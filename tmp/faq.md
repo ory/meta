@@ -4,6 +4,19 @@ This file keeps track of questions and discussions from discord/forum/github in 
 
 This is not a finished FAQ section, its a work in progress, it will be merged into /docs when ready.
 
+## Kratos
+
+#### Is it possible to use multiple different databases?
+>We want to seperate our customers and employees, so we store them in different databases.   
+>But we would like to have them use the same login dialog for our portal.  
+>Is that usecase supported by Kratos?
+
+You can deploy kratos two times, and use the same login/registration endpoints if you like.  
+You may need to tell you login/registration ui which kratos it is supposed to talk to.  
+The instances are cheap to deploy and the databases are completely isolated from each other.  
+For example you can have something like `/login/customer` and `login/employee`
+So fetch('http://my-cluster-${id}/...) (please use fixed values in production!)
+
 ## Hydra
 
 #### Is it possible to disable/enable certain flows in Hydra?
