@@ -16,7 +16,7 @@ git diff --exit-code
 goreleaser check
 circleci config check
 
-git commit --allow-empty "chore: pin $1 release commit"
+git commit --allow-empty -m "chore: pin $1 release commit"
 git tag -a "$1"
 git push
 git push --tags
