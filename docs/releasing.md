@@ -111,29 +111,68 @@ Define CI Environment Variables:
 
 * [ ] Make sure you set `GITHUB_TOKEN` in the project's CI config.
 * [ ] Make sure you set `MAILCHIMP_API_KEY` in the project's CI config.
+* [ ] Make sure you set `DOCKER_USER` in the project's CI config.
+* [ ] Make sure you set `DOCKER_TOKEN` in the project's CI config.
 
 In the project's CircleCI config (`.circleci/config.yml`), use the following
 workflow (please use an appropriate `$VERSION`):
 
 ```yaml
 orbs:
-  goreleaser: ory/goreleaser@$VERSION
+  goreleaser: ory/goreleaser@0.1.7
+  slack: circleci/slack@3.4.2
 
 workflows:
   my-workflow:
     jobs:
-      - goreleaser/test:
-      - goreleaser/release:
+
+      -
+        goreleaser/test:
+          filters:
+            tags:
+              only: /.*/
+      -
+        goreleaser/release:
           requires:
             - goreleaser/test
           filters:
             branches:
               ignore: /.*/
-      - newsletter-approval:
-          type: approval
+            tags:
+              only: /.*/
+
+      -
+        goreleaser/newsletter-draft:
+          chimp-list: f605a41b53
+          chimp-segment: 6478605
           requires:
             - goreleaser/release
-      - goreleaser/newsletter:
+          filters:
+            tags:
+              only: /.*/
+      -
+        slack/approval-notification:
+          message: Pending approval
+          channel: release-automation
           requires:
-            - notify-approval
+            - goreleaser/newsletter-draft
+          filters:
+            tags:
+              only: /.*/
+      -
+        newsletter-approval:
+          type: approval
+          requires:
+            - goreleaser/newsletter-draft
+          filters:
+            tags:
+              only: /.*/
+      -
+        goreleaser/newsletter-send:
+          chimp-list: f605a41b53
+          requires:
+            - newsletter-approval
+          filters:
+            tags:
+              only: /.*/
 ```
