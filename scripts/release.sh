@@ -7,11 +7,13 @@ if ! (echo "$1" | grep -Eq "^(major|minor|patch)$"); then
   exit 1
 fi
 
-go get github.com/davidrjonas/semver-cli
+go get github.com/davidrjonas/semver-cli@1.1.0
 go install github.com/davidrjonas/semver-cli
+git checkout -- go.mod
+git checkout -- go.sum
 
 prev=$(git describe --abbrev=0)
-bumpTo=$(semver-cli inc "$1" "$prev")
+bumpTo=v$(semver-cli inc "$1" "$prev")
 
 if grep -q "$bumpTo" <(git tag); then
   echo "There was a problem. It appears that tag $bumpTo already exists!"
