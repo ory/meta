@@ -2,8 +2,12 @@
 
 set -Eeuo pipefail
 
-if ! (echo "$1" | grep -Eq "^(major|minor|patch)$"); then
-  echo "$1 is not valid, choose major, minor, or patch!"
+if (echo "$1" | grep -Eq "^(major|minor|patch)$"); then
+  echo "$1 is a valid release tag!"
+elif echo "$1" | grep -Eq "^v(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?$"; then
+  echo "$1 is a valid release tag!"
+else
+  echo "$1 is not valid, choose 'major', 'minor', 'patch' or a valid semantic version (v1.2.3-alpha.123)!"
   exit 1
 fi
 
