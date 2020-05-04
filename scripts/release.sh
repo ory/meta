@@ -32,6 +32,12 @@ if ! echo "$project" | grep -Eq "^hydra|keto|oathkeeper|kratos$"; then
   exit 1
 fi
 
+git checkout master
+git tag -d $(git tag -l)
+git fetch origin --tags
+git pull -ff
+git diff --exit-code
+
 prev=$(git describe --abbrev=0 --tags)
 
 if grep -q "$bumpTo" <(git tag); then
