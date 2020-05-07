@@ -11,6 +11,13 @@ prompt() {
   fi
 }
 
+git checkout master
+git tag -d $(git tag -l)
+git fetch origin --tags
+git pull -ff
+git diff --exit-code
+prev=$(git describe --abbrev=0 --tags)
+
 if (echo "$1" | grep -Eq "^(major|minor|patch)$"); then
   echo "$1 is a valid release tag!"
   go get github.com/davidrjonas/semver-cli@1.1.0
@@ -37,8 +44,6 @@ git tag -d $(git tag -l)
 git fetch origin --tags
 git pull -ff
 git diff --exit-code
-
-prev=$(git describe --abbrev=0 --tags)
 
 if grep -q "$bumpTo" <(git tag); then
   echo "There was a problem. It appears that tag $bumpTo already exists!"
