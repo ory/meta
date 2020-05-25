@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -Eeuo pipefail
+set -Eexuo pipefail
 
 cd "$( dirname "${BASH_SOURCE[0]}" )/.."
 
@@ -10,7 +10,7 @@ npx doctoc ./templates/repository/common/SECURITY.md
 workdir=$(mktemp -d)
 
 function update {
-    workdir=$(mktemp -d -p "$1")
+    workdir=$(mktemp -d -t "$1")
     name="$1"
     type="$2"
     branch="$3"
@@ -22,7 +22,8 @@ function update {
     (cd "$workdir"; \
       git checkout "$branch"; \
       git reset --hard HEAD; \
-      git git pull -ff)
+      git pull -ff; \
+      rm -rf .github/)
 
     # Copy common templates
     cp -R "templates/repository/common/CONTRIBUTING.md" "$workdir/CONTRIBUTING.md"
@@ -34,17 +35,17 @@ function update {
     cp -R "templates/repository/$type/.github/" "$workdir/.github/"
 
     # Replace placeholders
-    sed -i '' -e "s|{{Project}}|$humanName|g" `find "$workdir/.github/*" -type f -print` "$workdir/CONTRIBUTING.md" "$workdir/SECURITY.md"
+    sed -i '' -e "s|{{Project}}|$humanName|g" `find "$workdir/.github" -type f -print` "$workdir/CONTRIBUTING.md" "$workdir/SECURITY.md"
 
-    perl -0pe 's/<!--\s*BEGIN ADOPTERS\s*-->.*<!--\s*END ADOPTERS\s*-->/`cat ADOPTERS.md`/gse' -i "$workdir/README.md"
-    perl -0pe 's#<!--\s*BEGIN ECOSYSTEM\s*-->.*<!--\s*END ECOSYSTEM\s*-->#`cat ../../PROJECTS.md`#gse' -i "$workdir/README.md"
+    perl -0pe 's#<!--\s*BEGIN ADOPTERS\s*-->.*<!--\s*END ADOPTERS\s*-->#`cat templates/repository/common/ADOPTERS.md`#gse' -i "$workdir/README.md"
+    perl -0pe 's#<!--\s*BEGIN ECOSYSTEM\s*-->.*<!--\s*END ECOSYSTEM\s*-->#`cat templates/repository/common/PROJECTS.md`#gse' -i "$workdir/README.md"
 
-    echo "Wrote all changes to: $workdir"
+    (git commit -a -m "docs: update repository templates" && git push origin HEAD:master || true)
 }
 
 update oathkeeper server master Oathkeeper
-update keto server master Keto
-update hydra server master Hydra
+#update keto server master Keto
+#update hydra server master Hydra
 #update kratos server master Kratos
 #
 #update hydra-login-consent-node library master "Hydra Login, Logout And Consent Node Example"
