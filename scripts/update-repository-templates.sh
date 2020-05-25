@@ -40,21 +40,21 @@ function update {
     perl -0pe 's#<!--\s*BEGIN ADOPTERS\s*-->.*<!--\s*END ADOPTERS\s*-->#`cat templates/repository/common/ADOPTERS.md`#gse' -i "$workdir/README.md"
     perl -0pe 's#<!--\s*BEGIN ECOSYSTEM\s*-->.*<!--\s*END ECOSYSTEM\s*-->#`cat templates/repository/common/PROJECTS.md`#gse' -i "$workdir/README.md"
 
-    (git commit -a -m "docs: update repository templates" && git push origin HEAD:master || true)
+    (git add -A; (git commit -a -m "docs: update repository templates" && git push origin HEAD:master) || true)
 }
 
 update oathkeeper server master Oathkeeper
-#update keto server master Keto
-#update hydra server master Hydra
-#update kratos server master Kratos
-#
-#update hydra-login-consent-node library master "Hydra Login, Logout And Consent Node Example"
-#update kratos-selfservice-ui-node library master "Kratos SelfService UI Node Example"
-#
-#update fosite library master Fosite
-#update dockertest library v3 Dockertest
-#update x library master X
-#update herodot library master Herodot
-#update graceful library master Graceful
-#update examples library master Examples
-#update k8s library master K8S
+update keto server master Keto
+update hydra server master Hydra
+update kratos server master Kratos
+
+update hydra-login-consent-node library master "Hydra Login, Logout And Consent Node Example"
+update kratos-selfservice-ui-node library master "Kratos SelfService UI Node Example"
+
+update fosite library master Fosite
+update dockertest library v3 Dockertest
+update x library master X
+update herodot library master Herodot
+update graceful library master Graceful
+update examples library master Examples
+update k8s library master K8S
