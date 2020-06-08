@@ -40,7 +40,7 @@ function update {
     perl -0pe 's#<!--\s*BEGIN ADOPTERS\s*-->.*<!--\s*END ADOPTERS\s*-->#`cat templates/repository/common/ADOPTERS.md`#gse' -i "$workdir/README.md"
     perl -0pe 's#<!--\s*BEGIN ECOSYSTEM\s*-->.*<!--\s*END ECOSYSTEM\s*-->#`cat templates/repository/common/PROJECTS.md`#gse' -i "$workdir/README.md"
 
-    (git add -A; (git commit -a -m "docs: update repository templates" && git push origin HEAD:master) || true)
+    (cd "$workdir"; git add -A; (git commit -a -m "docs: update repository templates" && git push origin HEAD:master) || true)
 }
 
 update oathkeeper server master Oathkeeper
