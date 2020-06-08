@@ -43,7 +43,7 @@ var fizzMigrationsTestsSyncCmd = &cobra.Command{
 
 			fix := filepath.Join(args[2], results[0][1])
 			if _, err := os.Stat(fix); os.IsNotExist(err) {
-				if err := os.Mkdir(fix, 0666); err != nil {
+				if err := os.Mkdir(fix, 0777); err != nil {
 					return err
 				}
 			}
