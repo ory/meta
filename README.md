@@ -8,7 +8,7 @@ The ORY development toolchain is a CLI which helps you with tasks that need to b
 ORY technology. To install it run
 
 ```shell script
-$ go install github.com/ory/meta/src/ory-dev
+$ go install github.com/ory/meta/tools/ory-dev
 ```
 
 For help on available commands (e.g. creating fizz migrations) check out
