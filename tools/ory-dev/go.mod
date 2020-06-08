@@ -1,4 +1,4 @@
-module github.com/ory/meta/src/ory-dev
+module github.com/ory/meta/tools/ory-dev
 
 go 1.14
 
