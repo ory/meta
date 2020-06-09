@@ -12,11 +12,22 @@ import (
 
 var fizzTestRegex = regexp.MustCompile("([0-9]+)_([a-zA-Z_0-9]+)(\\.(mysql|postgres|cockroach|sqlite)|)\\.up\\.(fizz|sql)")
 
+func makeFileIfNotExist(p string) error {
+	if _, err := os.Stat(p); !os.IsNotExist(err) {
+		return nil
+	}
+	f, err := os.Create(p)
+	if err != nil {
+		return err
+	}
+	return f.Close()
+}
+
 // fizzMigrationsTestsSyncCmd represents the sync command
 var fizzMigrationsTestsSyncCmd = &cobra.Command{
-	Use:   "sync [migrations] [testdata] [fixtures]",
+	Use:   "sync <path/to/migrations> <path/to/testdata>",
 	Short: "Creates testdata files and fixtures directories",
-	Args:  cobra.ExactArgs(3),
+	Args:  cobra.ExactArgs(2),
 	RunE: func(cmd *cobra.Command, args []string) error {
 		return filepath.Walk(args[0], func(path string, info os.FileInfo, err error) error {
 			if info.IsDir() || (filepath.Ext(path) != ".sql" && filepath.Ext(path) != ".fizz") {
@@ -33,22 +44,23 @@ var fizzMigrationsTestsSyncCmd = &cobra.Command{
 			}
 
 			tdp := filepath.Join(args[1], fmt.Sprintf("%s_testdata%s.sql", results[0][1], results[0][3]))
-			if _, err := os.Stat(tdp); os.IsNotExist(err) {
-				f, err := os.Create(tdp)
-				if err != nil {
-					return err
-				}
-				_ = f.Close()
+			if err := makeFileIfNotExist(tdp); err != nil {
+				return err
 			}
 
-			fix := filepath.Join(args[2], results[0][1])
-			if _, err := os.Stat(fix); os.IsNotExist(err) {
-				if err := os.Mkdir(fix, 0777); err != nil {
-					return err
-				}
-			}
-
-			return nil
+			// Ignore fixture paths for now as we don't really use them.
+			//
+			// fix := filepath.Join(args[2], results[0][1])
+			// gi := filepath.Join(fix, ".gitignore")
+			// if _, err := os.Stat(fix); !os.IsNotExist(err) {
+			// 	return makeFileIfNotExist(gi)
+			// }
+			//
+			// if err := os.Mkdir(fix, 0777); err != nil {
+			// 	return err
+			// }
+			//
+			// return makeFileIfNotExist(gi)
 		})
 	},
 }
