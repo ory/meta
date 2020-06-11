@@ -61,6 +61,8 @@ var fizzMigrationsTestsSyncCmd = &cobra.Command{
 			// }
 			//
 			// return makeFileIfNotExist(gi)
+
+			return nil
 		})
 	},
 }
