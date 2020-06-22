@@ -1,0 +1,37 @@
+name: ory-dev
+
+on: [push]
+
+defaults:
+  run:
+    working-directory: tools/ory-dev
+
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go: [1.14.x]
+    steps:
+
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: ${{ matrix.go }}
+        id: go
+
+      - uses: actions/checkout@v2
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ hashFiles('go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-
+      - run: go mod download
+      - run: go mod verify
+      - run: go build -v .
+      # TODO: comment in after fix swagger_sanitize_test.go
+      #- run: go test -v ./...
