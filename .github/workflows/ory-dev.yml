@@ -7,6 +7,12 @@ defaults:
     working-directory: tools/ory-dev
 
 jobs:
+  golangci-lint:
+    runs-on: ubuntu-latest
+    container: golangci/golangci-lint:v1.27.0-alpine
+    steps:
+      - uses: actions/checkout@v2
+      - run: golangci-lint run
 
   build:
     name: Build
