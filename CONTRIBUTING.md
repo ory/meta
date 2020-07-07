@@ -110,6 +110,33 @@ Normally, all pull requests must include tests that test your change.
 Occasionally, a change will be very difficult to test for. In those cases,
 please include a note in your commit message explaining why.
 
+### Working with Forks
+
+```
+# First you clone the original repository
+git clone git@github.com:ory/{{Project}}.git
+
+# Next you add a git remote that is your fork:
+git remote add fork git@github.com:<YOUR-GITHUB-USERNAME-HERE>/{{Project}}.git
+
+# Next you fetch the latest changes from origin for master:
+git fetch origin
+git checkout master
+git pull --rebase
+
+# Next you create a new feature branch off of master:
+git checkout my-feature-branch
+
+# Now you do your work and commit your changes:
+git add -A
+git commit -a -m "fix: this is the subject line" -m "This is the body line. Closes #123"
+
+# And the last step is pushing this to your fork
+git push -u fork my-feature-branch
+```
+
+Now go to the project's GitHub Pull Request page and click "New pull request"
+
 ## Communication
 
 We use [Slack](https://www.ory.sh/chat). You are welcome to drop in and ask
