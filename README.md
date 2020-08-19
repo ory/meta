@@ -2,22 +2,6 @@
 
 A place for reusable code, templates, and documentation required for getting a repository in ORY working.
 
-## ORY Development Toolchain (OryDT)
-
-The ORY development toolchain is a CLI which helps you with tasks that need to be done regularly when developing
-ORY technology. To install it run
-
-```shell script
-$ go get github.com/ory/meta/tools/ory-dev
-$ go install github.com/ory/meta/tools/ory-dev
-```
-
-For help on available commands (e.g. creating fizz migrations) check out
-
-```
-$ ory-dev help
-```
-
 ## Documentation
 
 Documentation can be found here:
