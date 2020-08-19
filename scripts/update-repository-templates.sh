@@ -16,7 +16,7 @@ function update {
     branch="$3"
     humanName="$4"
 
-    git clone "git@github.com:ory/$name.git" "$workdir"
+    git clone "git@github.com:$name.git" "$workdir"
 
     # Clone repository
     (cd "$workdir"; \
@@ -43,18 +43,19 @@ function update {
     (cd "$workdir"; git add -A; (git commit -a -m "docs: update repository templates" && git push origin HEAD:master) || true)
 }
 
-update oathkeeper server master Oathkeeper
-update keto server master Keto
-update hydra server master Hydra
-update kratos server master Kratos
+update ory/oathkeeper server master Oathkeeper
+update ory/keto server master Keto
+update ory/hydra server master Hydra
+update ory/kratos server master Kratos
+update ory-cloud/oasis server master Oasis
 
-update hydra-login-consent-node library master "Hydra Login, Logout And Consent Node Example"
-update kratos-selfservice-ui-node library master "Kratos SelfService UI Node Example"
+update ory/hydra-login-consent-node library master "Hydra Login, Logout And Consent Node Example"
+update ory/kratos-selfservice-ui-node library master "Kratos SelfService UI Node Example"
 
-update fosite library master Fosite
-update dockertest library v3 Dockertest
-update x library master X
-update herodot library master Herodot
-update graceful library master Graceful
-update examples library master Examples
-update k8s library master K8S
+update ory/fosite library master Fosite
+update ory/dockertest library v3 Dockertest
+update ory/x library master X
+update ory/herodot library master Herodot
+update ory/graceful library master Graceful
+update ory/examples library master Examples
+update ory/k8s library master K8S
