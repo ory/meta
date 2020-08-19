@@ -4,10 +4,6 @@ A place for reusable code, templates, and documentation required for getting a r
 
 ## Documentation
 
-Documentation can be found here:
-
-- [Releasing software](./docs/releasing.md)
-
 ### Updating Templates
 
 This repository contains templates for things like the software license, security policy, contributing guidelines,
