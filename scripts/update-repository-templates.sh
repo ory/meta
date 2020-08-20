@@ -10,7 +10,7 @@ npx doctoc ./templates/repository/common/SECURITY.md
 workdir=$(mktemp -d)
 
 function update {
-    workdir=$(mktemp -d -t "$1")
+    workdir=$(mktemp -d)
     name="$1"
     type="$2"
     branch="$3"
@@ -22,8 +22,7 @@ function update {
     (cd "$workdir"; \
       git checkout "$branch"; \
       git reset --hard HEAD; \
-      git pull -ff; \
-      rm -rf .github/)
+      git pull -ff)
 
     # Copy common templates
     cp -R "templates/repository/common/CONTRIBUTING.md" "$workdir/CONTRIBUTING.md"
