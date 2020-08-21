@@ -14,10 +14,4 @@ and servers (e.g. Kratos) share templates from the [common](./templates/reposito
 servers copy files from [server](./templates/repository/server) and libraries from the
 [library](./templates/repository/library) directory.
 
-To update the files in the git repositories with these templates all you have to do is run:
-
-```
-$ ./scripts/update-repository-templates.sh
-```
-
-You will need permission to push to master.
+To update the repositories simply make your changes. Once merged to master, they will be published using a GitHub Action.

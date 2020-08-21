@@ -1,0 +1,40 @@
+name: Synchronize Issue Labels
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+jobs:
+  milestone:
+    name: Synchronize Issue Labels
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Synchronize ORY Hydra
+        run: ./scripts/sync-server.sh ory/hydra master Hydra
+      - name: Synchronize ORY Keto
+        run: ./scripts/sync-server.sh ory/hydra master Keto
+      - name: Synchronize ORY Oathkeeper
+        run: ./scripts/sync-server.sh ory/hydra master Oathkeeper
+      - name: Synchronize ORY Kratos
+        run: ./scripts/sync-server.sh ory/hydra master Kratos
+      - name: Synchronize ORY Hydra Login, Logout And Consent Node Example
+        run: ./scripts/sync-library.sh ory/hydra-login-consent-node master "Hydra Login, Logout And Consent Node Example"
+      - name: Synchronize ORY Kratos SelfService UI Node Example
+        run: ./scripts/sync-library.sh ory/kratos-selfservice-ui-node master "Kratos SelfService UI Node Example"
+      - name: Synchronize ORY Fosite
+        run: ./scripts/sync-library.sh ory/fosite master Fosite
+      - name: Synchronize ORY Dockertest
+        run: ./scripts/sync-library.sh ory/dockertest v3 Dockertest
+      - name: Synchronize ORY Herodot
+        run: ./scripts/sync-library.sh ory/herodot master Herodot
+      - name: Synchronize ORY Graceful
+        run: ./scripts/sync-library.sh ory/graceful master Graceful
+      - name: Synchronize ORY Kubernetes Resources
+        run: ./scripts/sync-library.sh ory/k8s master "Kubernetes Resources"
+      - name: Synchronize ORY X
+        run: ./scripts/sync-library.sh ory/x master X
+

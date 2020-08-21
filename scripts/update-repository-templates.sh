@@ -46,6 +46,7 @@ update ory/oathkeeper server master Oathkeeper
 update ory/keto server master Keto
 update ory/hydra server master Hydra
 update ory/kratos server master Kratos
+
 update ory-cloud/oasis server master Oasis
 
 update ory/hydra-login-consent-node library master "Hydra Login, Logout And Consent Node Example"
