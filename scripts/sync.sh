@@ -2,11 +2,24 @@
 
 set -Eexuo pipefail
 
+bin=$(mktemp -d -t bin-XXXXXX)
+export PATH="$PATH:$bin"
+
+# get github api client
+wget -O "$bin/gh.tar.gz" https://github.com/cli/cli/releases/download/v0.10.1/gh_0.10.1_linux_amd64.tar.gz
+tar -xf "$bin/gh.tar.gz"
+mv gh_0.10.1_linux_amd64/bin/gh "$bin/gh"
+rm -rfd gh_0.10.1_linux_amd64
+
 function sync {
     workdir=$1
     branch=$2
     type=$3
     humanName=$4
+    pushBranch="docusaurus-$(date +%m-%d-%y-%H-%M-%S)"
+    hash=$(echo $GITHUB_SHA | head -c 8)
+
+    (cd "$workdir"; git checkout -b "$pushBranch")
 
     # Copy common templates
     cp -R "templates/repository/common/CONTRIBUTING.md" "$workdir/CONTRIBUTING.md"
@@ -28,6 +41,7 @@ function sync {
       git status; \
       ( \
         git commit -a -m "docs: update repository templates" \
-        && git push origin HEAD:$branch \
+        && git push origin HEAD:"$pushBranch" \
+        && gh pr create --repo "$1" --title "chore: update repository template to $hash" --body "Updated repository templates to master to https://github.com/ory/meta/commit/$GITHUB_SHA.") \
       ) || true)
 }
