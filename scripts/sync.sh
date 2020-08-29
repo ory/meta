@@ -55,7 +55,7 @@ EOF
       git add -A; \
       git status; \
       ( \
-        git commit -a -m "docs: update repository templates" && \
+        git commit -a -m "chore: update repository templates" && \
         git push --set-upstream origin "$pushBranch" && \
         curl \
           -X POST \
