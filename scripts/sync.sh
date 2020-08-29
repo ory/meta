@@ -5,14 +5,6 @@ set -Eexuo pipefail
 bin=$(mktemp -d -t bin-XXXXXX)
 export PATH="$PATH:$bin"
 
-# get github api client
-wget -O "$bin/gh.tar.gz" https://github.com/cli/cli/releases/download/v0.10.1/gh_0.10.1_linux_amd64.tar.gz
-tar -xf "$bin/gh.tar.gz"
-mv gh_0.10.1_linux_amd64/bin/gh "$bin/gh"
-rm -rfd gh_0.10.1_linux_amd64
-
-bash <(curl -s https://raw.githubusercontent.com/ory/ci/master/src/scripts/install/git.sh)
-
 function sync {
     cd "$( dirname "${BASH_SOURCE[0]}" )/.."
     workdir=$1
