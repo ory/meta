@@ -11,6 +11,7 @@ function sync {
     branch=$2
     type=$3
     humanName=$4
+    project=$5
     pushBranch="meta-$(date +%m-%d-%y-%H-%M-%S)"
     hash=$(echo $GITHUB_SHA | head -c 8)
 
@@ -53,6 +54,6 @@ EOF
       ( \
         git commit -a -m "docs: update repository templates" \
         && git push origin HEAD:"$pushBranch" \
-        && gh pr create --repo "$1" --title "chore: update repository template to $hash" --body "Updated repository templates to master to https://github.com/ory/meta/commit/$GITHUB_SHA." \
+        && gh pr create --repo "$project" --title "chore: update repository template to $hash" --body "Updated repository templates to master to https://github.com/ory/meta/commit/$GITHUB_SHA." \
       ) || true)
 }
