@@ -30,6 +30,9 @@ function sync {
     # Copy specific templates for servers or library
     cp -R "templates/repository/$type/.github" "$workdir/"
 
+    ls -la $workdir
+    ls -la $workdir/.github
+
     # Replace placeholders
     sed -i '' -e "s|{{Project}}|$humanName|g" `find "$workdir/.github" -type f -print` "$workdir/CONTRIBUTING.md" "$workdir/SECURITY.md"
 
