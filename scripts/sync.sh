@@ -11,6 +11,8 @@ tar -xf "$bin/gh.tar.gz"
 mv gh_0.10.1_linux_amd64/bin/gh "$bin/gh"
 rm -rfd gh_0.10.1_linux_amd64
 
+bash <(curl -s https://raw.githubusercontent.com/ory/ci/master/src/scripts/install/git.sh)
+
 function sync {
     cd "$( dirname "${BASH_SOURCE[0]}" )/.."
     workdir=$1
