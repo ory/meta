@@ -42,6 +42,6 @@ function sync {
       ( \
         git commit -a -m "docs: update repository templates" \
         && git push origin HEAD:"$pushBranch" \
-        && gh pr create --repo "$1" --title "chore: update repository template to $hash" --body "Updated repository templates to master to https://github.com/ory/meta/commit/$GITHUB_SHA.") \
+        && gh pr create --repo "$1" --title "chore: update repository template to $hash" --body "Updated repository templates to master to https://github.com/ory/meta/commit/$GITHUB_SHA." \
       ) || true)
 }
