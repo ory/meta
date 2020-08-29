@@ -1,4 +1,4 @@
-name: Synchronize Issue Labels
+name: Synchronize Repositories
 
 on:
   workflow_dispatch:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   milestone:
-    name: Synchronize Issue Labels
+    name: Synchronize Repositories
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
