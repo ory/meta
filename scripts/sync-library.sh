@@ -10,5 +10,5 @@ project=$1
 branch=$2
 humanName=$3
 
-git clone --depth 1 --branch "$branch" "https://github.com/$1.git" "$workdir"
+git clone --depth 1 --branch "$branch" "git@github.com:$1.git" "$workdir"
 sync "$workdir" "$branch" "library" $humanName
