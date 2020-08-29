@@ -53,7 +53,7 @@ EOF
       git status; \
       ( \
         git commit -a -m "docs: update repository templates" && \
-        git push --set-upstream origin "$branch" && \
+        git push --set-upstream origin "$pushBranch" && \
         curl \
           -X POST \
           -H "Authorization: token $GITHUB_TOKEN" \
