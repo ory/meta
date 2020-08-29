@@ -29,6 +29,12 @@ So fetch('http://my-cluster-${id}/...) (please use fixed values in production!)
 
 ## Hydra
 
+## Is it possible to set a custom claim in JWT access tokens?
+>We need to permission data (!= scope) in access token.
+
+You can use the context data on the login and consent requests for that.
+
+>Thanks . It worked with 'session' field on consent request!
 #### Is it possible to disable/enable certain flows in Hydra?
 
 >andrius#9992 09-Jan-20 09:50    
