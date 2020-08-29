@@ -5,6 +5,8 @@ set -Eexuo pipefail
 bin=$(mktemp -d -t bin-XXXXXX)
 export PATH="$PATH:$bin"
 
+gh config set git_protocol ssh
+
 function sync {
     cd "$( dirname "${BASH_SOURCE[0]}" )/.."
     workdir=$1
