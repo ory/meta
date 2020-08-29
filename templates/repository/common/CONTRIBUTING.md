@@ -30,7 +30,7 @@ https://github.com/ory/meta/blob/master/templates/repository/CONTRIBUTING.md
 
 Please note: We take ORY {{Project}}'s security and our users' trust very
 seriously. If you believe you have found a security issue in ORY {{Project}},
-please responsibly disclose by contacting us at hi@ory.sh.
+please responsibly disclose by contacting us at office@ory.sh.
 
 First: if you're unsure or afraid of anything, just ask or submit the issue or
 pull request anyways. You won't be yelled at for giving it your best effort. The
