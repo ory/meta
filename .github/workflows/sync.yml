@@ -16,13 +16,7 @@ jobs:
       - uses: webfactory/ssh-agent@v0.4.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-      - run: |
-          gh help
-          wget -O "$bin/gh.tar.gz" https://github.com/cli/cli/releases/download/v0.11.0/gh_0.11.0_linux_amd64.tar.gz
-          tar -xf "$bin/gh.tar.gz"
-          mv gh_0.11.0_linux_amd64/bin/gh /usr/local/bin/gh
-          rm -rfd gh_0.11.0_linux_amd64
-          bash <(curl -s https://raw.githubusercontent.com/ory/ci/master/src/scripts/install/git.sh)
+      - run: bash <(curl -s https://raw.githubusercontent.com/ory/ci/master/src/scripts/install/git.sh)
       - name: Synchronize ORY Hydra
         run: ./scripts/sync-server.sh ory/hydra master Hydra
         env:
