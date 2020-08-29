@@ -12,6 +12,7 @@ mv gh_0.10.1_linux_amd64/bin/gh "$bin/gh"
 rm -rfd gh_0.10.1_linux_amd64
 
 function sync {
+    cd "$( dirname "${BASH_SOURCE[0]}" )/.."
     workdir=$1
     branch=$2
     type=$3
@@ -30,8 +31,7 @@ function sync {
     # Copy specific templates for servers or library
     cp -R "templates/repository/$type/.github" "$workdir/"
 
-    ls -la $workdir
-    ls -la $workdir/.github
+    ls -la `find "$workdir/.github" -type f -print` "$workdir/CONTRIBUTING.md" "$workdir/SECURITY.md"
 
     # Replace placeholders
     sed -i '' -e "s|{{Project}}|$humanName|g" `find "$workdir/.github" -type f -print` "$workdir/CONTRIBUTING.md" "$workdir/SECURITY.md"
