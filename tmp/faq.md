@@ -4,6 +4,16 @@ This file keeps track of questions and discussions from discord/forum/github in 
 
 This is not a finished FAQ section, its a work in progress, it will be merged into /docs when ready.
 
+## General
+
+>Will you audit the code and/or provide bug bounties? 
+
+Yes, when we are near stable candidate we will audit the code and provide bug bounties.
+
+>Is it already clear what the enterprise version of the stack would do that the OS version does not?
+
+The open source version has the same functionality, without developer support and GUI
+
 ## Kratos
 
 #### Is it possible to use multiple different databases?
