@@ -19,7 +19,7 @@ function sync {
     branch=$2
     type=$3
     humanName=$4
-    pushBranch="docusaurus-$(date +%m-%d-%y-%H-%M-%S)"
+    pushBranch="meta-$(date +%m-%d-%y-%H-%M-%S)"
     hash=$(echo $GITHUB_SHA | head -c 8)
 
     (cd "$workdir"; git checkout -b "$pushBranch")
