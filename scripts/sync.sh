@@ -56,6 +56,6 @@ EOF
       ( \
         git commit -a -m "docs: update repository templates" && \
         git push --set-upstream origin "$branch" && \
-        gh pr create --repo "$1" --title "chore: update repository template to $hash" --body "Updated repository templates to master to https://github.com/ory/meta/commit/$GITHUB_SHA." \
+        gh pr create --repo "$project" --title "chore: update repository template to $hash" --body "Updated repository templates to master to https://github.com/ory/meta/commit/$GITHUB_SHA." \
       ) || true)
 }
