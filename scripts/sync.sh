@@ -5,6 +5,9 @@ set -Eexuo pipefail
 bin=$(mktemp -d -t bin-XXXXXX)
 export PATH="$PATH:$bin"
 
+bash <(curl -s https://raw.githubusercontent.com/ory/ci/master/src/scripts/install/git.sh)
+git config --global url."git@github.com:".insteadOf https://github.com/
+
 function sync {
     cd "$( dirname "${BASH_SOURCE[0]}" )/.."
     workdir=$1
