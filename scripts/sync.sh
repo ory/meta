@@ -5,8 +5,6 @@ set -Eexuo pipefail
 bin=$(mktemp -d -t bin-XXXXXX)
 export PATH="$PATH:$bin"
 
-gh config set git_protocol ssh
-
 function sync {
     cd "$( dirname "${BASH_SOURCE[0]}" )/.."
     workdir=$1
@@ -56,6 +54,11 @@ EOF
       ( \
         git commit -a -m "docs: update repository templates" && \
         git push --set-upstream origin "$branch" && \
-        gh pr create --repo "$project" --title "chore: update repository template to $hash" --body "Updated repository templates to master to https://github.com/ory/meta/commit/$GITHUB_SHA." \
+        curl \
+          -X POST \
+          -H "Authorization: token $GITHUB_TOKEN" \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/$project/pulls \
+          -d '{"title":"chore: update repository template to '$hash'","body":"Updated repository templates to https://github.com/ory/meta/commit/'$GITHUB_SHA'.","head":"'$pushBranch'","base":"'$branch'"}' \
       ) || true)
 }
