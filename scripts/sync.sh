@@ -54,8 +54,8 @@ EOF
       git add -A; \
       git status; \
       ( \
-        git commit -a -m "docs: update repository templates" \
-        && git push origin HEAD:"$pushBranch" \
-        && GH_REPO=$project gh pr create --title "chore: update repository template to $hash" --body "Updated repository templates to master to https://github.com/ory/meta/commit/$GITHUB_SHA." \
+        git commit -a -m "docs: update repository templates" && \
+        git push --set-upstream origin "$branch" && \
+        gh pr create --repo "$1" --title "chore: update repository template to $hash" --body "Updated repository templates to master to https://github.com/ory/meta/commit/$GITHUB_SHA." \
       ) || true)
 }
