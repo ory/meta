@@ -25,13 +25,26 @@ function sync {
     cp -R "templates/repository/common/CONTRIBUTING.md" "$workdir/CONTRIBUTING.md"
     cp -R "templates/repository/common/SECURITY.md" "$workdir/SECURITY.md"
     cp -R "templates/repository/common/LICENSE" "$workdir/LICENSE"
-    cp -R "templates/repository/common/.github/" "$workdir/.github/"
+    cp -R "templates/repository/common/.github" "$workdir/"
 
     # Copy specific templates for servers or library
-    cp -R "templates/repository/$type/.github/" "$workdir/.github/"
+    cp -R "templates/repository/$type/.github" "$workdir/"
 
     # Replace placeholders
     sed -i '' -e "s|{{Project}}|$humanName|g" `find "$workdir/.github" -type f -print` "$workdir/CONTRIBUTING.md" "$workdir/SECURITY.md"
+
+    # Copy contributing guide to docs if docs exist
+    if [ -d "$workdir/docs/docs" ]; then
+      cat <<EOF > "$workdir/docs/docs/contributing.md"
+---
+id: contributing
+title: Contribution Guidelines
+---
+
+EOF
+        cat "$workdir/CONTRIBUTING.md" >> "$workdir/docs/docs/contributing.md"
+        sed '/Contributing to/d' "$workdir/docs/docs/contributing.md"
+    fi
 
     perl -0pe 's#<!--\s*BEGIN ADOPTERS\s*-->.*<!--\s*END ADOPTERS\s*-->#`cat templates/repository/common/ADOPTERS.md`#gse' -i "$workdir/README.md"
     perl -0pe 's#<!--\s*BEGIN ECOSYSTEM\s*-->.*<!--\s*END ECOSYSTEM\s*-->#`cat templates/repository/common/PROJECTS.md`#gse' -i "$workdir/README.md"
