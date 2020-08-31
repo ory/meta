@@ -35,6 +35,7 @@ function sync {
     else
       sed -e "s|{{Project}}|$humanName|g" `find "$workdir/.github" -type f -print` "$workdir/CONTRIBUTING.md" "$workdir/SECURITY.md"
     fi
+
     # Copy contributing guide to docs if docs exist
     if [ -d "$workdir/docs/docs" ]; then
       cat <<EOF > "$workdir/docs/docs/contributing.md"
