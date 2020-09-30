@@ -69,6 +69,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
+      - name: Synchronize ORY Themes
+        run: ./scripts/sync-library.sh ory/themes master Themes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
       - name: Synchronize ORY Kubernetes Resources
         run: ./scripts/sync-library.sh ory/k8s master "Kubernetes Resources"
         env:
