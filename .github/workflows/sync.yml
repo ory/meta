@@ -83,3 +83,18 @@ jobs:
         run: ./scripts/sync-library.sh ory/x master X
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+      - name: Syncronize ORY Closed Reference Notifier
+        run: ./scripts/sync-action.sh ory/closed-reference-notifier master "Closed Reference Notifier"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+      - name: Syncronize ORY Label Sync Action
+        run: ./scripts/sync-action.sh ory/label-sync-action master "Label Sync Action"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+      - name: Syncronize ORY Milestone Action
+        run: ./scripts/sync-action.sh ory/milestone-action master "Milestone Action"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
