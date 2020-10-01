@@ -49,6 +49,8 @@ the core team via a GitHub issue or [in our chat](https://www.ory.sh/chat)
 before getting started to ensure your work is consistent with ORY {{Project}}'s
 roadmap and architecture.
 
+Before you contribute to ORY's projects you need to sign our [Contributor License Agreement](https://cla-assistant.io/ory/).
+
 All contributions are made via pull request. Note that **all patches from all
 contributors get reviewed**. After a pull request is made other contributors
 will offer feedback, and if the patch passes review a maintainer will accept it
