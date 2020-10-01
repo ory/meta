@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "prettier": "ory-prettier-styles",
   "scripts": {
-    "format": "prettier --write \"**/*.{js,ts,md,mdx}\""
+    "format": "prettier --write \"**/*.{js,ts,md,mdx}\"",
+    "format:check": "prettier --check \"**/*.{js,ts,md,mdx}\""
   },
   "repository": {
     "type": "git",
