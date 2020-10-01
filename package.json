@@ -1,0 +1,16 @@
+{
+  "name": "meta",
+  "version": "1.0.0",
+  "prettier": "ory-prettier-styles",
+  "scripts": {
+    "format": "prettier --write \"**/*.{js,ts,md,mdx}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ory/meta.git"
+  },
+  "dependencies": {
+    "ory-prettier-styles": "^1.0.1",
+    "prettier": "^2.1.2"
+  }
+}
