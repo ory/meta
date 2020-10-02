@@ -24,6 +24,8 @@ function sync {
     cp -R "templates/repository/common/CONTRIBUTING.md" "$workdir/CONTRIBUTING.md"
     cp -R "templates/repository/common/SECURITY.md" "$workdir/SECURITY.md"
     cp -R "templates/repository/common/LICENSE" "$workdir/LICENSE"
+    # Copy .reference-ignore only if it does not exist, as it is meant to help getting started
+    cp -n "templates/repository/common/.reference-ignore" "$workdir/.reference-ignore"
     cp -R "templates/repository/common/.github" "$workdir/"
 
     # Copy specific templates for servers or library
