@@ -84,6 +84,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
+      - name: Synchronize ORY Web
+        run: ./scripts/sync-library.sh ory/web master Web
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
       - name: Syncronize ORY Closed Reference Notifier
         run: ./scripts/sync-action.sh ory/closed-reference-notifier master "Closed Reference Notifier"
         env:
