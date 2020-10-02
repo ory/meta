@@ -103,3 +103,8 @@ jobs:
         run: ./scripts/sync-action.sh ory/milestone-action master "Milestone Action"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+          
+      - name: Synchronize ORY Works
+        run: ./scripts/sync-library.sh ory/oryworks master ORYworks
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
