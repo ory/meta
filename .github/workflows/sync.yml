@@ -105,6 +105,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
           
       - name: Synchronize ORY Works
-        run: ./scripts/sync-library.sh ory/oryworks master ORYworks
+        run: ./scripts/sync-library.sh ory/oryworks master Works
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
