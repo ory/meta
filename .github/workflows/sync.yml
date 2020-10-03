@@ -45,7 +45,7 @@ jobs:
 
       - name: Synchronize ORY CLI
         run: |
-          ./scripts/sync-library.sh ory/cli CLI
+          ./scripts/sync-library.sh ory/cli master CLI
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
