@@ -43,6 +43,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
+      - name: Synchronize ORY CLI
+        run: |
+          ./scripts/sync-library.sh ory/cli CLI
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
       - name: Synchronize ORY Kratos SelfService UI Node Example
         run: |
           ./scripts/sync-library.sh ory/kratos-selfservice-ui-node master "Kratos SelfService UI Node Example"
