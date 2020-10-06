@@ -59,11 +59,11 @@ request merges successfully.
 At least one review from a maintainer is required for all patches (even patches
 from maintainers).
 
-Before your contributions can be merged you need to sign our [Contributor License Agreement](https://cla-assistant.io/ory/). 
+Before your contributions can be merged you need to sign our [Contributor License Agreement](https://cla-assistant.io/ory/).
 
-This agreement defines the terms under which your code is contributed to ORY. 
-More specifically this enables ORY to make use of your contributions to the 
-projects without legal repercussions. You can see the Apache 2.0 license under 
+This agreement defines the terms under which your code is contributed to ORY.
+More specifically this enables ORY to make use of your contributions to the
+projects without legal repercussions. You can see the Apache 2.0 license under
 which our projects are published [here](https://github.com/ory/meta/blob/master/LICENSE).
 
 Reviewers should leave a "LGTM" comment once they are satisfied with the patch.
