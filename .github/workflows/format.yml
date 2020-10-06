@@ -14,5 +14,4 @@ jobs:
     name: Check format
     steps:
       - uses: actions/checkout@v2
-      - run: npm ci
-      - run: "npm run format:check"
+      - uses: ory/prettier-styles@v1.0.1
