@@ -55,6 +55,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
+      - name: Synchronize ORY Kratos SelfService UI React Native Example
+        run: |
+          ./scripts/sync-library.sh ory/kratos-selfservice-ui-react-native master "Kratos SelfService UI React Native Example"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
       - name: Synchronize ORY Fosite
         run: ./scripts/sync-library.sh ory/fosite master Fosite
         env:
