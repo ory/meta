@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/ory/meta.git"
   },
-  "dependencies": {
+  "devDependencies": {
     "ory-prettier-styles": "^1.0.1",
     "prettier": "^2.1.2"
   }
