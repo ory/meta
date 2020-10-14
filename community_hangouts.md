@@ -2,23 +2,23 @@
 
 ## Q&A
 
-### Question 
+### Question
 
 #### ORY Product: Oathkeeper, Keto
 
 #### Is there any way that we can change the Oathkeper flow?
 
-### Answer 
+### Answer
 
-Write a pull request that submits the organizational structure that could be part of Keto. It might be easier to ask for all the logic to be supported in Keto. 
+Write a pull request that submits the organizational structure that could be part of Keto. It might be easier to ask for all the logic to be supported in Keto.
 
 Look if Keto can support what you are looking for and if it does not support that then make a feature request. Easier to pull off outside of Kratos.
 
 ### Answer
 
-It should be possible, it should be a feature in Oathkeeper. If it is not possible please open a feature request; it is a very common/good use case. 
+It should be possible, it should be a feature in Oathkeeper. If it is not possible please open a feature request; it is a very common/good use case.
 
-----
+---
 
 ### Question
 
@@ -28,9 +28,9 @@ It should be possible, it should be a feature in Oathkeeper. If it is not possib
 
 ### Answer
 
-That is definitely something we are looking at. We need to figure out how to implement this safely though. It will be a lot of work but it would be a very important feature for us to have. 
+That is definitely something we are looking at. We need to figure out how to implement this safely though. It will be a lot of work but it would be a very important feature for us to have.
 
-----
+---
 
 ### Question
 
@@ -38,11 +38,11 @@ That is definitely something we are looking at. We need to figure out how to imp
 
 #### What is the reasoning between having two database tables? Would it not be easier to merge the tables into one ? What is the design decision behind that?
 
-----
+---
 
 ## Comments
-Comments/Feedback/Future Issues
 
+Comments/Feedback/Future Issues
 
 # 07_10_2020 (second hangout)
 
@@ -54,15 +54,15 @@ Comments/Feedback/Future Issues
 
 ### Answer
 
-We have extensive documentation on any breaking changes, if you sign up to the newsletter you will get notified every time there is a new release. 
+We have extensive documentation on any breaking changes, if you sign up to the newsletter you will get notified every time there is a new release.
 
-We have elaborate descriptions of all changes in the newsletter, or on github. The changelogs are in the documentation and also on github. Also with guides how to do the upgrade/migration. 
+We have elaborate descriptions of all changes in the newsletter, or on github. The changelogs are in the documentation and also on github. Also with guides how to do the upgrade/migration.
 
-With helm charts its a manual process changing the version number at the moment. We are looking to automate this in the near future. 
+With helm charts its a manual process changing the version number at the moment. We are looking to automate this in the near future.
 
 [k8s issue #180](https://github.com/ory/k8s/issues/180)
 
-----
+---
 
 ### Question
 
@@ -70,7 +70,7 @@ With helm charts its a manual process changing the version number at the moment.
 
 #### Do you have plans to offer support the open source, selfhosted deployments?
 
-We have been using Oathkeeper & Kratos for Auth. 
+We have been using Oathkeeper & Kratos for Auth.
 We are interested in support, but our customers dont allow SaaS in this regard.
 
 ### Answer
@@ -78,10 +78,10 @@ We are interested in support, but our customers dont allow SaaS in this regard.
 We will focus on the cloud offering, it is easy to scale, easier to support.
 But this request comes often, and we do want to help companies in this position.
 
-We do want to offer solutions there so we could provide you with support in the future. 
+We do want to offer solutions there so we could provide you with support in the future.
 Best solution: Talk to [jared](jared@ory.sh), figure out what you need and we will find a solution.
 
-----
+---
 
 ### Question
 
@@ -98,7 +98,7 @@ Solution here is reverse proxy, like Oathkeeper.
 
 If you do not use a reverse proxy, you have to do it with path rewrite currently.
 
-----
+---
 
 ### Question
 
@@ -106,21 +106,21 @@ If you do not use a reverse proxy, you have to do it with path rewrite currently
 
 ### Answer
 
-All projects that are currently open source, will remain open source. 
-We have a commitment to open source, that we still need to publish. 
+All projects that are currently open source, will remain open source.
+We have a commitment to open source, that we still need to publish.
 
-We will not go down the path of ElasticSearch. The monetization strategy that we are following is running all the software as one consistent product with alot of additional benefits as a cloud service. 
+We will not go down the path of ElasticSearch. The monetization strategy that we are following is running all the software as one consistent product with alot of additional benefits as a cloud service.
 
-But the core building blocks will remain free and open source. As we use Linux and Kubernetes, we also use the ORY stack - which is open source. 
+But the core building blocks will remain free and open source. As we use Linux and Kubernetes, we also use the ORY stack - which is open source.
 
 We are also planning on having a foundation of sorts, but this is still in planning.
 
-----
+---
 
 ## Comments
+
 Comments/Feedback/Future Issues
 
 ### Comment
 
-Next big assignment for Patrick is implementation of Google Sansibar paper. This will allow us to deploy multi-region without significant latency. 
-
+Next big assignment for Patrick is implementation of Google Sansibar paper. This will allow us to deploy multi-region without significant latency.
