@@ -1,4 +1,4 @@
-# 07_10_2020 (first hangout)
+# 07_10_2020_01
 
 ## Q&A
 
@@ -44,7 +44,9 @@ That is definitely something we are looking at. We need to figure out how to imp
 
 Comments/Feedback/Future Issues
 
-# 07_10_2020 (second hangout)
+---
+
+# 07_10_2020_02
 
 ## Q&A
 
@@ -124,3 +126,66 @@ Comments/Feedback/Future Issues
 ### Comment
 
 Next big assignment for Patrick is implementation of Google Sansibar paper. This will allow us to deploy multi-region without significant latency.
+
+---
+
+# 14_10_2020
+
+## Q&A
+
+### Question
+
+#### ORY Project: Oathkeeper
+
+#### My biggest concern is this big refactor on Oathkeeper concerning the Hydrator, for example [Issue 441](https://github.com/ory/oathkeeper/issues/441)
+
+### Answer by Aeneas
+
+So the original hydrator was more or less like an interim solution for the project and the idea was always to have a pipeline where you do authentication, hydration, authorization and then mutation.
+
+So you've probably looked into the configuration system for remote Json, for example, and I think its ultimately really not great to generate Json.
+So we want to use JsonNet for all of the config stuff. And with the change we would also introduce a new part to the pipeline, which would then be a dedicated hydrator because I think it makes a lot of sense to add. Basically you get the requests and then authenticate, add context, check for permissions and then you take all of the data, massage it and put it into a token or something.
+
+---
+
+### Question
+
+#### ORY Project: Kratos
+
+#### When are you expecting to release the 0.5 version of Kratos?
+
+### Answer
+
+The way we do release is slow because the pipelines sometimes a little bit flaky when it comes to releases as we do pre-releases. So we do for example the pre-release where we see if all the pipelines are working, if the build is successful and if all the tests are successful for the build pipeline, the binary in a Docker image ect.
+
+If that works and once that passes all tests we do the proper release. So the fact that you're seeing the pre dot 0 release is a very good sign because it means that we're working on it.
+Unfortunately the build didn't pass so so we will be trying to figure out what's going on.
+
+You can expect the release maybe in the next hours, definitely this week. It depends how difficult it is to figure out what's going on.
+
+---
+
+### Question
+
+#### ORY Project: Kratos
+
+#### Is there any way to specify the schema_id to render the proper form inputs which belong to the specified schema?
+
+For example I have an employee and customer schema and I would like to be able to specify the schema when registering a new account from the selfservice endpoints or public API or anywhere else where I can create a user.
+
+More info in [this thread](https://community.ory.sh/t/multiple-schemas-identities-seem-problematic/2251)
+
+### Answer
+
+So for registration, it's a little bit difficult because assume you have customer schema and you have a admin schema.
+You don't really want someone who signs up to be able to use the admin schema because they're not a regular user or customer.
+
+I think the best idea probably would be to create an issue in the Kratos repo and explain the use case and then we can discuss some ideas.
+
+Connected Issue: [kratos #765](https://github.com/ory/kratos/issues/765)
+
+---
+
+## Comments
+
+Comments/Feedback/Future Issues
