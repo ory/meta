@@ -3,6 +3,8 @@ name: Synchronize Repositories
 on:
   workflow_dispatch:
   push:
+    paths:
+      - '^templates$'
     branches:
       - master
 
