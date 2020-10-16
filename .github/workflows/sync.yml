@@ -117,6 +117,11 @@ jobs:
         run: ./scripts/sync-action.sh ory/milestone-action master "Milestone Action"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+      - name: Syncronize ORY Prettier Styles Action
+        run: ./scripts/sync-action.sh ory/prettier-styles master "Prettier Styles"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
           
       - name: Synchronize ORY Works
         run: ./scripts/sync-library.sh ory/oryworks master Works
