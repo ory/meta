@@ -40,12 +40,6 @@ That is definitely something we are looking at. We need to figure out how to imp
 
 ---
 
-## Comments
-
-Comments/Feedback/Future Issues
-
----
-
 # 07_10_2020_02
 
 ## Q&A
@@ -121,8 +115,6 @@ We are also planning on having a foundation of sorts, but this is still in plann
 
 ## Comments
 
-Comments/Feedback/Future Issues
-
 ### Comment
 
 Next big assignment for Patrick is implementation of Google Sansibar paper. This will allow us to deploy multi-region without significant latency.
@@ -188,4 +180,62 @@ Connected Issue: [kratos #765](https://github.com/ory/kratos/issues/765)
 
 ## Comments
 
-Comments/Feedback/Future Issues
+# Comments/Feedback/Future Issues
+
+# 21_10_2020
+
+## Q&A
+
+### Question
+
+We had to get used to the terminology and what all the different systems do because there's quite a lot to the ecosystem. Could you give me a broad overview?
+
+### Answer
+
+We started out with Hydra, which is the protocol layer for open authorization and open ID connect.
+And the reason we started there was that we were doing a cloud native file sharing application at the time and it just got really difficult to interface with Dropbox and Google Cloud and so on. The Go Community was not so so big back then and we just wanted to do something that would be good for Go developers to use.
+
+But the deeper you get into open authorization and OAuth and OpenID Connect the more complex it gets, the terminology, the structure of things, the processes or flows. So we ended up completely redoing Hydra two times just because the more we got into it, the more we knew and learned.
+
+Then probably the best place to start is with Kratos, which is how you build your credentials, your username, password and all the flows around that.
+
+Alot of companies don't need auth and open ID connect because they're not using cloud native services.
+So here Kratos is a great fit. I think it's really an amazing utility, that we're soon going to offer as a cloud service also, by the way. Then Hydra I just explained that, and also we have oathkeeper.
+Oathkeeper is an implementation of Google beyondcorp reverse proxy plus some rules about how and why to access API, so when you use Json web tokens against an API for OAuth, there's a number of rules etc.
+It could be in the payload or it could be just general rules about API access that you want to implement, so that's a zero trust API access infrastructure.
+
+And last but not least there are different models out there for role-based access management. For instance ORY Keto is an implementation basically mimicking the AWS IAM. And now if you look at the newest sort of PR in the Keto project we are tackling this at a much bigger level and implementing or trying to implement something that Google calls Zanzibar, which is a more sort of very low latency access management and role-based control system. So you write the rules and we basically create an infrastructure that lets you manage that at planet scale.
+
+---
+
+### Question
+
+We are reading that jobs in Kratos are not being encouraged anymore. Why is that?
+
+### Answer
+
+The reason for that is it's Hydra uses a special flavor of jobs before you get to the API. The reason for that is to obfuscate some information and also make it more compatible with some of the other security approaches we have including oathkeeper, but when it's through the API it then turns into a normal Json web token.
+So these are Open Standards, but they give you a lot of, let's say flexibility, especially on how you want to configure the payload.
+
+nd they have a very simple structure, there's a record for how it's been made, what algorithm the payload uses and the signature and we're not going to stray far away from that at all because that's how you guarantee interoperability amongst different systems.
+So we do take some liberties within Hydra of making those tokens as it's called "ORY flavoured" until they get to the API.
+
+There's also some situations where it's not recommendable to use jobs. There's actually lots of situations just because it's a new area and it's emerging. And you know, there is not enough implementation experience with it.
+
+So if you have architectural questions and you want to ask them, you can do that an issue or something else but be confident that we've had tons of conversations about this and the implementation of Hydra is now over five years old.
+
+---
+
+### Question
+
+Our main fear is that you guys might be closing or changing all the Open Standards to some closed standard of security authorization.
+
+### Answer by Thomas
+
+We're not interested in violating those standards actually in any way because that's the whole basis of our work too.
+I mean the IEEE standard and the IETF standard and the w3c standard are our standards. That doesn't mean that the ORY projects implement everything and by the way we implement a lot of things based on how companies are using these things, but when we implement it it is exactly in accordance with the standard.
+And the ORY open source projects too are the codebase from that we build our products, so we are relying on them to stay open source.
+
+## Comments
+
+---
