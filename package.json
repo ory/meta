@@ -2,16 +2,19 @@
   "name": "meta",
   "version": "1.0.0",
   "prettier": "ory-prettier-styles",
+  "config": {
+    "prettierTarget": "**/*.{js,ts,md,mdx}"
+  },
   "scripts": {
-    "format": "prettier --write \"**/*.{js,ts,md,mdx}\"",
-    "format:check": "prettier --check \"**/*.{js,ts,md,mdx}\""
+    "format": "prettier --write ${npm_package_config_prettierTarget}",
+    "format:check": "prettier --check ${npm_package_config_prettierTarget}"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ory/meta.git"
   },
   "devDependencies": {
-    "ory-prettier-styles": "^1.0.1",
-    "prettier": "^2.1.2"
+    "ory-prettier-styles": "^1.1.1",
+    "prettier": "2.1.2"
   }
 }
