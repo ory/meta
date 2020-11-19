@@ -13,7 +13,6 @@ https://github.com/ory/meta/blob/master/templates/repository/CONTRIBUTING.md
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [Contributing to ORY {{Project}}](#contributing-to-ory-project)
   - [Introduction](#introduction)
   - [FAQ](#faq)
   - [How can I contribute?](#how-can-i-contribute)
