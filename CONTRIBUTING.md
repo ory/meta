@@ -162,7 +162,7 @@ Documentation resides in the project's `docs` folder. Generate API and
 configuration reference documentation using `cd docs; npm run gen`.
 
 For further instructions please head over to
-[docs/README.md](ttps://github.com/ory/{{Project}}/blob/master/README.md).
+[docs/README.md](ttps://github.com/ory/{{Project}}/blob/master/docs/README.md).
 
 ## Disclosing vulnerabilities
 
