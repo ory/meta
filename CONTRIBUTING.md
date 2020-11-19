@@ -13,18 +13,17 @@ https://github.com/ory/meta/blob/master/templates/repository/CONTRIBUTING.md
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [Contributing to ORY {{Project}}](#contributing-to-ory-project)
-  - [Introduction](#introduction)
-  - [FAQ](#faq)
-  - [How can I contribute?](#how-can-i-contribute)
-  - [Communication](#communication)
-  - [Contributing Code](#contributing-code)
-  - [Documentation](#documentation)
-  - [Disclosing vulnerabilities](#disclosing-vulnerabilities)
-  - [Code Style](#code-style)
-  - [Pull request procedure](#pull-request-procedure)
-    - [Working with Forks](#working-with-forks)
-  - [Conduct](#conduct)
+- [Introduction](#introduction)
+- [FAQ](#faq)
+- [How can I contribute?](#how-can-i-contribute)
+- [Communication](#communication)
+- [Contributing Code](#contributing-code)
+- [Documentation](#documentation)
+- [Disclosing vulnerabilities](#disclosing-vulnerabilities)
+- [Code Style](#code-style)
+- [Pull request procedure](#pull-request-procedure)
+  - [Working with Forks](#working-with-forks)
+- [Conduct](#conduct)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -158,11 +157,12 @@ should be merged by the submitter after review.
 ## Documentation
 
 Please provide documentation when changing, removing, or adding features.
-Documentation resides in the project's docs folder. Generate API and
-configuration reference documentation using `cd docs; npm run gen`.
+Documentation resides in the project's
+[docs](https://github.com/ory/{{Project}}/tree/master/docs) folder. Generate API
+and configuration reference documentation using `cd docs; npm run gen`.
 
 For further instructions please head over to
-[docs/README.md](ttps://github.com/ory/{{Project}}/blob/master/README.md).
+[docs/README.md](https://github.com/ory/{{Project}}/blob/master/README.md).
 
 ## Disclosing vulnerabilities
 
