@@ -161,7 +161,7 @@ Please provide documentation when changing, removing, or adding features.
 Documentation resides in the project's docs folder. Generate API and
 configuration reference documentation using `cd docs; npm run gen`.
 
-For further instructions please head over to [docs/README.md](docs/README.md).
+For further instructions please head over to [docs/README.md](https://github.com/ory/{Project}/blob/master/README.md).
 
 ## Disclosing vulnerabilities
 
