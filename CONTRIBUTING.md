@@ -13,17 +13,18 @@ https://github.com/ory/meta/blob/master/templates/repository/CONTRIBUTING.md
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [Introduction](#introduction)
-- [FAQ](#faq)
-- [How can I contribute?](#how-can-i-contribute)
-- [Communication](#communication)
-- [Contributing Code](#contributing-code)
-- [Documentation](#documentation)
-- [Disclosing vulnerabilities](#disclosing-vulnerabilities)
-- [Code Style](#code-style)
-- [Pull request procedure](#pull-request-procedure)
-- [Working with Forks](#working-with-forks)
-- [Conduct](#conduct)
+- [Contributing to ORY {{Project}}](#contributing-to-ory-project)
+  - [Introduction](#introduction)
+  - [FAQ](#faq)
+  - [How can I contribute?](#how-can-i-contribute)
+  - [Communication](#communication)
+  - [Contributing Code](#contributing-code)
+  - [Documentation](#documentation)
+  - [Disclosing vulnerabilities](#disclosing-vulnerabilities)
+  - [Code Style](#code-style)
+  - [Pull request procedure](#pull-request-procedure)
+    - [Working with Forks](#working-with-forks)
+  - [Conduct](#conduct)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -55,7 +56,7 @@ do this is via the [ORY Community](https://community.ory.sh/) or join the
 ## FAQ
 
 - I am new to the community. Where can I find the
-  [ORY Community Code of Conduct?](CODE_OF_CONDUCT.md)
+  [ORY Community Code of Conduct?](https://github.com/ory/meta/blob/master/CODE_OF_CONDUCT.md)
 
 - I have a question. Where can I get
   [answers to questions regarding ORY {{Project}}?](#communication)
@@ -157,7 +158,7 @@ should be merged by the submitter after review.
 ## Documentation
 
 Please provide documentation when changing, removing, or adding features.
-Documentation resides in the project's [docs](docs) folder. Generate API and
+Documentation resides in the project's docs folder. Generate API and
 configuration reference documentation using `cd docs; npm run gen`.
 
 For further instructions please head over to [docs/README.md](docs/README.md).
