@@ -78,7 +78,7 @@ do this is via the [ORY Community](https://community.ory.sh/) or join the
 ## How can I contribute?
 
 If you want to start contributing code right away, we have a
-[list of good first issues](https://github.com/ory/{{Project}}/labels/good%20first%20issue).
+[list of good first issues](https://github.com/ory/{{Project}/labels/good%20first%20issue).
 
 There are many other ways you can contribute without writing any code. Here are
 a few things you can do to help out:
@@ -161,7 +161,7 @@ Please provide documentation when changing, removing, or adding features.
 Documentation resides in the project's docs folder. Generate API and
 configuration reference documentation using `cd docs; npm run gen`.
 
-For further instructions please head over to [docs/README.md](docs/README.md).
+For further instructions please head over to [docs/README.md](ttps://github.com/ory/{{Project}}/blob/master/README.md).
 
 ## Disclosing vulnerabilities
 
