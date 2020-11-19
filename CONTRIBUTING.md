@@ -13,17 +13,18 @@ https://github.com/ory/meta/blob/master/templates/repository/CONTRIBUTING.md
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [Introduction](#introduction)
-- [FAQ](#faq)
-- [How can I contribute?](#how-can-i-contribute)
-- [Communication](#communication)
-- [Contributing Code](#contributing-code)
-- [Documentation](#documentation)
-- [Disclosing vulnerabilities](#disclosing-vulnerabilities)
-- [Code Style](#code-style)
-- [Pull request procedure](#pull-request-procedure)
-  - [Working with Forks](#working-with-forks)
-- [Conduct](#conduct)
+- [Contributing to ORY {{Project}}](#contributing-to-ory-project)
+  - [Introduction](#introduction)
+  - [FAQ](#faq)
+  - [How can I contribute?](#how-can-i-contribute)
+  - [Communication](#communication)
+  - [Contributing Code](#contributing-code)
+  - [Documentation](#documentation)
+  - [Disclosing vulnerabilities](#disclosing-vulnerabilities)
+  - [Code Style](#code-style)
+  - [Pull request procedure](#pull-request-procedure)
+    - [Working with Forks](#working-with-forks)
+  - [Conduct](#conduct)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -77,7 +78,7 @@ do this is via the [ORY Community](https://community.ory.sh/) or join the
 ## How can I contribute?
 
 If you want to start contributing code right away, we have a
-[list of good first issues](https://github.com/ory/{{Project}/labels/good%20first%20issue).
+[list of good first issues](https://github.com/ory/{{Project}}/labels/good%20first%20issue).
 
 There are many other ways you can contribute without writing any code. Here are
 a few things you can do to help out:
