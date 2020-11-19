@@ -158,7 +158,7 @@ should be merged by the submitter after review.
 ## Documentation
 
 Please provide documentation when changing, removing, or adding features.
-Documentation resides in the project's docs folder. Generate API and
+Documentation resides in the project's `docs` folder. Generate API and
 configuration reference documentation using `cd docs; npm run gen`.
 
 For further instructions please head over to
