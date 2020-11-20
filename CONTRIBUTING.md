@@ -4,7 +4,7 @@ Thank you for contributing changes to this document! Because we use a central re
 to synchronize this file across all our repositories, make sure to make your edits
 in the correct file, which you can find here:
 
-https://github.com/ory/meta/blob/master/CONTRIBUTING.md
+https://github.com/ory/meta/blob/master/templates/repository/CONTRIBUTING.md
 
 -->
 
@@ -22,7 +22,7 @@ https://github.com/ory/meta/blob/master/CONTRIBUTING.md
 - [Disclosing vulnerabilities](#disclosing-vulnerabilities)
 - [Code Style](#code-style)
 - [Pull request procedure](#pull-request-procedure)
-  - [Working with Forks](#working-with-forks)
+- [Working with Forks](#working-with-forks)
 - [Conduct](#conduct)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -55,7 +55,7 @@ do this is via the [ORY Community](https://community.ory.sh/) or join the
 ## FAQ
 
 - I am new to the community. Where can I find the
-  [ORY Community Code of Conduct?](https://github.com/ory/meta/blob/master/CODE_OF_CONDUCT.md)
+  [ORY Community Code of Conduct?](CODE_OF_CONDUCT.md)
 
 - I have a question. Where can I get
   [answers to questions regarding ORY {{Project}}?](#communication)
@@ -157,12 +157,10 @@ should be merged by the submitter after review.
 ## Documentation
 
 Please provide documentation when changing, removing, or adding features.
-Documentation resides in the project's
-[docs](https://github.com/ory/{{Project}}/tree/master/docs) folder. Generate API
-and configuration reference documentation using `cd docs; npm run gen`.
+Documentation resides in the project's [docs](docs) folder. Generate API and
+configuration reference documentation using `cd docs; npm run gen`.
 
-For further instructions please head over to
-[docs/README.md](https://github.com/ory/{{Project}}/blob/master/README.md).
+For further instructions please head over to [docs/README.md](docs/README.md).
 
 ## Disclosing vulnerabilities
 
