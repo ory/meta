@@ -122,7 +122,12 @@ jobs:
         run: ./scripts/sync-action.sh ory/prettier-styles master "Prettier Styles"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
-          
+
+      - name: Syncronize ORY Buildbuf Action
+        run: ./scripts/sync-action.sh ory/build-buf-action main "Buildbuf Action"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
       - name: Synchronize ORY Works
         run: ./scripts/sync-library.sh ory/oryworks master Works
         env:
