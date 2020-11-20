@@ -55,7 +55,7 @@ do this is via the [ORY Community](https://community.ory.sh/) or join the
 ## FAQ
 
 - I am new to the community. Where can I find the
-  [ORY Community Code of Conduct?](https://github.com/ory/meta/blob/master/CODE_OF_CONDUCT.md)
+  [ORY Community Code of Conduct?](https://github.com/ory/{{Project}}/blob/master/CODE_OF_CONDUCT.md)
 
 - I have a question. Where can I get
   [answers to questions regarding ORY {{Project}}?](#communication)
