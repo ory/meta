@@ -49,6 +49,11 @@ title: Contribution Guidelines
 EOF
         cat "$workdir/CONTRIBUTING.md" >> "$workdir/docs/docs/contributing.md"
         sed '/Contributing to/d' "$workdir/docs/docs/contributing.md"
+        (
+          cd "$workdir/docs"
+          bash <(curl -s https://raw.githubusercontent.com/ory/ci/master/src/scripts/install/prettier.sh)
+          npm run format
+        )
     fi
 
     perl -0pe 's#<!--\s*BEGIN ADOPTERS\s*-->.*<!--\s*END ADOPTERS\s*-->\n#`cat templates/repository/common/ADOPTERS.md`#gse' -i "$workdir/README.md"
