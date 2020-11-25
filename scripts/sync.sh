@@ -33,9 +33,9 @@ function sync {
 
     # Replace placeholders
     if [[ "$OSTYPE" == "darwin"* ]]; then
-      sed -i -e "s|{{Project}}|$humanName|g" `find "$workdir/.github" -type f -print` "$workdir/CONTRIBUTING.md" "$workdir/SECURITY.md"
-    else
       sed -e "s|{{Project}}|$humanName|g" `find "$workdir/.github" -type f -print` "$workdir/CONTRIBUTING.md" "$workdir/SECURITY.md"
+    else
+      sed -i -e "s|{{Project}}|$humanName|g" `find "$workdir/.github" -type f -print` "$workdir/CONTRIBUTING.md" "$workdir/SECURITY.md"
     fi
 
     # Copy contributing guide to docs if docs exist
