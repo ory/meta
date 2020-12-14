@@ -8,4 +8,4 @@ contact_links:
     about: Hang out with other ORY community members and ask and answer questions.
   - name: ORY Support for Business
     url: https://github.com/ory/open-source-support/blob/master/README.md
-    about: Buy professional support for ORY {{Project}} .
+    about: Buy professional support for ORY {{Project}}.
