@@ -1,7 +1,7 @@
 blank_issues_enabled: false
 contact_links:
-  - name: ORY Community
-    url: https://www.github.com/{{Project}}/discussions
+  - name: ORY {{Project}} Forum
+    url: https://www.github.com/{{Repo}}/discussions
     about: Please ask and answer questions here, show your implementations and discuss ideas.
   - name: ORY Chat
     url: https://www.ory.sh/chat
