@@ -34,7 +34,7 @@ function update {
     cp -R "templates/repository/$type/.github/" "$workdir/.github/"
 
     # Replace placeholders
-    sed -i '' -e "s|{{Project}}|$humanName|g" `find "$workdir/.github" -type f -print` "$workdir/CONTRIBUTING.md" "$workdir/SECURITY.md"
+    sed -i '' -e "s|{{Project}}|$humanName|g" `find "$workdir/.github" -type f -print` "$workdir/CONTRIBUTING.md" "$workdir/SECURITY.md" "/.github/ISSUE_TEMPLATE/config.yml"
     sed -i '' -e "s|{{Repo}}|$name|g" `find "$workdir/.github" -type f -print` "/.github/ISSUE_TEMPLATE/config.yml"
 
     perl -0pe 's#<!--\s*BEGIN ADOPTERS\s*-->.*<!--\s*END ADOPTERS\s*-->#`cat templates/repository/common/ADOPTERS.md`#gse' -i "$workdir/README.md"
