@@ -31,9 +31,9 @@ function sync {
     # Copy specific templates for servers or library
     cp -R "templates/repository/$type/.github" "$workdir/"
 
-    for f in (find "$workdir/.github" "$workdir/CONTRIBUTING.md" "$workdir/SECURITY.md" "$workdir/CODE_OF_CONDUCT.md" "$workdir/LICENSE" -type f -print); do {
+    for f in $(find "$workdir/.github" "$workdir/CONTRIBUTING.md" "$workdir/SECURITY.md" "$workdir/CODE_OF_CONDUCT.md" "$workdir/LICENSE" -type f -print); do
       REPOSITORY="$project" PROJECT="$humanName" envsubst $f | sponge $f
-    }
+    done
 
     # Copy contributing guide to docs if docs exist
     if [ -d "$workdir/docs/docs" ]; then
