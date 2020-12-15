@@ -31,12 +31,9 @@ function sync {
     # Copy specific templates for servers or library
     cp -R "templates/repository/$type/.github" "$workdir/"
 
-    # Replace placeholders
-    if [[ "$OSTYPE" == "darwin"* ]]; then
-      sed -e "s|{{Project}}|$humanName|g" `find "$workdir/.github" -type f -print` "$workdir/CONTRIBUTING.md" "$workdir/SECURITY.md"
-    else
-      sed -i -e "s|{{Project}}|$humanName|g" `find "$workdir/.github" -type f -print` "$workdir/CONTRIBUTING.md" "$workdir/SECURITY.md"
-    fi
+    for f in (find "$workdir/.github" "$workdir/CONTRIBUTING.md" "$workdir/SECURITY.md" "$workdir/CODE_OF_CONDUCT.md" "$workdir/LICENSE" -type f -print); do {
+      REPOSITORY="$project" PROJECT="$humanName" envsubst $f | sponge $f
+    }
 
     # Copy contributing guide to docs if docs exist
     if [ -d "$workdir/docs/docs" ]; then
