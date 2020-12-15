@@ -19,7 +19,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Install sponge
-        run: apt-get update -y && apt-get install -y moreutils
+        run: sudo apt-get update -y && sudo apt-get install -y moreutils
       - uses: webfactory/ssh-agent@v0.4.1
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
