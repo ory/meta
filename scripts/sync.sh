@@ -25,14 +25,14 @@ function sync {
     cp -R "templates/repository/common/SECURITY.md" "$workdir/SECURITY.md"
     cp -R "templates/repository/common/LICENSE" "$workdir/LICENSE"
     # Copy .reference-ignore only if it does not exist, as it is meant to help getting started
-    cp -n "templates/repository/common/.reference-ignore" "$workdir/.reference-ignore"
+    cp -n "templates/repository/common/.reference-ignore" "$workdir/.reference-ignore" || true
     cp -R "templates/repository/common/.github" "$workdir/"
 
     # Copy specific templates for servers or library
     cp -R "templates/repository/$type/.github" "$workdir/"
 
     for f in $(find "$workdir/.github" "$workdir/CONTRIBUTING.md" "$workdir/SECURITY.md" "$workdir/CODE_OF_CONDUCT.md" "$workdir/LICENSE" -type f -print); do
-      REPOSITORY="$project" PROJECT="$humanName" envsubst $f | sponge $f
+      REPOSITORY="$project" PROJECT="$humanName" envsubst < "$f" | sponge "$f"
     done
 
     # Copy contributing guide to docs if docs exist
@@ -56,6 +56,7 @@ EOF
     perl -0pe 's#<!--\s*BEGIN ADOPTERS\s*-->.*<!--\s*END ADOPTERS\s*-->\n#`cat templates/repository/common/ADOPTERS.md`#gse' -i "$workdir/README.md"
     perl -0pe 's#<!--\s*BEGIN ECOSYSTEM\s*-->.*<!--\s*END ECOSYSTEM\s*-->\n#`cat templates/repository/common/PROJECTS.md`#gse' -i "$workdir/README.md"
 
+    exit 1
     (cd "$workdir"; \
       git add -A; \
       git status; \
