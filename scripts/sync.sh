@@ -31,8 +31,12 @@ function sync {
     # Copy specific templates for servers or library
     cp -R "templates/repository/$type/.github" "$workdir/"
 
-    for f in $(find "$workdir/.github/ISSUE_TEMPLATE" "$workdir/.github/pull_request_template.md" "$workdir/CONTRIBUTING.md" "$workdir/SECURITY.md" "$workdir/CODE_OF_CONDUCT.md" "$workdir/LICENSE" -type f -print); do
-      env -i REPOSITORY="$project" PROJECT="$humanName" /bin/bash -c "envsubst < \"$f\" | sponge \"$f\""
+    for f in $(find "./.github/ISSUE_TEMPLATE" " ./.github/pull_request_template.md" "CONTRIBUTING.md" "SECURITY.md" "CODE_OF_CONDUCT.md" "LICENSE" -type f -print); do
+      if [[ "$REPOSITORY" = "hydra" || $REPOSITORY = "kratos" || $REPOSITORY = "oathkeeper" || $REPOSITORY = "keto" ]]; then
+        env -i REPOSITORY="$project" PROJECT="$humanName" /bin/bash -c "envsubst < \"$f\" | sponge \"$f\""
+      else 
+        env -i REPOSITORY="meta" PROJECT="$humanName" /bin/bash -c "envsubst < \"$f\" | sponge \"$f\""
+      fi
     done
 
     # Copy contributing guide to docs if docs exist
