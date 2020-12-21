@@ -19,3 +19,58 @@ files from [server](./templates/repository/server) and libraries from the
 
 To update the repositories simply make your changes. Once merged to master, they
 will be published using a GitHub Action.
+
+
+## sync action
+
+sync.yml
+```yml
+name: Synchronize Repositories
+
+on:                                   
+  # action can be manually triggered 
+  workflow_dispatch:
+  # action is triggered on push to the following paths
+  push:
+    paths:
+      - 'templates/**'
+      - 'scripts/sync*'
+      - 'package.json'
+      - '.github/workflows/sync.yml'
+    branches:
+      - master
+
+jobs:
+  milestone:
+    name: Synchronize Repositories
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+        # installs moreutils on the Action worker node to use the sponge function
+      - name: Install sponge
+        run: sudo apt-get update -y && sudo apt-get install -y moreutils 
+        
+        # Ssh-agent action to get a ssh key with privileges to repos outside of /meta in this case the repositories you want to sync.
+      - uses: webfactory/ssh-agent@v0.4.1                                 
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+        # Synchronize server script
+      - name: Synchronize ORY Kratos
+        
+        # runs the sync-server bash script in the Action workers CLI with arguments: $1=workdir (the repository you want to sync) $2=branch $3=humanName   
+        run: ./scripts/sync-server.sh ory/kratos master Kratos
+        
+        # sets the required github token as enviromental variable
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+        # runs the sync-server bash script in the Action workers CLI with arguments: $1=workdir (the repository you want to sync) $2=branch $3=humanName   
+      - name: Synchronize ORY Kratos SelfService UI React Native Example
+        run: |
+          ./scripts/sync-library.sh ory/kratos-selfservice-ui-react-native master "Kratos SelfService UI React Native Example"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+```
