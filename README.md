@@ -21,9 +21,14 @@ To update the repositories simply make your changes. Once merged to master, they
 will be published using a GitHub Action.
 
 
-## sync action
+## Github Sync action
 
-sync.yml
+The scripts in "/scripts" serve to synchronize all ORY repositories to a common template, including README, CONTRIBUTING, COC, LICENCE, Github Workflows with close to zero manual interaction.
+Depending on repository type (server, library, action) specific templates can be copied as well. 
+The project names, links to documentation ect. are being substituted for each project in "/scripts/sync.sh". 
+For more details please refer to the documentation within the scripts.
+
+#### Documentation of sync.yml
 ```yml
 name: Synchronize Repositories
 
