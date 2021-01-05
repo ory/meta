@@ -1,7 +1,9 @@
 name: Synchronize Repositories
 
 on:
+  # action can be manually triggered
   workflow_dispatch:
+  # action is triggered on push to the following paths
   push:
     paths:
       - 'templates/**'
@@ -18,8 +20,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+  # installs moreutils on the Action worker node to use the sponge function
       - name: Install sponge
         run: sudo apt-get update -y && sudo apt-get install -y moreutils
+  # Ssh-agent action to get a ssh key with privileges to repos outside of /meta in this case the repositories you want to sync.
       - uses: webfactory/ssh-agent@v0.4.1
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
@@ -38,9 +42,11 @@ jobs:
         run: ./scripts/sync-server.sh ory/oathkeeper master Oathkeeper
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
-
+  # Synchronize server 
       - name: Synchronize ORY Kratos
+  # runs the sync-server bash script in the Action workers CLI with arguments: $1=workdir (the repository you want to sync) $2=branch $3=humanName
         run: ./scripts/sync-server.sh ory/kratos master Kratos
+  # sets the required github token as enviromental variable
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
@@ -55,8 +61,9 @@ jobs:
           ./scripts/sync-library.sh ory/cli master CLI
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
-
+  # Synchronize library
       - name: Synchronize ORY Kratos SelfService UI Node Example
+  # runs the sync-library bash script in the Action workers CLI with arguments: $1=workdir (the repository you want to sync) $2=branch $3=humanName
         run: |
           ./scripts/sync-library.sh ory/kratos-selfservice-ui-node master "Kratos SelfService UI Node Example"
         env:
@@ -107,8 +114,9 @@ jobs:
         run: ./scripts/sync-library.sh ory/web master Web
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
-
+  # Synchronize action
       - name: Syncronize ORY Closed Reference Notifier
+        # runs the sync-action bash script in the Action workers CLI with arguments: $1=workdir (the repository you want to sync) $2=branch $3=humanName
         run: ./scripts/sync-action.sh ory/closed-reference-notifier master "Closed Reference Notifier"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
@@ -134,6 +142,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
       - name: Synchronize ORY Works
-        run: ./scripts/sync-library.sh ory/oryworks master Works
+        run: ./scripts/sync-library.sh ory/works master Works
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
