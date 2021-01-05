@@ -43,7 +43,7 @@ function sync {
     # env clears environment and sets REPOSITORY and PROJECT as new env variables
     # /bin/bash -c execute commands in " " in the new environment 
     # envsubst: replace all env variables found ($f) with the ones specified 2 steps before, pipe to sponge and write to file
-    for f in $(find "./.github/ISSUE_TEMPLATE" " ./.github/pull_request_template.md" "CONTRIBUTING.md" "SECURITY.md" "CODE_OF_CONDUCT.md" "LICENSE" -type f -print); do
+    for f in $(find "$workdir/.github/ISSUE_TEMPLATE" "$workdir/.github/pull_request_template.md" "$workdir/CONTRIBUTING.md" "$workdir/SECURITY.md" "$workdir/CODE_OF_CONDUCT.md" "$workdir/LICENSE" -type f -print); do
         env -i REPOSITORY="$project" PROJECT="$humanName" /bin/bash -c "envsubst < \"$f\" | sponge \"$f\""
     done
 
