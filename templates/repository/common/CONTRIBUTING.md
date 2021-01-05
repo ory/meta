@@ -8,7 +8,7 @@ https://github.com/ory/meta/blob/master/templates/repository/common/CONTRIBUTING
 
 -->
 
-# Contributing to ORY ${PROJECT}
+# Contributing to ORY \${PROJECT}
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -33,7 +33,8 @@ There are many ways in which you can contribute, beyond writing code. The goal
 of this document is to provide a high-level overview of how you can get
 involved.
 
-_Please note_: We take ORY ${PROJECT}'s security and our users' trust very
+_Please note_: We take ORY
+${PROJECT}'s security and our users' trust very
 seriously. If you believe you have found a security issue in ORY ${PROJECT},
 please responsibly disclose by contacting us at security@ory.sh.
 
@@ -51,8 +52,9 @@ talk to us! You can find out our thoughts and ensure that your contribution
 won't clash or be obviated by ORY
 ${PROJECT}'s normal direction. A great way to
 do this is via
-[ORY ${PROJECT} Discussions](https://github.com/${REPOSITORY}/discussions)
-or the [ORY Chat](https://www.ory.sh/chat).
+[ORY ${PROJECT}
+Discussions](https://github.com/${REPOSITORY}/discussions) or the
+[ORY Chat](https://www.ory.sh/chat).
 
 ## FAQ
 
@@ -60,20 +62,20 @@ or the [ORY Chat](https://www.ory.sh/chat).
   [ORY Community Code of Conduct?](https://github.com/${REPOSITORY}/blob/master/CODE_OF_CONDUCT.md)
 
 - I have a question. Where can I get
-  [answers to questions regarding ORY ${PROJECT}?](#communication)
+  [answers to questions regarding ORY \${PROJECT}?](#communication)
 
 - I would like to contribute but I am not sure how. Are there
   [easy ways to contribute?](#how-can-i-contribute)
   [Or good first issues?](https://github.com/search?l=&o=desc&q=label%3A%22help+wanted%22+label%3A%22good+first+issue%22+is%3Aopen+user%3Aory+user%3Aory-corp&s=updated&type=Issues)
 
-- I want to talk to other ORY ${PROJECT} users.
+- I want to talk to other ORY \${PROJECT} users.
   [How can I become a part of the community?](#communication)
 
 - I would like to know what I am agreeing to when I contribute to ORY
-  ${PROJECT}. Does ORY have
+  \${PROJECT}. Does ORY have
   [a Contributors License Agreement?](https://cla-assistant.io/ory/)
 
-- I would like updates about new versions of ORY ${PROJECT}.
+- I would like updates about new versions of ORY \${PROJECT}.
   [How are new releases announced?](https://ory.us10.list-manage.com/subscribe?u=ffb1a878e4ec6c0ed312a3480&id=f605a41b53)
 
 ## How can I contribute?
@@ -85,15 +87,15 @@ There are many other ways you can contribute without writing any code. Here are
 a few things you can do to help out:
 
 - **Give us a star.** It may not seem like much, but it really makes a
-  difference. This is something that everyone can do to help out ORY ${PROJECT}.
-  Github stars help the project gain visibility and stand out.
+  difference. This is something that everyone can do to help out ORY
+  \${PROJECT}. Github stars help the project gain visibility and stand out.
 
 - **Join the community.** Sometimes helping people can be as easy as listening
   to their problems and offering a different perspective. Join our Slack, have a
   look at discussions in the forum and take part in our weekly hangout. More
   info on this in [Communication](#communication).
 
-- **Helping with open issues.** We have a lot of open issues for ORY ${PROJECT}
+- **Helping with open issues.** We have a lot of open issues for ORY \${PROJECT}
   and some of them may lack necessary information, some are duplicates of older
   issues. You can help out by guiding people through the process of filling out
   the issue template, asking for clarifying information, or pointing them to
@@ -113,15 +115,15 @@ We use [Slack](https://www.ory.sh/chat). You are welcome to drop in and ask
 questions, discuss bugs and feature requests, talk to other users of ORY, etc.
 
 Check out
-[ORY ${PROJECT} Discussions](https://github.com/${REPOSITORY}/discussions). This
-is a great place for in-depth discussions and lots of code examples, logs and
-similar data.
+[ORY \${PROJECT} Discussions](https://github.com/${REPOSITORY}/discussions).
+This is a great place for in-depth discussions and lots of code examples, logs
+and similar data.
 
 You can also join our community hangout, if you want to speak to the ORY team
 directly or ask some questions. You can find more info on the hangouts in
 [Slack](https://www.ory.sh/chat).
 
-If you want to receive regular notifications about updates to ORY ${PROJECT},
+If you want to receive regular notifications about updates to ORY \${PROJECT},
 consider joining the mailing list. We will _only_ send you vital information on
 the projects that you are interested in.
 
@@ -131,7 +133,7 @@ Also [follow us on twitter](https://twitter.com/orycorp).
 
 Unless you are fixing a known bug, we **strongly** recommend discussing it with
 the core team via a GitHub issue or [in our chat](https://www.ory.sh/chat)
-before getting started to ensure your work is consistent with ORY ${PROJECT}'s
+before getting started to ensure your work is consistent with ORY \${PROJECT}'s
 roadmap and architecture.
 
 All contributions are made via pull request. Note that **all patches from all
@@ -249,7 +251,7 @@ community a safe place for you and we've got your back.
 - Private harassment is also unacceptable. No matter who you are, if you feel
   you have been or are being harassed or made uncomfortable by a community
   member, please contact one of the channel ops or a member of the ORY
-  ${PROJECT} core team immediately.
+  \${PROJECT} core team immediately.
 - Likewise any spamming, trolling, flaming, baiting or other attention-stealing
   behaviour is not welcome.
 
