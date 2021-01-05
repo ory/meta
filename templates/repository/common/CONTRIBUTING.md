@@ -33,8 +33,7 @@ There are many ways in which you can contribute, beyond writing code. The goal
 of this document is to provide a high-level overview of how you can get
 involved.
 
-_Please note_: We take ORY
-${PROJECT}'s security and our users' trust very
+_Please note_: We take ORY ${PROJECT}'s security and our users' trust very
 seriously. If you believe you have found a security issue in ORY ${PROJECT},
 please responsibly disclose by contacting us at security@ory.sh.
 
@@ -53,8 +52,8 @@ won't clash or be obviated by ORY
 ${PROJECT}'s normal direction. A great way to
 do this is via
 [ORY ${PROJECT}
-Discussions](https://github.com/${REPOSITORY}/discussions) or the
-[ORY Chat](https://www.ory.sh/chat).
+Discussions](https://github.com/${REPOSITORY}/discussions)
+or the [ORY Chat](https://www.ory.sh/chat).
 
 ## FAQ
 
