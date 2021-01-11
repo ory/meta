@@ -69,8 +69,8 @@ or the [ORY Chat](https://www.ory.sh/chat).
 - I want to talk to other ORY $project users.
   [How can I become a part of the community?](#communication)
 
-- I would like to know what I am agreeing to when I contribute to ORY
-  $project. Does ORY have
+- I would like to know what I am agreeing to when I contribute to ORY $project.
+  Does ORY have
   [a Contributors License Agreement?](https://cla-assistant.io/ory/)
 
 - I would like updates about new versions of ORY $project.
@@ -112,10 +112,8 @@ a few things you can do to help out:
 We use [Slack](https://www.ory.sh/chat). You are welcome to drop in and ask
 questions, discuss bugs and feature requests, talk to other users of ORY, etc.
 
-Check out
-[ORY $project Discussions]($discussions). This
-is a great place for in-depth discussions and lots of code examples, logs and
-similar data.
+Check out [ORY $project Discussions]($discussions). This is a great place for
+in-depth discussions and lots of code examples, logs and similar data.
 
 You can also join our community hangout, if you want to speak to the ORY team
 directly or ask some questions. You can find more info on the hangouts in
@@ -162,8 +160,8 @@ should be merged by the submitter after review.
 
 Please provide documentation when changing, removing, or adding features.
 Documentation resides in the project's
-[docs](https://github.com/$repository/tree/master/docs) folder. Generate API
-and configuration reference documentation using `cd docs; npm run gen`.
+[docs](https://github.com/$repository/tree/master/docs) folder. Generate API and
+configuration reference documentation using `cd docs; npm run gen`.
 
 For further instructions please head over to
 [docs/README.md](https://github.com/$repository/blob/master/README.md).
@@ -248,8 +246,8 @@ community a safe place for you and we've got your back.
   marginalized groups.
 - Private harassment is also unacceptable. No matter who you are, if you feel
   you have been or are being harassed or made uncomfortable by a community
-  member, please contact one of the channel ops or a member of the ORY
-  $project core team immediately.
+  member, please contact one of the channel ops or a member of the ORY $project
+  core team immediately.
 - Likewise any spamming, trolling, flaming, baiting or other attention-stealing
   behaviour is not welcome.
 
