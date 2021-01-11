@@ -20,7 +20,7 @@ function sync {
     type=$3
     humanName=$4
     project=$5
-    # discussions="https://github.com/${REPOSITORY}/discussions"
+    discussions="https://github.com/$project/discussions"
     pushBranch="meta-$(date +%m-%d-%y-%H-%M-%S)"
     # set hash as github commit hash, first 8 bytes
     hash=$(echo $GITHUB_SHA | head -c 8)
@@ -44,7 +44,11 @@ function sync {
     # /bin/bash -c execute commands in " " in the new environment 
     # envsubst: replace all env variables found ($f) with the ones specified 2 steps before, pipe to sponge and write to file
     for f in $(find "$workdir/.github/ISSUE_TEMPLATE" "$workdir/.github/pull_request_template.md" "$workdir/CONTRIBUTING.md" "$workdir/SECURITY.md" "$workdir/CODE_OF_CONDUCT.md" "$workdir/LICENSE" -type f -print); do
-        env -i REPOSITORY="$project" PROJECT="$humanName" /bin/bash -c "envsubst < \"$f\" | sponge \"$f\""
+        if [[ "$project" = "hydra" || $project = "kratos" || $project = "oathkeeper" || $project = "keto" ]]; then
+        env -i discussions="$discussions" repository="$project" project="$humanName" /bin/bash -c "envsubst < \"$f\" | sponge \"$f\""
+        else
+        env -i discussions="https://github.com/meta/discussions" repository="$project" project="$humanName" /bin/bash -c "envsubst < \"$f\" | sponge \"$f\""
+        fi
     done
 
     # Copy contributing guide to docs if docs exist
