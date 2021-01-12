@@ -47,7 +47,7 @@ function sync {
         if [[ "$project" = "hydra" || $project = "kratos" || $project = "oathkeeper" || $project = "keto" ]]; then
            env -i discussions="$discussions" repository="$project" project="$humanName" /bin/bash -c "envsubst < \"$f\" | sponge \"$f\""
         else
-        env -i discussions="https://github.com/meta/discussions" repository="$project" project="$humanName" /bin/bash -c "envsubst < \"$f\" | sponge \"$f\""
+            env -i discussions="https://github.com/meta/discussions" repository="$project" project="$humanName" /bin/bash -c "envsubst < \"$f\" | sponge \"$f\""
         fi
     done
 
