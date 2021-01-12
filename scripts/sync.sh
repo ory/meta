@@ -20,7 +20,7 @@ function sync {
     type=$3
     humanName=$4
     project=$5
-    discussions="https://github.com/ory/$project/discussions"
+    discussions="https://github.com/$project/discussions"
     pushBranch="meta-$(date +%m-%d-%y-%H-%M-%S)"
     # set hash as github commit hash, first 8 bytes
     hash=$(echo $GITHUB_SHA | head -c 8)
