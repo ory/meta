@@ -45,9 +45,9 @@ function sync {
     # envsubst: replace all env variables found ($f) with the ones specified 2 steps before, pipe to sponge and write to file
     for f in $(find "$workdir/.github/ISSUE_TEMPLATE" "$workdir/.github/pull_request_template.md" "$workdir/CONTRIBUTING.md" "$workdir/SECURITY.md" "$workdir/CODE_OF_CONDUCT.md" "$workdir/LICENSE" -type f -print); do
         if [[ "$roject" = "ory/hydra" || $project = "ory/kratos" || $project = "ory/oathkeeper" || $project = "ory/keto" ]]; then
-        env -i Discussions="$discussions" Repository="$project" Project="$humanName" /bin/bash -c "envsubst < \"$f\" | sponge \"$f\""
+          env -i Discussions="$discussions" Repository="$project" Project="$humanName" /bin/bash -c "envsubst < \"$f\" | sponge \"$f\""
         else
-        env -i Discussions="https://github.com/ory/meta/discussions" Repository="$project" Project="$humanName" /bin/bash -c "envsubst < \"$f\" | sponge \"$f\""
+          env -i Discussions="https://github.com/ory/meta/discussions" Repository="$project" Project="$humanName" /bin/bash -c "envsubst < \"$f\" | sponge \"$f\""
         fi
     done
 
