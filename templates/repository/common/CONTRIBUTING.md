@@ -207,10 +207,10 @@ please include a note in your commit message explaining why.
 
 ```
 # First you clone the original repository
-git clone git@github.com:ory/$PROJECT.git
+git clone git@github.com:ory/$REPOSITORY.git
 
 # Next you add a git remote that is your fork:
-git remote add fork git@github.com:<YOUR-GITHUB-USERNAME-HERE>/$PROJECT.git
+git remote add fork git@github.com:<YOUR-GITHUB-USERNAME-HERE>/$REPOSITORY.git
 
 # Next you fetch the latest changes from origin for master:
 git fetch origin
