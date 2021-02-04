@@ -26,7 +26,9 @@ deal with: Self-service Login and Registration, Multi-Factor Authentication
 ### ORY Hydra: OAuth2 & OpenID Connect Server
 
 [ORY Hydra](https://github.com/ory/hydra) is an OpenID Certified™ OAuth2 and
-OpenID Connect Provider easily to be integrated with your frontend.
+OpenID Connect Provider which easily connects to any existing identity system by
+writing a tiny "bridge" application. Gives absolute control over user interface
+and user experience flows.
 
 ### ORY Oathkeeper: Identity & Access Proxy
 
