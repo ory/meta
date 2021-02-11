@@ -69,7 +69,8 @@ or the [ORY Chat](https://www.ory.sh/chat).
 - I want to talk to other ORY $PROJECT users.
   [How can I become a part of the community?](#communication)
 
-- I would like to know what I am agreeing to when I contribute to ORY $PROJECT.
+- I would like to know what I am agreeing to when I contribute to ORY
+  $PROJECT.
   Does ORY have
   [a Contributors License Agreement?](https://cla-assistant.io/$REPOSITORY)
 
