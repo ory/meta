@@ -21,6 +21,8 @@ function sync {
     humanName=$4
     project=$5
     discussions="https://github.com/$project/discussions"
+    metaDiscussions="https://github.com/meta/discussions"
+
     pushBranch="meta-$(date +%m-%d-%y-%H-%M-%S)"
     # set hash as github commit hash, first 8 bytes
     hash=$(echo $GITHUB_SHA | head -c 8)
@@ -47,7 +49,7 @@ function sync {
         if [[ "$project" = "ory/hydra" || $project = "ory/kratos" || $project = "ory/oathkeeper" || $project = "ory/keto" ]]; then
           env -i DISCUSSIONS="$discussions" REPOSITORY="$project" PROJECT="$humanName" /bin/bash -c "envsubst < \"$f\" | sponge \"$f\""
         else
-          env -i DISCUSSIONS="https://github.com/ory/meta/discussions" REPOSITORY="$project" PROJECT="$humanName" /bin/bash -c "envsubst < \"$f\" | sponge \"$f\""
+          env -i DISCUSSIONS="$metaDiscussions" REPOSITORY="$project" PROJECT="$humanName" /bin/bash -c "envsubst < \"$f\" | sponge \"$f\""
         fi
     done
 
