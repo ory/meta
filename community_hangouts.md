@@ -85,8 +85,8 @@ We will focus on the cloud offering, it is easy to scale, easier to support. But
 this request comes often, and we do want to help companies in this position.
 
 We do want to offer solutions there so we could provide you with support in the
-future. Best solution: Talk to [jared](jared@ory.sh), figure out what you need
-and we will find a solution.
+future. Best solution: Talk to [jared](mailto:jared@ory.sh), figure out what you
+need and we will find a solution.
 
 ---
 

@@ -7,7 +7,8 @@
   },
   "scripts": {
     "format": "prettier --write ${npm_package_config_prettierTarget}",
-    "format:check": "prettier --check ${npm_package_config_prettierTarget}"
+    "format:check": "prettier --check ${npm_package_config_prettierTarget}",
+    "text-run": "text-run"
   },
   "repository": {
     "type": "git",
@@ -15,6 +16,7 @@
   },
   "devDependencies": {
     "ory-prettier-styles": "^1.1.1",
-    "prettier": "2.2.1"
+    "prettier": "2.2.1",
+    "text-runner": "5.0.0-pre11"
   }
 }
