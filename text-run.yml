@@ -1,0 +1,4 @@
+ignoreLinkTargets:
+  - ^\$.*
+  - ^docs\/.*
+  - ^docs$

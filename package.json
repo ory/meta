@@ -8,7 +8,8 @@
   "scripts": {
     "format": "prettier --write ${npm_package_config_prettierTarget}",
     "format:check": "prettier --check ${npm_package_config_prettierTarget}",
-    "text-run": "text-run"
+    "text-run-build": "cd node_modules/text-runner && npm i && make build-all",
+    "text-run": "./node_modules/text-runner/text-runner-cli/bin/text-run"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,6 @@
   "devDependencies": {
     "ory-prettier-styles": "^1.1.1",
     "prettier": "2.2.1",
-    "text-runner": "5.0.0-pre11"
+    "text-runner": "git+https://github.com/kevgo/text-runner.git#63c31b3"
   }
 }
