@@ -1,4 +1,4 @@
-name: Check format
+name: Text runner checks
 
 on:
   pull_request:
