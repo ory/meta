@@ -2,3 +2,4 @@ ignoreLinkTargets:
   - ^\$.*
   - ^docs\/.*
   - ^docs$
+  - ^saved_replies\/.*
