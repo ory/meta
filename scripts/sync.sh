@@ -51,6 +51,9 @@ function sync {
         fi
     done
 
+    # format everything that was rendered
+    (cd "$workdir"; npm ci; npm run format)
+
     # Copy contributing guide to docs if docs exist
     if [ -d "$workdir/docs/docs" ]; then
       cat <<EOF > "$workdir/docs/docs/contributing.md"
