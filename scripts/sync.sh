@@ -51,8 +51,8 @@ function sync {
         fi
     done
 
-    # format everything that was rendered
-    (cd "$workdir"; npm ci; npm run format)
+    # format everything that was rendered, only if
+    (cd "$workdir"; if test -f package.json; then (npm ci; npm run format); else true; fi)
 
     # Copy contributing guide to docs if docs exist
     if [ -d "$workdir/docs/docs" ]; then
