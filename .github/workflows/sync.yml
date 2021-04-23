@@ -150,3 +150,23 @@ jobs:
         run: ./scripts/sync-library.sh ory/hydra-db-growth master "Hydra DB Growth"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+      - name: Synchronize Ory Hydra Maester
+        run: ./scripts/sync-library.sh ory/hydra-maester master "Ory Hydra Maester"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+      - name: Synchronize Ory Oathkeeper Maester
+        run: ./scripts/sync-library.sh ory/hydra-maester master "Ory Oathkeeper Maester"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+      - name: Synchronize Ory SDK
+        run: ./scripts/sync-library.sh ory/sdk master "Ory SDK"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+      - name: Synchronize Ory Platform
+        run: ./scripts/sync-library.sh ory/platform master "Ory Platform"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
