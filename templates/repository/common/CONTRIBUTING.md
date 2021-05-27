@@ -196,7 +196,7 @@ request, go through this checklist:
    command and confirm that it passes.
 1. Run `gofmt -s` (if the project is written in Go).
 1. Ensure that each commit has a subsystem prefix (ex: `controller:`).
-   [List of subsystem prefixes for $PROJECT](https://github.com/ory/$REPOSITORY/labels?q=package)
+   [List of subsystem prefixes for $PROJECT](https://github.com/ory/$REPOSITORY/blob/master/.github/semantic.yml)
    (if applicable).
 
 Pull requests will be treated as "review requests," and maintainers will give
