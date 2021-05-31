@@ -197,7 +197,8 @@ request, go through this checklist:
 1. Run `gofmt -s` (if the project is written in Go).
 1. Ensure that each commit has a descriptive prefix. This ensures a uniform
    commit history and helps structure the changelog.  
-   Please refer to this [list of prefixes for $PROJECT](https://github.com/ory/$REPOSITORY/blob/master/.github/semantic.yml).
+   Please refer to this
+   [list of prefixes for $PROJECT](https://github.com/ory/$REPOSITORY/blob/master/.github/semantic.yml).
 
 Pull requests will be treated as "review requests," and maintainers will give
 feedback on the style and substance of the patch.
