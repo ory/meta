@@ -200,6 +200,7 @@ request, go through this checklist:
    Please refer to this
    [list of prefixes for $PROJECT](https://github.com/ory/$REPOSITORY/blob/master/.github/semantic.yml).
 
+
 Pull requests will be treated as "review requests," and maintainers will give
 feedback on the style and substance of the patch.
 
