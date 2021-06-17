@@ -32,6 +32,7 @@ function sync {
     cp -R "templates/repository/common/CONTRIBUTING.md" "$workdir/CONTRIBUTING.md"
     cp -R "templates/repository/common/SECURITY.md" "$workdir/SECURITY.md"
     cp -R "templates/repository/common/LICENSE" "$workdir/LICENSE"
+    cp -R "templates/repository/common/CODE_OF_CONDUCT.md" "$workdir/CODE_OF_CONDUCT.md"
     # Copy .reference-ignore only if it does not exist, as it is meant to help getting started
     cp -n "templates/repository/common/.reference-ignore" "$workdir/.reference-ignore" || true
     cp -R "templates/repository/common/.github" "$workdir/"
