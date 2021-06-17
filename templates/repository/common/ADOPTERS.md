@@ -1,9 +1,9 @@
 <!--BEGIN ADOPTERS-->
 
-The ORY community stands on the shoulders of individuals, companies, and
+The Ory community stands on the shoulders of individuals, companies, and
 maintainers. We thank everyone involved - from submitting bug reports and
 feature requests, to contributing patches, to sponsoring our work. Our community
-is 1000+ strong and growing rapidly. The ORY stack protects 16.000.000.000+ API
+is 1000+ strong and growing rapidly. The Ory stack protects 16.000.000.000+ API
 requests every month with over 250.000+ active service nodes. We would have
 never been able to achieve this without each and everyone of you!
 
@@ -120,6 +120,6 @@ and past & current supporters (in alphabetical order) on
 Kennedy, Drozzy, Edwin Trejos, Howard Edidin, Ken Adler Oz Haven, Stefan Hans,
 TheCrealm.
 
-<em>\* Uses one of ORY's major projects in production.</em>
+<em>\* Uses one of Ory's major projects in production.</em>
 
 <!--END ADOPTERS-->

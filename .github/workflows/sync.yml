@@ -28,125 +28,125 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Synchronize ORY Hydra
+      - name: Synchronize Ory Hydra
         run: ./scripts/sync-server.sh ory/hydra master Hydra
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
-      - name: Synchronize ORY Keto
+      - name: Synchronize Ory Keto
         run: ./scripts/sync-server.sh ory/keto master Keto
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
-      - name: Synchronize ORY Oathkeeper
+      - name: Synchronize Ory Oathkeeper
         run: ./scripts/sync-server.sh ory/oathkeeper master Oathkeeper
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
   # Synchronize server 
-      - name: Synchronize ORY Kratos
+      - name: Synchronize Ory Kratos
   # runs the sync-server bash script in the Action workers CLI with arguments: $1=workdir (the repository you want to sync) $2=branch $3=humanName
         run: ./scripts/sync-server.sh ory/kratos master Kratos
   # sets the required github token as enviromental variable
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
-      - name: Synchronize ORY Hydra Login, Logout And Consent Node Example
+      - name: Synchronize Ory Hydra Login, Logout And Consent Node Example
         run: |
           ./scripts/sync-library.sh ory/hydra-login-consent-node master "Hydra Login, Logout And Consent Node Example"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
-      - name: Synchronize ORY CLI
+      - name: Synchronize Ory CLI
         run: |
           ./scripts/sync-library.sh ory/cli master CLI
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
   # Synchronize library
-      - name: Synchronize ORY Kratos SelfService UI Node Example
+      - name: Synchronize Ory Kratos SelfService UI Node Example
   # runs the sync-library bash script in the Action workers CLI with arguments: $1=workdir (the repository you want to sync) $2=branch $3=humanName
         run: |
           ./scripts/sync-library.sh ory/kratos-selfservice-ui-node master "Kratos SelfService UI Node Example"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
-      - name: Synchronize ORY Kratos SelfService UI React Native Example
+      - name: Synchronize Ory Kratos SelfService UI React Native Example
         run: |
           ./scripts/sync-library.sh ory/kratos-selfservice-ui-react-native master "Kratos SelfService UI React Native Example"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
-      - name: Synchronize ORY Fosite
+      - name: Synchronize Ory Fosite
         run: ./scripts/sync-library.sh ory/fosite master Fosite
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
-      - name: Synchronize ORY Dockertest
+      - name: Synchronize Ory Dockertest
         run: ./scripts/sync-library.sh ory/dockertest v3 Dockertest
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
-      - name: Synchronize ORY Herodot
+      - name: Synchronize Ory Herodot
         run: ./scripts/sync-library.sh ory/herodot master Herodot
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
-      - name: Synchronize ORY Graceful
+      - name: Synchronize Ory Graceful
         run: ./scripts/sync-library.sh ory/graceful master Graceful
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
-      - name: Synchronize ORY Themes
+      - name: Synchronize Ory Themes
         run: ./scripts/sync-library.sh ory/themes master Themes
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
-      - name: Synchronize ORY Kubernetes Resources
+      - name: Synchronize Ory Kubernetes Resources
         run: ./scripts/sync-library.sh ory/k8s master "Kubernetes Resources"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
-      - name: Synchronize ORY X
+      - name: Synchronize Ory X
         run: ./scripts/sync-library.sh ory/x master X
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
-      - name: Synchronize ORY Web
+      - name: Synchronize Ory Web
         run: ./scripts/sync-library.sh ory/web master Web
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
   # Synchronize action
-      - name: Syncronize ORY Closed Reference Notifier
+      - name: Syncronize Ory Closed Reference Notifier
         # runs the sync-action bash script in the Action workers CLI with arguments: $1=workdir (the repository you want to sync) $2=branch $3=humanName
         run: ./scripts/sync-action.sh ory/closed-reference-notifier master "Closed Reference Notifier"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
-      - name: Syncronize ORY Label Sync Action
+      - name: Syncronize Ory Label Sync Action
         run: ./scripts/sync-action.sh ory/label-sync-action master "Label Sync Action"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
-      - name: Syncronize ORY Milestone Action
+      - name: Syncronize Ory Milestone Action
         run: ./scripts/sync-action.sh ory/milestone-action master "Milestone Action"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
-      - name: Syncronize ORY Prettier Styles Action
+      - name: Syncronize Ory Prettier Styles Action
         run: ./scripts/sync-action.sh ory/prettier-styles master "Prettier Styles"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
-      - name: Syncronize ORY Buildbuf Action
+      - name: Syncronize Ory Buildbuf Action
         run: ./scripts/sync-action.sh ory/build-buf-action main "Buildbuf Action"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
-      - name: Synchronize ORY Works
+      - name: Synchronize Ory Works
         run: ./scripts/sync-library.sh ory/works master Works
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
-      - name: Syncronize ORY Hydra-DB-Growth
+      - name: Syncronize Ory Hydra-DB-Growth
         run: ./scripts/sync-library.sh ory/hydra-db-growth master "Hydra DB Growth"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}

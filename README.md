@@ -1,7 +1,7 @@
 # meta
 
 A place for reusable code, templates, and documentation required for getting a
-repository in ORY working.
+repository in Ory working.
 
 ## Documentation
 
@@ -23,7 +23,7 @@ will be published using a GitHub Action.
 ## Github Sync action
 
 The [meta scripts](https://github.com/ory/meta/tree/master/scripts) serve to
-synchronize all ORY repositories to a common template, including README,
+synchronize all Ory repositories to a common template, including README,
 CONTRIBUTING, COC, SECURITY, LICENCE and Github Workflows with close to zero
 manual interaction.  
 Depending on repository type (server, library, action) specific templates can be
