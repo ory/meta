@@ -146,11 +146,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
-      - name: Syncronize Ory Hydra-DB-Growth
-        run: ./scripts/sync-library.sh ory/hydra-db-growth master "Hydra DB Growth"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
-
       - name: Synchronize Ory Hydra Maester
         run: ./scripts/sync-library.sh ory/hydra-maester master "Ory Hydra Maester"
         env:
