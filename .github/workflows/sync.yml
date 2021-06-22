@@ -165,3 +165,8 @@ jobs:
         run: ./scripts/sync-library.sh ory/platform master "Ory Platform"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+      - name: Synchronize Ory Corp
+        run: ./scripts/sync-server.sh ory-corp/cloud master "Ory SaaS"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
