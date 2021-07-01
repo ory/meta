@@ -106,7 +106,7 @@ that your company deserves a spot here, reach out to
         </tr>        
         <tr>
             <td>Adopter *</td>
-            <td>Commit Project Zero</td>
+            <td>Zero</td>
             <td align="center"><img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/commitzero.svg" alt="Project Zero by Commit"></td>
             <td><a href="https://getzero.dev/">getzero.dev</a></td>
         </tr>
