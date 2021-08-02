@@ -52,7 +52,7 @@ function sync {
         fi
     done
 
-    # format everything that was rendered, only if
+    # format everything that was rendered, only if package.json exists
     (cd "$workdir"; if test -f package.json; then (npm ci; npm run format); else true; fi)
 
     # Copy contributing guide to docs if docs exist
