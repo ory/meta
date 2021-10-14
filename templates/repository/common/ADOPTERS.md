@@ -40,12 +40,6 @@ that your company deserves a spot here, reach out to
         </tr>
         <tr>
             <td>Sponsor</td>
-            <td>ThoughtWorks</td>
-            <td align="center"><img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/tw.svg" alt="ThoughtWorks"></td>
-            <td><a href="https://www.thoughtworks.com/">thoughtworks.com</a></td>
-        </tr>
-        <tr>
-            <td>Sponsor</td>
             <td>Tulip</td>
             <td align="center"><img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/tulip.svg" alt="Tulip Retail"></td>
             <td><a href="https://tulip.com/">tulip.com</a></td>
