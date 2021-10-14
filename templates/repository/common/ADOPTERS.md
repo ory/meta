@@ -51,12 +51,6 @@ that your company deserves a spot here, reach out to
             <td><a href="https://cashdeck.com.au/">cashdeck.com.au</a></td>
         </tr>
         <tr>
-            <td>Sponsor</td>
-            <td>3Rein</td>
-            <td align="center"><img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/3R-horiz.svg" alt="3Rein"></td>
-            <td><a href="https://3rein.com/">3rein.com</a></td>
-        </tr>
-        <tr>
             <td>Contributor</td>
             <td>Hootsuite</td>
             <td align="center"><img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/hootsuite.svg" alt="Hootsuite"></td>
