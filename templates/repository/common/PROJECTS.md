@@ -11,14 +11,14 @@ design:
 Ory's architecture is designed to run best on a Container Orchestration system
 such as Kubernetes, CloudFoundry, OpenShift, and similar projects. Binaries are
 small (5-15MB) and available for all popular processor types (ARM, AMD64, i386)
-and operating systems (FreeBSD, Linux, macOS, Windows) without systems.
+and operating systems (FreeBSD, Linux, macOS, Windows) without system
 dependencies (Java, Node, Ruby, libxml, ...).
 
 ### Ory Kratos: Identity and User Infrastructure and Management
 
 [Ory Kratos](https://github.com/ory/kratos) is an API-first Identity and User
-A management system that is built according to
-[Cloud architecture best practices](https://www.ory.sh/docs/next/ecosystem/software-architecture-philosophy).
+Management system that is built according to
+[cloud architecture best practices](https://www.ory.sh/docs/next/ecosystem/software-architecture-philosophy).
 It implements core use cases that almost every software application needs to
 deal with: Self-service Login and Registration, Multi-Factor Authentication
 (MFA/2FA), Account Recovery and Verification, Profile, and Account Management.
@@ -27,7 +27,7 @@ deal with: Self-service Login and Registration, Multi-Factor Authentication
 
 [Ory Hydra](https://github.com/ory/hydra) is an OpenID Certified™ OAuth2 and
 OpenID Connect Provider which easily connects to any existing identity system by
-writing a tiny "bridge" application. Gives absolute control over the user interface
+writing a tiny "bridge" application. Gives absolute control over user interface
 and user experience flows.
 
 ### Ory Oathkeeper: Identity & Access Proxy
