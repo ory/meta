@@ -170,3 +170,186 @@ jobs:
         run: ./scripts/sync-server.sh ory-corp/cloud master "Ory SaaS"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+      - name: Synchronize keto-client-dotnet
+        run: ./scripts/sync-library.sh ory/keto-client-dotnet master "Ory Keto Dotnet Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+          
+      - name: Synchronize keto-client-java
+        run: ./scripts/sync-library.sh ory/keto-client-java master "Ory Keto Java Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+        
+      - name: Synchronize keto-client-rust
+        run: ./scripts/sync-library.sh ory/keto-client-rust master "Ory Keto Rust Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+        
+      - name: Synchronize keto-client-dart
+        run: ./scripts/sync-library.sh ory/keto-client-dart master "Ory Keto Dart Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+      - name: Synchronize keto-client-js
+        run: ./scripts/sync-library.sh ory/keto-client-js master "Ory Keto JavaScript Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+      - name: Synchronize keto-client-php
+        run: ./scripts/sync-library.sh ory/keto-client-php master "Ory Keto PHP Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+      - name: Synchronize keto-client-go
+        run: ./scripts/sync-library.sh ory/keto-client-go master "Ory Keto Go Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+      - name: Synchronize keto-client-ruby
+        run: ./scripts/sync-library.sh ory/keto-client-ruby master "Ory Keto Ruby Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+      - name: Synchronize keto-client-python
+        run: ./scripts/sync-library.sh ory/keto-client-python master "Ory Keto Python Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+
+      - name: Synchronize kratos-client-dotnet
+        run: ./scripts/sync-library.sh ory/kratos-client-dotnet master "Ory Kratos Dotnet Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+          
+      - name: Synchronize kratos-client-java
+        run: ./scripts/sync-library.sh ory/kratos-client-java master "Ory Kratos Java Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+        
+      - name: Synchronize kratos-client-rust
+        run: ./scripts/sync-library.sh ory/kratos-client-rust master "Ory Kratos Rust Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+        
+      - name: Synchronize kratos-client-dart
+        run: ./scripts/sync-library.sh ory/kratos-client-dart master "Ory Kratos Dart Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+      - name: Synchronize kratos-client-js
+        run: ./scripts/sync-library.sh ory/kratos-client-js master "Ory Kratos JavaScript Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+      - name: Synchronize kratos-client-php
+        run: ./scripts/sync-library.sh ory/kratos-client-php master "Ory Kratos PHP Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+      - name: Synchronize kratos-client-go
+        run: ./scripts/sync-library.sh ory/kratos-client-go master "Ory Kratos Go Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+      - name: Synchronize kratos-client-ruby
+        run: ./scripts/sync-library.sh ory/kratos-client-ruby master "Ory Kratos Ruby Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+      - name: Synchronize kratos-client-python
+        run: ./scripts/sync-library.sh ory/kratos-client-python master "Ory Kratos Python Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+
+      - name: Synchronize hydra-client-dotnet
+        run: ./scripts/sync-library.sh ory/hydra-client-dotnet master "Ory Hydra Dotnet Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+          
+      - name: Synchronize hydra-client-java
+        run: ./scripts/sync-library.sh ory/hydra-client-java master "Ory Hydra Java Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+        
+      - name: Synchronize hydra-client-rust
+        run: ./scripts/sync-library.sh ory/hydra-client-rust master "Ory Hydra Rust Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+        
+      - name: Synchronize hydra-client-dart
+        run: ./scripts/sync-library.sh ory/hydra-client-dart master "Ory Hydra Dart Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+      - name: Synchronize hydra-client-js
+        run: ./scripts/sync-library.sh ory/hydra-client-js master "Ory Hydra JavaScript Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+      - name: Synchronize hydra-client-php
+        run: ./scripts/sync-library.sh ory/hydra-client-php master "Ory Hydra PHP Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+      - name: Synchronize hydra-client-go
+        run: ./scripts/sync-library.sh ory/hydra-client-go master "Ory Hydra Go Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+      - name: Synchronize hydra-client-ruby
+        run: ./scripts/sync-library.sh ory/hydra-client-ruby master "Ory Hydra Ruby Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+      - name: Synchronize hydra-client-python
+        run: ./scripts/sync-library.sh ory/hydra-client-python master "Ory Hydra Python Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+
+      - name: Synchronize oathkeeper-client-dotnet
+        run: ./scripts/sync-library.sh ory/oathkeeper-client-dotnet master "Ory Oathkeeper Dotnet Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+          
+      - name: Synchronize oathkeeper-client-java
+        run: ./scripts/sync-library.sh ory/oathkeeper-client-java master "Ory Oathkeeper Java Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+        
+      - name: Synchronize oathkeeper-client-rust
+        run: ./scripts/sync-library.sh ory/oathkeeper-client-rust master "Ory Oathkeeper Rust Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+        
+      - name: Synchronize oathkeeper-client-dart
+        run: ./scripts/sync-library.sh ory/oathkeeper-client-dart master "Ory Oathkeeper Dart Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+      - name: Synchronize oathkeeper-client-js
+        run: ./scripts/sync-library.sh ory/oathkeeper-client-js master "Ory Oathkeeper JavaScript Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+      - name: Synchronize oathkeeper-client-php
+        run: ./scripts/sync-library.sh ory/oathkeeper-client-php master "Ory Oathkeeper PHP Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+      - name: Synchronize oathkeeper-client-go
+        run: ./scripts/sync-library.sh ory/oathkeeper-client-go master "Ory Oathkeeper Go Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+      - name: Synchronize oathkeeper-client-ruby
+        run: ./scripts/sync-library.sh ory/oathkeeper-client-ruby master "Ory Oathkeeper Ruby Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
+      - name: Synchronize oathkeeper-client-python
+        run: ./scripts/sync-library.sh ory/oathkeeper-client-python master "Ory Oathkeeper Python Client"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
