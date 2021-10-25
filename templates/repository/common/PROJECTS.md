@@ -8,7 +8,7 @@ design:
 - Scales without effort
 - Minimize room for human and network errors
 
-Ory's architecture designed to run best on a Container Orchestration Systems
+Ory's architecture is designed to run best on a Container Orchestration system
 such as Kubernetes, CloudFoundry, OpenShift, and similar projects. Binaries are
 small (5-15MB) and available for all popular processor types (ARM, AMD64, i386)
 and operating systems (FreeBSD, Linux, macOS, Windows) without system
@@ -21,7 +21,7 @@ Management system that is built according to
 [cloud architecture best practices](https://www.ory.sh/docs/next/ecosystem/software-architecture-philosophy).
 It implements core use cases that almost every software application needs to
 deal with: Self-service Login and Registration, Multi-Factor Authentication
-(MFA/2FA), Account Recovery and Verification, Profile and Account Management.
+(MFA/2FA), Account Recovery and Verification, Profile, and Account Management.
 
 ### Ory Hydra: OAuth2 & OpenID Connect Server
 
