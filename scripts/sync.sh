@@ -84,13 +84,13 @@ EOF
       git add -A; \
       git status; \
       ( \
-        git commit -a -m "chore: update repository templates" && \
-        git push --set-upstream origin "$pushBranch" && \
-        curl \
-          -X POST \
-          -H "Authorization: token $GITHUB_TOKEN" \
-          -H "Accept: application/vnd.github.v3+json" \
-          https://api.github.com/repos/$project/pulls \
-          -d '{"title":"chore: update repository template to '$hash'","body":"Updated repository templates to https://github.com/ory/meta/commit/'$GITHUB_SHA'.","head":"'$pushBranch'","base":"'$branch'"}' \
+        git commit -a -m "chore: update repository templates to $GITHUB_SHA" -m "Updated repository templates to https://github.com/ory/meta/commit/$GITHUB_SHA" && \
+        git push --set-upstream origin "origin" \ # && \
+        # curl \
+        #   -X POST \
+        #   -H "Authorization: token $GITHUB_TOKEN" \
+        #   -H "Accept: application/vnd.github.v3+json" \
+        #   https://api.github.com/repos/$project/pulls \
+        #   -d '{"title":"chore: update repository template to '$hash'","body":"Updated repository templates to https://github.com/ory/meta/commit/'$GITHUB_SHA'.","head":"'$pushBranch'","base":"'$branch'"}' \
       ) || true)
 }
