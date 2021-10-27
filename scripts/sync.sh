@@ -28,6 +28,7 @@ function sync {
     # in subshell, change directory to workdir, checkout git branch specified in pushBranch
     (cd "$workdir"; git checkout -b "$pushBranch")
 
+
     # Copy common templates to workdir
     cp -R "templates/repository/common/CONTRIBUTING.md" "$workdir/CONTRIBUTING.md"
     cp -R "templates/repository/common/SECURITY.md" "$workdir/SECURITY.md"
@@ -77,6 +78,8 @@ EOF
     perl -0pe 's#<!--\s*BEGIN ADOPTERS\s*-->.*<!--\s*END ADOPTERS\s*-->\n#`cat templates/repository/common/ADOPTERS.md`#gse' -i "$workdir/README.md"
     # Add Ecosystem (overview of all projects) to README.md
     perl -0pe 's#<!--\s*BEGIN ECOSYSTEM\s*-->.*<!--\s*END ECOSYSTEM\s*-->\n#`cat templates/repository/common/PROJECTS.md`#gse' -i "$workdir/README.md"
+
+
 
     # Commit changes - line by line: change to workdir, add all files to git index, show working tree status, commit changes with "chore:..." title, push to upstream 
     # curl: make pull request through Github API with token to authenticate and the PR titles, body. With pushBranch (the "script" branch) as head and the specified branch (main) as base
