@@ -28,7 +28,7 @@ function sync {
     # in subshell, change directory to workdir, checkout git branch specified in pushBranch
     (cd "$workdir"; git checkout -b "$pushBranch")
 
-    rm -rf "$workdir/.github/ISSUE_TEMPLATE/*"
+    rm -rf "$workdir/.github/ISSUE_TEMPLATE/"
 
     # Copy common templates to workdir
     cp -R "templates/repository/common/CONTRIBUTING.md" "$workdir/CONTRIBUTING.md"
