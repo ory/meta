@@ -84,7 +84,7 @@ EOF
       git add -A; \
       git status; \
       ( \
-        git commit -a -m "chore: update repository templates to $GITHUB_SHA" -m "[skip ci] - updated repository templates to https://github.com/ory/meta/commit/$GITHUB_SHA" && \
+        git commit -a -m "chore: update repository templates" -m "[skip ci] - updated repository templates to https://github.com/ory/meta/commit/$GITHUB_SHA" && \
         git push origin HEAD:master) || true) # && \
         # curl \
         #   -X POST \
