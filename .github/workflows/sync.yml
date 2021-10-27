@@ -20,10 +20,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-  # installs moreutils on the Action worker node to use the sponge function
+      # installs moreutils on the Action worker node to use the sponge function
       - name: Install sponge
         run: sudo apt-get update -y && sudo apt-get install -y moreutils
-  # Ssh-agent action to get a ssh key with privileges to repos outside of /meta in this case the repositories you want to sync.
+      # Ssh-agent action to get a ssh key with privileges to repos outside of /meta in this case the repositories you want to sync.
       - uses: webfactory/ssh-agent@v0.4.1
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
@@ -42,11 +42,11 @@ jobs:
         run: ./scripts/sync-server.sh ory/oathkeeper master Oathkeeper
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
-  # Synchronize server 
+      # Synchronize server
       - name: Synchronize Ory Kratos
-  # runs the sync-server bash script in the Action workers CLI with arguments: $1=workdir (the repository you want to sync) $2=branch $3=humanName
+        # runs the sync-server bash script in the Action workers CLI with arguments: $1=workdir (the repository you want to sync) $2=branch $3=humanName
         run: ./scripts/sync-server.sh ory/kratos master Kratos
-  # sets the required github token as enviromental variable
+        # sets the required github token as enviromental variable
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
@@ -61,9 +61,9 @@ jobs:
           ./scripts/sync-library.sh ory/cli master CLI
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
-  # Synchronize library
+      # Synchronize library
       - name: Synchronize Ory Kratos SelfService UI Node Example
-  # runs the sync-library bash script in the Action workers CLI with arguments: $1=workdir (the repository you want to sync) $2=branch $3=humanName
+        # runs the sync-library bash script in the Action workers CLI with arguments: $1=workdir (the repository you want to sync) $2=branch $3=humanName
         run: |
           ./scripts/sync-library.sh ory/kratos-selfservice-ui-node master "Kratos SelfService UI Node Example"
         env:
@@ -114,30 +114,38 @@ jobs:
         run: ./scripts/sync-library.sh ory/web master Web
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
-  # Synchronize action
+      # Synchronize action
       - name: Syncronize Ory Closed Reference Notifier
         # runs the sync-action bash script in the Action workers CLI with arguments: $1=workdir (the repository you want to sync) $2=branch $3=humanName
-        run: ./scripts/sync-action.sh ory/closed-reference-notifier master "Closed Reference Notifier"
+        run:
+          ./scripts/sync-action.sh ory/closed-reference-notifier master "Closed
+          Reference Notifier"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
       - name: Syncronize Ory Label Sync Action
-        run: ./scripts/sync-action.sh ory/label-sync-action master "Label Sync Action"
+        run:
+          ./scripts/sync-action.sh ory/label-sync-action master "Label Sync
+          Action"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
       - name: Syncronize Ory Milestone Action
-        run: ./scripts/sync-action.sh ory/milestone-action master "Milestone Action"
+        run:
+          ./scripts/sync-action.sh ory/milestone-action master "Milestone
+          Action"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
       - name: Syncronize Ory Prettier Styles Action
-        run: ./scripts/sync-action.sh ory/prettier-styles master "Prettier Styles"
+        run:
+          ./scripts/sync-action.sh ory/prettier-styles master "Prettier Styles"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
       - name: Syncronize Ory Buildbuf Action
-        run: ./scripts/sync-action.sh ory/build-buf-action main "Buildbuf Action"
+        run:
+          ./scripts/sync-action.sh ory/build-buf-action main "Buildbuf Action"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
@@ -147,12 +155,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
       - name: Synchronize Ory Hydra Maester
-        run: ./scripts/sync-library.sh ory/hydra-maester master "Ory Hydra Maester"
+        run:
+          ./scripts/sync-library.sh ory/hydra-maester master "Ory Hydra Maester"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
       - name: Synchronize Ory Oathkeeper Maester
-        run: ./scripts/sync-library.sh ory/hydra-maester master "Ory Oathkeeper Maester"
+        run:
+          ./scripts/sync-library.sh ory/hydra-maester master "Ory Oathkeeper
+          Maester"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
