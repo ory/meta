@@ -85,7 +85,7 @@ EOF
       git status; \
       ( \
         git commit -a -m "chore: update repository templates to $GITHUB_SHA" -m "Updated repository templates to https://github.com/ory/meta/commit/$GITHUB_SHA" && \
-        git push --set-upstream origin "master") || true) # && \
+        git push origin HEAD:master) || true) # && \
         # curl \
         #   -X POST \
         #   -H "Authorization: token $GITHUB_TOKEN" \
