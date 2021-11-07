@@ -12,11 +12,11 @@ Usage: $this [-b] bindir [-d] <project> [<tag>]
 
   <project> (required)
     Can be one of:
-      - cli - downloads the Ory CLI
       - keto - downloads Ory Keto
       - kratos - downloads Ory Kratos
       - hydra - downloads Ory Hydra
       - oathkeeper - downloads Ory Oathkeeper
+      - ory - downloads the Ory CLI
 
   -b sets bindir or installation directory, Defaults to ./bin
   -s downloads the static binary build without SQLite support
@@ -52,7 +52,7 @@ parse_args() {
 
   case "$1" in
 
-    cli)
+    ory)
       REPO="cli"
       BINARY=ory
       PROJECT_NAME=ory
@@ -83,7 +83,7 @@ parse_args() {
       ;;
 
     *)
-      echo "The project you specified is unknown. Please choose one of \"cli\", \"keto\", \"kratos\", \"oathkeeper\". Received \"$1\"."
+      echo "The project you specified is unknown. Please choose one of \"ory\", \"keto\", \"kratos\", \"oathkeeper\". Received \"$1\"."
       exit 1
       ;;
   esac
