@@ -86,7 +86,7 @@ a few things you can do to help out:
 
 - **Give us a star.** It may not seem like much, but it really makes a
   difference. This is something that everyone can do to help out Ory $PROJECT.
-  Github stars help the project gain visibility and stand out.
+  GitHub stars help the project gain visibility and stand out.
 
 - **Join the community.** Sometimes helping people can be as easy as listening
   to their problems and offering a different perspective. Join our Slack, have a
@@ -153,7 +153,7 @@ request, go through this checklist:
    for an overview.
 1. Sign-up with CircleCI so that it has access to your repository with the
    branch containing your PR. Simply creating a CircleCI account is sufficient
-   for the CI jobs to run, you do not need to setup a CircleCI project for the
+   for the CI jobs to run, you do not need to set up a CircleCI project for the
    branch.
 
 If a pull request is not ready to be reviewed yet
@@ -257,7 +257,7 @@ community a safe place for you and we've got your back.
   you have been or are being harassed or made uncomfortable by a community
   member, please contact one of the channel ops or a member of the Ory $PROJECT
   core team immediately.
-- Likewise any spamming, trolling, flaming, baiting or other attention-stealing
+- Likewise, any spamming, trolling, flaming, baiting or other attention-stealing
   behaviour is not welcome.
 
 We welcome discussion about creating a welcoming, safe, and productive
