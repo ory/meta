@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "prettier": "ory-prettier-styles",
   "config": {
-    "prettierTarget": "**/*.{js,ts,md,mdx}"
+    "prettierTarget": "**/*.{js,ts,md,mdx,yml}"
   },
   "scripts": {
     "format": "prettier --write ${npm_package_config_prettierTarget}",

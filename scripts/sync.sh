@@ -28,6 +28,8 @@ function sync {
     # in subshell, change directory to workdir, checkout git branch specified in pushBranch
     (cd "$workdir"; git checkout -b "$pushBranch")
 
+    rm -rf "$workdir/.github/ISSUE_TEMPLATE/"
+
     # Copy common templates to workdir
     cp -R "templates/repository/common/CONTRIBUTING.md" "$workdir/CONTRIBUTING.md"
     cp -R "templates/repository/common/SECURITY.md" "$workdir/SECURITY.md"
@@ -78,19 +80,21 @@ EOF
     # Add Ecosystem (overview of all projects) to README.md
     perl -0pe 's#<!--\s*BEGIN ECOSYSTEM\s*-->.*<!--\s*END ECOSYSTEM\s*-->\n#`cat templates/repository/common/PROJECTS.md`#gse' -i "$workdir/README.md"
 
+
+
     # Commit changes - line by line: change to workdir, add all files to git index, show working tree status, commit changes with "chore:..." title, push to upstream 
     # curl: make pull request through Github API with token to authenticate and the PR titles, body. With pushBranch (the "script" branch) as head and the specified branch (main) as base
     (cd "$workdir"; \
       git add -A; \
       git status; \
       ( \
-        git commit -a -m "chore: update repository templates" && \
-        git push --set-upstream origin "$pushBranch" && \
-        curl \
-          -X POST \
-          -H "Authorization: token $GITHUB_TOKEN" \
-          -H "Accept: application/vnd.github.v3+json" \
-          https://api.github.com/repos/$project/pulls \
-          -d '{"title":"chore: update repository template to '$hash'","body":"Updated repository templates to https://github.com/ory/meta/commit/'$GITHUB_SHA'.","head":"'$pushBranch'","base":"'$branch'"}' \
-      ) || true)
+        git commit -a -m "chore: update repository templates" -m "[skip ci] - updated repository templates to https://github.com/ory/meta/commit/$GITHUB_SHA" && \
+        git push origin HEAD:master) || true) # && \
+        # curl \
+        #   -X POST \
+        #   -H "Authorization: token $GITHUB_TOKEN" \
+        #   -H "Accept: application/vnd.github.v3+json" \
+        #   https://api.github.com/repos/$project/pulls \
+        #   -d '{"title":"chore: update repository template to '$hash'","body":"Updated repository templates to https://github.com/ory/meta/commit/'$GITHUB_SHA'.","head":"'$pushBranch'","base":"'$branch'"}' \
+      # ) || true)
 }

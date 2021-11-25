@@ -1,8 +1,7 @@
-exclude: 
+exclude:
   - ^saved_replies\/.*
 
 ignoreLinkTargets:
   - ^\$.*
   - ^docs\/.*
   - ^docs$
-  
