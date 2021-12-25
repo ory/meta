@@ -25,7 +25,7 @@ Usage: $this [-b] bindir [-d] <project> [<tag>]
    [<tag>] (optional)
      The release you wish to download. If left empty the latest version will be installed.
 
-        $ bash <(curl -s https://raw.githubusercontent.com/ory/meta/master/install.sh) -v v0.8.0-alpha.2 kratos
+        $ bash <(curl -s https://raw.githubusercontent.com/ory/meta/master/install.sh) kratos v0.8.0-alpha.2
 
 EOF
   exit 2
