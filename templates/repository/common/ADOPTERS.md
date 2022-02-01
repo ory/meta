@@ -144,7 +144,7 @@ that your company deserves a spot here, reach out to
             <td>Sponsor</td>
             <td>Strivacity</td>
             <td align="center"><img height="16px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/strivacity.svg" alt="Strivacity"></td>
-            <td><a href="https://strivacity.com/">strivacity</a></td>
+            <td><a href="https://strivacity.com/">strivacity.com</a></td>
         </tr>
         <tr>
             <td>Adopter *</td>
