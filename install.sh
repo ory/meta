@@ -80,6 +80,7 @@ parse_args() {
       REPO="oathkeeper"
       BINARY=oathkeeper
       PROJECT_NAME=oathkeeper
+      FLAVOR=""
       ;;
 
     *)
