@@ -54,8 +54,8 @@ jobs:
         run: |
           ./scripts/sync-library.sh ory/hydra-login-consent-node master "Hydra Login, Logout And Consent Node Example"
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}      
-          
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
       - name: Synchronize Ory Documentation
         run: |
           ./scripts/sync-library.sh ory/docs master "Documentation"
