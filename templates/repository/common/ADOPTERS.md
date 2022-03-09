@@ -158,6 +158,12 @@ that your company deserves a spot here, reach out to
             <td align="center"><img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/rabbit.svg" alt="rabbit"></td>
             <td><a href="https://rabbit.co.th/">rabbit.co.th</a></td>
         </tr>
+        <tr>
+            <td>Adopter *</td>
+            <td>inMusic</td>
+            <td align="center"><img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/inmusic.svg" alt="inmusic"></td>
+            <td><a href="https://inmusicbrands.com/">inmusicbrands.com</a></td>
+        </tr>
     </tbody>
 </table>
 
