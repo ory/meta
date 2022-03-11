@@ -56,6 +56,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
+      - name: Synchronize Ory Documentation
+        run: |
+          ./scripts/sync-library.sh ory/docs master "Documentation"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+
       - name: Synchronize Ory CLI
         run: |
           ./scripts/sync-library.sh ory/cli master CLI
