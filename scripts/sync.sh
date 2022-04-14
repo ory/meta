@@ -50,7 +50,7 @@ function sync {
         if [[ "$project" = "ory/hydra" || $project = "ory/kratos" || $project = "ory/oathkeeper" || $project = "ory/keto" ]]; then
           env -i DISCUSSIONS="$discussions" REPOSITORY="$project" PROJECT="$humanName" /bin/bash -c "envsubst < \"$f\" | sponge \"$f\""
         else
-          env -i DISCUSSIONS="https://github.com/ory/meta/discussions" REPOSITORY="$project" PROJECT="$humanName" /bin/bash -c "envsubst < \"$f\" | sponge \"$f\""
+          env -i DISCUSSIONS="https://github.com/orgs/ory/discussions" REPOSITORY="$project" PROJECT="$humanName" /bin/bash -c "envsubst < \"$f\" | sponge \"$f\""
         fi
     done
 
