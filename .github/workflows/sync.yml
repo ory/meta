@@ -155,8 +155,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
-      - name: Synchronize Ory Works
-        run: ./scripts/sync-library.sh ory/works master Works
+      - name: Synchronize Ory Examples
+        run: ./scripts/sync-library.sh ory/examples master Examples
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
