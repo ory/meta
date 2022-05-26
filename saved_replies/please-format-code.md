@@ -1,5 +1,4 @@
-Thank you, this looks great! The CI is failing because some files are formatted
-incorrectly. To format them, run:
+Thank you, this looks great! The CI is failing because some files are formatted incorrectly. To format them, run:
 
 ```
 $ make format

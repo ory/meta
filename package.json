@@ -15,8 +15,8 @@
     "url": "git+https://github.com/ory/meta.git"
   },
   "devDependencies": {
-    "ory-prettier-styles": "^1.1.1",
-    "prettier": "2.2.1",
-    "text-runner": "^5.0.0"
+    "ory-prettier-styles": "1.2.0",
+    "prettier": "2.6.2",
+    "text-runner": "5.0.1"
   }
 }

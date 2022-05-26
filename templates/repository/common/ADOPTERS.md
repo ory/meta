@@ -1,20 +1,16 @@
 <!--BEGIN ADOPTERS-->
 
-The Ory community stands on the shoulders of individuals, companies, and
-maintainers. We thank everyone involved - from submitting bug reports and
-feature requests, to contributing patches, to sponsoring our work. Our community
-is 1000+ strong and growing rapidly. The Ory stack protects 16.000.000.000+ API
-requests every month with over 250.000+ active service nodes. We would have
+The Ory community stands on the shoulders of individuals, companies, and maintainers. We thank everyone involved - from submitting
+bug reports and feature requests, to contributing patches, to sponsoring our work. Our community is 1000+ strong and growing
+rapidly. The Ory stack protects 16.000.000.000+ API requests every month with over 250.000+ active service nodes. We would have
 never been able to achieve this without each and everyone of you!
 
-The following list represents companies that have accompanied us along the way
-and that have made outstanding contributions to our ecosystem. _If you think
-that your company deserves a spot here, reach out to
+The following list represents companies that have accompanied us along the way and that have made outstanding contributions to our
+ecosystem. _If you think that your company deserves a spot here, reach out to
 <a href="mailto:office-muc@ory.sh">office-muc@ory.sh</a> now_!
 
-**Please consider giving back by becoming a sponsor of our open source work on
-<a href="https://www.patreon.com/_ory">Patreon</a> or
-<a href="https://opencollective.com/ory">Open Collective</a>.**
+**Please consider giving back by becoming a sponsor of our open source work on <a href="https://www.patreon.com/_ory">Patreon</a>
+or <a href="https://opencollective.com/ory">Open Collective</a>.**
 
 <table>
     <thead>
@@ -181,10 +177,8 @@ as well as all of our backers
 
 <a href="https://opencollective.com/ory#backers" target="_blank"><img src="https://opencollective.com/ory/backers.svg?width=890"></a>
 
-and past & current supporters (in alphabetical order) on
-[Patreon](https://www.patreon.com/_ory): Alexander Alimovs, Billy, Chancy
-Kennedy, Drozzy, Edwin Trejos, Howard Edidin, Ken Adler Oz Haven, Stefan Hans,
-TheCrealm.
+and past & current supporters (in alphabetical order) on [Patreon](https://www.patreon.com/_ory): Alexander Alimovs, Billy, Chancy
+Kennedy, Drozzy, Edwin Trejos, Howard Edidin, Ken Adler Oz Haven, Stefan Hans, TheCrealm.
 
 <em>\* Uses one of Ory's major projects in production.</em>
 
