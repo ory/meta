@@ -1,7 +1,7 @@
 blank_issues_enabled: false
 contact_links:
   - name: Ory $PROJECT Forum
-    url: https://github.com/$REPOSITORY/discussions
+    url: $DISCUSSIONS
     about:
       Please ask and answer questions here, show your implementations and
       discuss ideas.
