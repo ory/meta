@@ -55,7 +55,7 @@ function sync {
     done
 
     # format everything that was rendered, only if package.json exists
-    (cd "$workdir"; if test -f package.json; then (npm ci; npm run format); else true; fi)
+    (cd "$workdir"; if test -f package.json; then (npm i; npm run format); else true; fi)
 
     # Copy contributing guide to docs if docs exist
     if [ -d "$workdir/docs/docs" ]; then
