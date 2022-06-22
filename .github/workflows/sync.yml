@@ -6,10 +6,10 @@ on:
   # action is triggered on push to the following paths
   push:
     paths:
-      - 'templates/**'
-      - 'scripts/sync*'
-      - 'package.json'
-      - '.github/workflows/sync.yml'
+      - "templates/**"
+      - "scripts/sync*"
+      - "package.json"
+      - ".github/workflows/sync.yml"
     branches:
       - master
 
@@ -18,6 +18,9 @@ jobs:
     name: Synchronize Repositories
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
       - name: Checkout
         uses: actions/checkout@v2
       # installs moreutils on the Action worker node to use the sponge function
