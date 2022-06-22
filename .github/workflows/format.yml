@@ -1,17 +1,27 @@
-name: Check format
+name: format
 
 on:
   pull_request:
     branches:
       - master
-  push:
-    branches:
-      - master
 
 jobs:
-  check-format:
+  format:
     runs-on: ubuntu-latest
-    name: Check format
     steps:
-      - uses: actions/checkout@v2
-      - uses: ory/prettier-styles@v1.0.1
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Cache node modules
+        id: cache-nodemodules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key:
+            ${{ runner.os }}-nodemodules-${{ hashFiles('package-lock.json') }}
+      - name: Install Dependencies
+        if: steps.cache-nodemodules.outputs.cache-hit != 'true'
+        run: npm ci
+      - run: npm run format
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "autogen(docs): formatting changes"
