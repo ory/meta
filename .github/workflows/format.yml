@@ -24,4 +24,4 @@ jobs:
       - run: npm run format
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: 'autogen(docs): formatting changes'
+          commit_message: "autogen(docs): formatting changes"
