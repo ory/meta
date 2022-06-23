@@ -4,8 +4,7 @@ Thank you, this looks great! It looks like the CLA bot is not properly detecting
 $ git commit  --amend --author="Author Name <email@address.com>"
 ```
 
-Ensure that `Author Name` is replaced with your GitHub username (e.g. `aeneasr`) and that the email address is replaced with the
-email address you have set up in GitHub (e.g. `3372410+aeneasr@users.noreply.github.com`):
+Ensure that `Author Name` is replaced with your GitHub username (e.g. `aeneasr`) and that the email address is replaced with the email address you have set up in GitHub (e.g. `3372410+aeneasr@users.noreply.github.com`):
 
 ```
 $ git commit  --amend --author="aeneasr <3372410+aeneasr@users.noreply.github.com>"
