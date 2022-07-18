@@ -30,14 +30,17 @@ jobs:
             chore
 
           scopes: |
+            backoffice
             blog
             cms
+            console
             deps
             docs
             home
             hydra
             keto
             kratos
+            sdk
             stats
 
           requireScope: false
