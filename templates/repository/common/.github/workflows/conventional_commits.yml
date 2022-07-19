@@ -8,6 +8,7 @@ on:
       - ready_for_review
       - reopened
       - synchronize
+  # pull_request: # for debugging, uses config in local branch but supports only Pull Requests from this repo
 
 jobs:
   main:
