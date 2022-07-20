@@ -19,10 +19,10 @@ name: Conventional commits
 #
 # All keys are optional, remove the ones you don't need.
 #
-# types:        overrides the default types
-# addTypes:     adds the given types to the set of default types
-# scopes:       overrides the default scopes
-# addScopes:    adds the given scopes to the set of default scopes
+# types: overrides the default types
+# addTypes: adds the given types to the set of default types
+# scopes: overrides the default scopes
+# addScopes: adds the given scopes to the set of default scopes
 # requireScope: enforces a scope in pull requests titles (default: false)
 
 on:
