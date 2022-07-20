@@ -6,7 +6,7 @@ name: Conventional commits
 # The action defines Ory-specific defaults for commit titles and scopes
 # in variables in SCREAMING_SNAKE_CASE in the github-script actions below.
 #
-# Configuration: create a file ".github/conventional_commits.json".
+# Configuration: in your repo, create a file ".github/conventional_commits.json".
 # Example content:
 #
 # {
@@ -17,7 +17,7 @@ name: Conventional commits
 #   "requireScope": true
 # }
 #
-# Remove keys that you don't need.
+# All keys are optional, remove the ones you don't need.
 #
 # types:        overrides the default types
 # addTypes:     adds the given types to the set of default types
