@@ -3,27 +3,11 @@ name: Conventional commits
 # This GitHub CI Action enforces that pull request titles follow conventional commits.
 # More info at https://www.conventionalcommits.org.
 #
-# The action defines Ory-specific defaults for commit titles and scopes
-# in variables in SCREAMING_SNAKE_CASE in the github-script actions below.
-#
-# Configuration: in your repo, create a file ".github/conventional_commits.json".
-# Example content:
-#
-# {
-#   "types": ["type1", "type2"],
-#   "addTypes": ["type3", "type4"],
-#   "scopes": ["scope1", "scope2"],
-#   "addScopes": ["scope3", "scope4"],
-#   "requireScope": true
-# }
-#
-# All keys are optional, remove the ones you don't need.
-#
-# types: overrides the default types
-# addTypes: adds the given types to the set of default types
-# scopes: overrides the default scopes
-# addScopes: adds the given scopes to the set of default scopes
-# requireScope: enforces a scope in pull requests titles (default: false)
+# The action defines Ory-specific defaults for commit titles and scopes.
+# You see them below. They apply to all Ory repos.
+# Your repository can add or replace elements via a configuration file.
+# Path for that below as well.
+# More info at https://github.com/ory/ci/blob/master/conventional_commit_config/README.md
 
 on:
   pull_request_target:
@@ -37,93 +21,38 @@ on:
 
 jobs:
   main:
-    name: Validate PR title
+    name: validate PR title
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - id: load_config
-        uses: actions/github-script@v6
+      - id: config
+        uses: ory/ci/conventional_commit_config@master
         with:
-          script: |
-            const CONFIG_PATH = ".github/conventional_commits.json"
-            console.log(`looking for config file ${CONFIG_PATH}`)
-            try {
-              var configText = require("fs").readFileSync(CONFIG_PATH, "utf8")
-            } catch (e) {
-              console.log("no config file")
-              return {}
-            }
-            try {
-              var config = JSON.parse(configText)
-            } catch (e) {
-              console.log(`ERROR: invalid JSON in ${CONFIG_PATH}:`, e)
-              return {}
-            }
-            console.log(`config found: ${require("util").inspect(config)}`)
-            return config
-
-      - id: load_types
-        uses: actions/github-script@v6
-        with:
-          result-encoding: string
-          script: |
-            const DEFAULT_TYPES = `
-              feat
-              fix
-              revert
-              docs
-              style
-              refactor
-              test
-              build
-              autogen
-              security
-              ci
-              chore
-            `
-            const config = ${{ steps.load_config.outputs.result }}
-            const types = config.types ? config.types.join("\n") : DEFAULT_TYPES
-            const result = config.addTypes ? types + "\n" + config.addTypes.join("\n") : types
-            console.log(`allowed types:\n${result}`)
-            return result
-
-      - id: load_scopes
-        uses: actions/github-script@v6
-        with:
-          result-encoding: string
-          script: |
-            const DEFAULT_SCOPES = `
-              blog
-              cms
-              deps
-              docs
-              home
-              stats
-            `
-            const config = ${{ steps.load_config.outputs.result }}
-            let scopes = config.scopes ? config.scopes.join("\n") : DEFAULT_SCOPES
-            const result = config.addScopes ? scopes + "\n" + config.addScopes.join("\n") : scopes
-            console.log(`allowed scopes:\n${result}`)
-            return result
-
-      - id: load_require_scope
-        uses: actions/github-script@v6
-        with:
-          result-encoding: string
-          script: |
-            const DEFAULT_REQUIRE_SCOPE = false
-            const config = ${{ steps.load_config.outputs.result }}
-            const result = config.requireScope || DEFAULT_REQUIRE_SCOPE
-            console.log(`require scope: ${result}`)
-            return result
-
+          config_path: .github/conventional_commits.json
+          default_types: |
+            feat
+            fix
+            revert
+            docs
+            style
+            refactor
+            test
+            build
+            autogen
+            security
+            ci
+            chore
+          default_scopes: |
+            defaultScope1
+            defaultScope2
+          default_require_scope: false
       - uses: amannn/action-semantic-pull-request@v4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          types: ${{ steps.load_types.outputs.result }}
-          scopes: ${{ steps.load_scopes.outputs.result }}
-          requireScope: ${{ steps.load_require_scope.outputs.result }}
+          types: ${{ steps.config.outputs.types }}
+          scopes: ${{ steps.config.outputs.scopes }}
+          requireScope: ${{ steps.config.outputs.requireScope }}
           subjectPattern: ^(?![A-Z]).+$
           subjectPatternError: |
             The subject should start with a lowercase letter, yours is uppercase:
