@@ -40,8 +40,8 @@ jobs:
             ci
             chore
           default_scopes: |
-            defaultScope1
-            defaultScope2
+            deps
+            docs
           default_require_scope: false
       - uses: amannn/action-semantic-pull-request@v4
         env:
