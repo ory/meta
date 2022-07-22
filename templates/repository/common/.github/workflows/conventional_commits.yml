@@ -3,10 +3,8 @@ name: Conventional commits
 # This GitHub CI Action enforces that pull request titles follow conventional commits.
 # More info at https://www.conventionalcommits.org.
 #
-# The action defines Ory-specific defaults for commit titles and scopes.
-# You see them below. They apply to all Ory repos.
-# Your repository can add or replace elements via a configuration file.
-# Path for that below as well.
+# The Ory-wide defaults for commit titles and scopes are below.
+# Your repository can add/replace elements via a configuration file at the path below.
 # More info at https://github.com/ory/ci/blob/master/conventional_commit_config/README.md
 
 on:
