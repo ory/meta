@@ -186,11 +186,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
-      - name: Synchronize Ory Corp
-        run: ./scripts/sync-server.sh ory-corp/cloud master "Ory SaaS"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
-
       - name: Synchronize keto-client-dotnet
         run:
           ./scripts/sync-library.sh ory/keto-client-dotnet master "Ory Keto
