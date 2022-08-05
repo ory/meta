@@ -8,9 +8,9 @@ help:  # shows all available Make commands
 
 test: .bin/shellcheck .bin/shfmt node_modules  # runs all linters
 	echo running tests ...
-	 .bin/shellcheck create_changelog.sh
+	find . -name '*.sh' | xargs .bin/shellcheck
 	echo Verifying formatting ...
-	.bin/shfmt --list create_changelog.sh
+	.bin/shfmt --list .
 	node_modules/.bin/prettier --check .
 
 .bin/shellcheck: Makefile

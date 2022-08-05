@@ -11,7 +11,7 @@ prompt() {
 }
 
 git checkout master
-git tag -d $(git tag -l)
+git tag -d "$(git tag -l)"
 git fetch origin --tags
 git pull -ff
 git diff --exit-code
@@ -39,7 +39,7 @@ if ! echo "$project" | grep -Eq "^hydra|keto|oathkeeper|kratos$"; then
 fi
 
 git checkout master
-git tag -d $(git tag -l)
+git tag -d "$(git tag -l)"
 git fetch origin --tags
 git pull -ff
 git diff --exit-code
