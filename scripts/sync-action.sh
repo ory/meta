@@ -4,7 +4,7 @@
 set -Eexuo pipefail
 
 # Change directory to the path of the invoking script.
-cd "$( dirname "${BASH_SOURCE[0]}" )/.."
+cd "$(dirname "${BASH_SOURCE[0]}")/.."
 
 # Reads and executes commands from sync.sh in the current shell environment.
 source scripts/sync.sh
