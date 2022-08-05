@@ -17,4 +17,4 @@ humanName=$3
 
 # Clones the in project specified repository (for example ory/hydra) with history truncated to latest commit on the in sync.yml specified branch.
 git clone --depth 1 --branch "$branch" "git@github.com:$1.git" "$workdir"
-sync "$workdir" "$branch" "library" "$humanName" "$project"
+sync "$workdir" "library" "$humanName" "$project" "$branch"

@@ -1,20 +1,34 @@
 #!/bin/bash
 
-# Causes the script to abort on error.
-set -Eexuo pipefail
+set -Eexuo pipefail # abort the script on error
 
-# Change directory to the path of the invoking script.
-cd "$(dirname "${BASH_SOURCE[0]}")/.."
-
-# Reads and executes commands from sync.sh in the current shell environment.
-source scripts/sync.sh
-
-# Set workdir to a temporary directory, set project, branch, humanName to the shell arguments 1-3.
-workdir=$(mktemp -d)
+# check arguments
 project=$1
+if [ -z "$project" ]; then
+  echo "ERROR: argument 'project' for sync-server.sh is missing"
+  exit 1
+fi
 branch=$2
+if [ -z "$branch" ]; then
+  echo "ERROR: argument 'branch' for sync-server.sh is missing"
+  exit 1
+fi
 humanName=$3
+if [ -z "$humanName" ]; then
+  echo "ERROR: argument 'humanName' for sync-server.sh is missing"
+  exit 1
+fi
 
-# Clones the in project specified repository (for example ory/hydra) with history truncated to latest commit on the in sync.yml specified branch.
-git clone --depth 1 --branch "$branch" "git@github.com:$1.git" "$workdir"
-sync "$workdir" "$branch" "server" "$humanName" "$project"
+# load the sync toolkit
+scriptDir="$(dirname "${BASH_SOURCE[0]}")"
+source "$scriptDir/sync.sh"
+
+# configure the local Git client on CI
+configureGitOnCI
+
+# create a folder to contain the target repo
+workdir=$(mktemp -d)
+
+clone "$workdir" "$project" "$branch"
+syncRepo "$workdir" "server" "$humanName" "$project"
+pushChanges "$GITHUB_SHA"
