@@ -171,8 +171,8 @@ jobs:
 
       - name: Synchronize Ory Oathkeeper Maester
         run:
-          ./scripts/sync-library.sh ory/hydra-maester master "Ory Oathkeeper
-          Maester"
+          ./scripts/sync-library.sh ory/oathkeeper-maester master "Ory
+          Oathkeeper Maester"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
 
