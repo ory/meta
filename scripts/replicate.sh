@@ -14,7 +14,7 @@ function replicate_all {
     echo "ERROR (sync_all): please provide the path to a workspace directory"
     exit 1
   fi
-  if [ ! -d "$push" ]; then
+  if [ ! -d "$workspace" ]; then
     echo "ERROR (sync_all): provided workspace ($workspace) is not a directory"
     exit 1
   fi
@@ -23,7 +23,6 @@ function replicate_all {
     echo "ERROR (sync_all): unknown value for \"push\" argument: \"$push\". Please provide either \"push\" or \"none\"."
     exit 1
   fi
-  cd "$workspace"
   replicate ory/hydra server "Hydra" "$workspace" "$push"
   replicate ory/keto server "Keto" "$workspace" "$push"
   replicate ory/oathkeeper server "Oathkeeper" "$workspace" "$push"
@@ -134,7 +133,7 @@ function replicate {
   add_adopters_to_readme "$repo_id"
   add_ecosystem_to_readme "$repo_id"
   if test -f package.json; then
-    format_everything "$repo_path"
+    format "$repo_path"
 	fi
 
   # optionally commit
@@ -225,22 +224,14 @@ function create_workspace {
   mktemp -d
 }
 
-function format_everything {
+function format {
   local -r repo_path=$1
   (
     cd "$repo_path"
-    npm ci --legacy-peer-deps
-    npm run format
-  )
-}
-
-# formats only the /docs folder
-function format_docs {
-	local -r workdir=$1
-  (
-    cd "$workdir/docs"
-    bash <(curl -s https://raw.githubusercontent.com/ory/ci/master/src/scripts/install/prettier.sh)
-    npm run format
+    if [ -f 'package-lock.json' ]; then
+      npm i --legacy-peer-deps
+      npm run format
+    fi
   )
 }
 
