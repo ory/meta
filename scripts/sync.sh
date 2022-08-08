@@ -4,16 +4,21 @@ set -Eexuo pipefail  # abort the script on error
 
 # syncs all repositories
 # $push == "push" --> commit and push to Github
-# $push == "keep" --> don't commit or push
+# $push == "none" --> don't commit or push
 function sync_all {
-  workspace=$1
+  # verify arguments
+  local workspace=$1
   if [ -z "$workspace" ]; then
-    echo "Please provide a workspace directory to sync_all"
+    echo "ERROR (sync_all): please provide the path to a workspace directory"
     exit 1
   fi
-  push=$2
-  if [ "$push" != "push" ] && [ "$push" != "keep" ]; then
-    echo "Unknown value for 'push' argument: '$push'. Please provide either 'push' or 'keep'."
+  if [ ! -d "$push" ]; then
+    echo "ERROR (sync_all): provided workspace ($workspace) is not a directory"
+    exit 1
+  fi
+  local push=$2
+  if [ "$push" != "push" ] && [ "$push" != "none" ]; then
+    echo "ERROR (sync_all): unknown value for \"push\" argument: \"$push\". Please provide either \"push\" or \"none\"."
     exit 1
   fi
   cd "$workspace"
@@ -83,53 +88,53 @@ function sync_all {
 }
 
 function sync {
-  # load and verify arguments
-	repo_id=$1
+  # verify arguments
+	local -r repo_id=$1
   if [ -z "$repo_id" ]; then
-    echo "ERROR: argument \"repo_id\" for sync() is missing. Please provide the XXX part of the URL: https://github.com/XXX"
+    echo "ERROR (sync): argument \"repo_id\" is missing. Please provide the XXX part of the URL: https://github.com/XXX"
     exit 1
   fi
-	repo_type=$2
+	local -r repo_type=$2
   if [ "$repo_type" != "action" ] && [ "$repo_type" != "library" ] && [ "$repo_type" != "server" ]; then
-    echo "ERROR: invalid argument \"repo_type\" for sync(): \"$repo_type\". Please provide either \"action\", \"library\", or \"server\""
+    echo "ERROR (sync): invalid argument \"repo_type\": \"$repo_type\". Please provide either \"action\", \"library\", or \"server\""
     exit 1
   fi
-	human_name=$3
+	local -r human_name=$3
   if [ -z "$human_name" ]; then
-    echo 'ERROR: argument "human_name" for sync() is missing'
+    echo 'ERROR (sync): argument "human_name" is missing'
     exit 1
   fi
-	workspace=$4
+	local -r workspace=$4
   if [ -z "$workspace" ]; then
-    echo 'ERROR: argument "workspace" for sync() is missing'
+    echo 'ERROR (sync): argument "workspace" is missing'
     exit 1
   fi
-	push=$5
-  if [ "$push" != "push" ] && [ "$push" != "keep" ]; then
-    echo "Unknown value for \"push\" argument: \"$push\". Please provide either \"push\" or \"keep\"."
+	local -r push=$5
+  if [ "$push" != "push" ] && [ "$push" != "none" ]; then
+    echo "ERROR (sync): Unknown value for \"push\" argument: \"$push\". Please provide either \"push\" or \"none\"."
     exit 1
   fi
 
   # clone if the codebase doesn't exist in the workspace yet
-  repo_name=$(basename "$repo_id")
-  repo_path="$workspace/$repo_name"
+  local -r repo_name=$(basename "$repo_id")
+  local -r repo_path="$workspace/$repo_name"
   if [ ! -d "$repo_path" ]; then
     clone "$repo_id" "$repo_path"
   fi
 
+  # sync changes from meta into this repo
 	copy_templates "$repo_path" "$repo_type"
   substitutePlaceholders "$project" "https://github.com/$project/discussions" "$human_name"
-
-	# format everything that was rendered, only if package.json exists
-  if test -f package.json; then
-			format_everything
-	fi
 	if [ -d "$repo_id/docs/docs" ]; then
     copy_contributing_guide_to_docs "$repo_id"
-    format_docs "$repo_id"
   fi
   add_adopters_to_readme "$repo_id"
   add_ecosystem_to_readme "$repo_id"
+  if test -f package.json; then
+    format_everything
+	fi
+
+  # optionally commit
   if [ "$push" == "push" ]; then
     commit_changes
     push_changes
@@ -141,20 +146,20 @@ function sync {
 ### HELPER FUNCTIONS
 
 function add_adopters_to_readme {
-	workdir=$1
+	local -r workdir=$1
 	perl -0pe 's#<!--\s*BEGIN ADOPTERS\s*-->.*<!--\s*END ADOPTERS\s*-->\n#`cat templates/repository/common/ADOPTERS.md`#gse' -i "$workdir/README.md"
 }
 
 # adds an overview of all projects to README.md
 function add_ecosystem_to_readme {
-	workdir=$1
+	local -r workdir=$1
 	perl -0pe 's#<!--\s*BEGIN ECOSYSTEM\s*-->.*<!--\s*END ECOSYSTEM\s*-->\n#`cat templates/repository/common/PROJECTS.md`#gse' -i "$workdir/README.md"
 }
 
 # clones the given project onto the local machine
 function clone {
-  repo_id=$1
-  repo_path=$2
+  local -r repo_id=$1
+  local -r repo_path=$2
   git clone --depth 1 "git@github.com:$repo_id.git" "$repo_path"
 }
 
@@ -174,8 +179,8 @@ function configure_git_on_ci {
 
 # copy contributing guide to docs if docs exist
 function copy_contributing_guide_to_docs {
-	workdir=$1
-  file="$workdir/docs/docs/contributing.md"
+	local -r workdir=$1
+  local -r file="$workdir/docs/docs/contributing.md"
   cat <<EOF >"$file"
 ---
 id: contributing
@@ -189,8 +194,8 @@ EOF
 
 # replicates the template files in templates/repository into the given project
 function copy_templates {
-  repo_path=$1
-  repo_type=$2
+  local -r repo_path=$1
+  local -r repo_type=$2
 	rm -rf "$repo_path/.github/ISSUE_TEMPLATE/"
 	cp "templates/repository/common/CONTRIBUTING.md" "$repo_path/CONTRIBUTING.md"
 	cp "templates/repository/common/SECURITY.md" "$repo_path/SECURITY.md"
@@ -224,7 +229,7 @@ function format_everything {
 
 # formats only the /docs folder
 function format_docs {
-	workdir=$1
+	local -r workdir=$1
   (
     cd "$workdir/docs"
     bash <(curl -s https://raw.githubusercontent.com/ory/ci/master/src/scripts/install/prettier.sh)
@@ -238,9 +243,9 @@ function push_changes {
 }
 
 function substitutePlaceholders {
-	project=$1
-  discussions=$2
-  human_name=$3
+	local -r project=$1
+  local -r discussions=$2
+  local -r human_name=$3
   substitute_placeholders_in_file ".github/ISSUE_TEMPLATE" "$project" "$discussions" "$human_name"
   substitute_placeholders_in_file ".github/pull_request_template.md" "$project" "$discussions" "$human_name"
   substitute_placeholders_in_file "CONTRIBUTING.md" "$project" "$discussions" "$human_name"
@@ -251,10 +256,10 @@ function substitutePlaceholders {
 
 # replaces placeholders like "$PROJECT" in the given file with the given values
 function substitute_placeholders_in_file {
-  file=$1
-	project=$2
-  discussions=$3
-  human_name=$4
+  local -r file=$1
+	local -r project=$2
+  local -r discussions=$3
+  local -r human_name=$4
   if [ ! -f "$file" ]; then
     return
   fi
