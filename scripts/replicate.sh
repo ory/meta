@@ -230,7 +230,15 @@ function format {
     cd "$repo_path"
     if [ -f 'package.json' ] && [ -f 'package-lock.json' ]; then
       prettier_version=$(node -pe 'require("./package.json").devDependencies.prettier')
+      if [ -z "$prettier_version" ]; then
+        echo "ERROR (format): Cannot determine Prettier version in $repo_path"
+        exit 1
+      fi
       prettier_styles_version=$(node -pe 'require("./package.json").devDependencies["ory-prettier-styles"]')
+      if [ -z "$prettier_styles_version" ]; then
+        echo "ERROR (format): Cannot determine ory-prettier-styles version in $repo_path"
+        exit 1
+      fi
       npm i --no-save "prettier@$prettier_version" "ory-prettier-styles@$prettier_styles_version"
       prettier --write "*.md" .github
     fi
