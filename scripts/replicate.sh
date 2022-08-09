@@ -36,7 +36,7 @@ function replicate_all {
   replicate ory/dockertest library "Dockertest" "$workspace" "$push"
   replicate ory/herodot library "Herodot" "$workspace" "$push"
   replicate ory/graceful library "Graceful" "$workspace" "$push"
-  replicate ory/themes library "Themes" "$workspace" "$push"
+  # replicate ory/themes library "Themes" "$workspace" "$push"
   replicate ory/k8s library "Kubernetes Resources" "$workspace" "$push"
   replicate ory/x library  "X" "$workspace" "$push"
   replicate ory/web library "Web" "$workspace" "$push"
@@ -145,7 +145,7 @@ function replicate {
 
 
 ############################################################
-### HELPER FUNCTIONS
+### INDIVIDUAL ACTIVITIES
 
 function add_adopters_to_readme {
 	local -r workdir=$1
@@ -239,7 +239,7 @@ function format {
         echo "ERROR (format): Cannot determine ory-prettier-styles version in $repo_path"
         exit 1
       fi
-      npm i --no-save "prettier@$prettier_version" "ory-prettier-styles@$prettier_styles_version"
+      npm i --no-save --legacy-peer-deps "prettier@$prettier_version" "ory-prettier-styles@$prettier_styles_version"
       prettier --write "*.md" .github
     fi
   )
