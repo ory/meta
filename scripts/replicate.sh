@@ -234,7 +234,7 @@ function format {
         echo "ERROR (format): Cannot determine Prettier version in $repo_path"
         exit 1
       fi
-      prettier_styles_version=$(node -pe 'require("./package.json").devDependencies?.["ory-prettier-styles"].replace("~", "") ?? require("./package.json").dependencies?.["ory-prettier-styles"].replace("~", "")')
+      prettier_styles_version=$(node -pe 'require("./package.json").devDependencies?.["ory-prettier-styles"]?.replace("~", "") ?? require("./package.json").dependencies?.["ory-prettier-styles"]?.replace("~", "")')
       if [ -z "$prettier_styles_version" ]; then
         echo "ERROR (format): Cannot determine ory-prettier-styles version in $repo_path"
         exit 1
