@@ -228,7 +228,7 @@ function format {
   local -r repo_path=$1
   (
     cd "$repo_path"
-    if [ -f 'package-lock.json' ]; then
+    if [ -f 'package.json' ] && [ -f 'package-lock.json' ]; then
       npm i --legacy-peer-deps
       prettier --write *.md .github
     fi
