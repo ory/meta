@@ -230,7 +230,7 @@ function format {
     cd "$repo_path"
     if [ -f 'package-lock.json' ]; then
       npm i --legacy-peer-deps
-      npm run format
+      prettier --write *.md .github
     fi
   )
 }
