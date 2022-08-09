@@ -230,7 +230,7 @@ function format {
     cd "$repo_path"
     if [ -f 'package.json' ] && [ -f 'package-lock.json' ]; then
       prettier_version=$(node -pe 'require("./package.json").devDependencies.prettier')
-      prettier_styles_version=$(node -pe 'require("./package.json").devDependencies.ory-prettier-styles')
+      prettier_styles_version=$(node -pe 'require("./package.json").devDependencies["ory-prettier-styles"]')
       npm i --no-save "prettier@$prettier_version" "ory-prettier-styles@$prettier_styles_version"
       prettier --write "*.md" .github
     fi
