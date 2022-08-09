@@ -229,17 +229,7 @@ function format {
   (
     cd "$repo_path"
     if [ -f 'package.json' ] && [ -f 'package-lock.json' ]; then
-      prettier_version=$(node -pe 'require("./package.json").devDependencies?.prettier?.replace("~", "") ?? require("./package.json").dependencies?.prettier?.replace("~", "")')
-      if [ "$prettier_version" = "undefined" ]; then
-        echo "ERROR (format): Cannot determine Prettier version in $repo_path"
-        exit 1
-      fi
-      prettier_styles_version=$(node -pe 'require("./package.json").devDependencies?.["ory-prettier-styles"]?.replace("~", "") ?? require("./package.json").dependencies?.["ory-prettier-styles"]?.replace("~", "")')
-      if [ "$prettier_styles_version" = "undefined" ]; then
-        echo "ERROR (format): Cannot determine ory-prettier-styles version in $repo_path"
-        exit 1
-      fi
-      npm i --no-save --legacy-peer-deps "prettier@$prettier_version" "ory-prettier-styles@$prettier_styles_version"
+      npm i --legacy-peer-deps
       prettier --write "*.md" .github
     fi
   )
