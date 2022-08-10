@@ -1,6 +1,6 @@
 format: .bin/shfmt node_modules  # formats the source code
 	echo formatting ...
-	.bin/shfmt --write create_changelog.sh
+	.bin/shfmt --write .
 	node_modules/.bin/prettier --write .
 
 help:  # shows all available Make commands
