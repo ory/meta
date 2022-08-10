@@ -31,3 +31,5 @@ jobs:
           configure_git_on_ci
           workspace=$(create_workspace)
           replicate_all "$workspace" "keep"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
