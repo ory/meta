@@ -26,7 +26,7 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - run: |
-          source ./scripts/replicate.sh
+          source ./scripts/sync.sh
           install_dependencies_on_ci
           configure_git_on_ci
           workspace=$(create_workspace)
