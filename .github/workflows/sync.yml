@@ -27,8 +27,7 @@ jobs:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - run: |
           sudo apt-get update -y
-          sudo apt-get install -y moreutils
-          sudo apt-get install -y gettext-base
+          sudo apt-get install -y moreutils gettext-base
           source ./scripts/replicate.sh
           configure_git_on_ci
           workspace=$(create_workspace)
