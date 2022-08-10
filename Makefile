@@ -11,7 +11,7 @@ test: .bin/shellcheck .bin/shfmt node_modules  # runs all linters
 	find . -name '*.sh' | xargs .bin/shellcheck
 	echo Verifying formatting ...
 	.bin/shfmt --list .
-	node_modules/.bin/prettier --check .
+	npm run format:check
 
 .bin/shellcheck: Makefile
 	echo installing Shellcheck ...
