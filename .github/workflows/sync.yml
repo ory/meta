@@ -26,9 +26,8 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - run: |
-          sudo apt-get update -y
-          sudo apt-get install -y moreutils gettext-base
           source ./scripts/replicate.sh
+          install_dependencies_on_ci
           configure_git_on_ci
           workspace=$(create_workspace)
           replicate_all "$workspace" "keep"

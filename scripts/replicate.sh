@@ -236,6 +236,11 @@ function format {
   )
 }
 
+function install_dependencies_on_ci {
+  sudo apt-get update -y
+  sudo apt-get install -y moreutils gettext-base
+}
+
 # pushes the committed changes from the local Git client to GitHub
 function push_changes {
   git push origin HEAD:master
