@@ -36,11 +36,12 @@ function replicate_all {
   replicate ory/dockertest library "Dockertest" "$workspace" "$push"
   replicate ory/herodot library "Herodot" "$workspace" "$push"
   replicate ory/graceful library "Graceful" "$workspace" "$push"
+  # TODO: uncomment once https://github.com/ory/themes/pull/62 ships
   # replicate ory/themes library "Themes" "$workspace" "$push"
   replicate ory/k8s library "Kubernetes Resources" "$workspace" "$push"
   replicate ory/x library  "X" "$workspace" "$push"
   replicate ory/web library "Web" "$workspace" "$push"
-  # replicate ory/closed-reference-notifier action "Closed Reference Notifier" "$workspace" "$push"
+  replicate ory/closed-reference-notifier action "Closed Reference Notifier" "$workspace" "$push"
   replicate ory/label-sync-action action "Label Sync Action" "$workspace" "$push"
   replicate ory/milestone-action action "Milestone Action" "$workspace" "$push"
   replicate ory/prettier-styles action  "Prettier Styles" "$workspace" "$push"
