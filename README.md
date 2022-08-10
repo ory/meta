@@ -37,14 +37,9 @@ For more details please refer to the documentation within the
 the workflow please refer to the documentation within
 [sync.yml](https://github.com/ory/meta/blob/master/.github/workflows/sync.yml)
 
-Local testing:
-
-- open a Bash terminal
-- copy the respective commands from
-  [sync.sh](https://github.com/ory/meta/blob/master/scripts/sync.sh) into the
-  terminal
-
-For example, to run all sync jobs:
+To test the sync script locally, open a Bash terminal and copy the respective
+commands from [sync.sh](https://github.com/ory/meta/blob/master/scripts/sync.sh)
+into the terminal. For example, to run all sync jobs:
 
 ```
 source ./scripts/sync.sh
@@ -52,4 +47,7 @@ workspace=$(create_workspace)
 replicate_all "$workspace" "keep"
 ```
 
-Run `cd $workspace` to see the repos cloned and changes made to them.
+The `keep` parameter prevents changes being committed and pushed, so that you
+can inspect the result of the sync operation locally. To do that,
+`cd $workspace` to get to the folder that contains the cloned and modified
+repos.
