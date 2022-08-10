@@ -10,11 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - id: cache-node
-        uses: actions/cache@v3
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-      - run: npm ci
-        if: steps.cache-node.outputs.cache-hit != 'true'
       - run: make test
