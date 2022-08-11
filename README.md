@@ -48,5 +48,5 @@ replicate_all "$workspace" "keep"
 ```
 
 Please make sure to change `"push"` to `"keep"` to skip committing and pushing
-the changes. `cd $workspace` to go to the folder that contains the cloned and
+the changes. `cd $workspace` goes to the folder that contains the cloned and
 modified repos so that you can see the changes made to them.
