@@ -235,11 +235,10 @@ function format {
 	)
 }
 
-function install_dependencies_on_ci {
-	sudo apt-get update -y
-	sudo apt-get install -y moreutils gettext-base
-	curl https://raw.githubusercontent.com/ory/meta/master/install.sh | bash -s -- -d -b .bin ory v0.1.33
-}
+    # Add Adopters to README.md
+    perl -0pe 's#<!--\s*BEGIN ADOPTERS\s*-->.*<!--\s*END ADOPTERS\s*-->\n#`cat templates/repository/common/ADOPTERS.md`#gse' -i "$workdir/README.md"
+    # Add Ecosystem (overview of all projects) to README.md
+    perl -0pe 's#<!--\s*BEGIN ECOSYSTEM\s*-->.*<!--\s*END ECOSYSTEM\s*-->\n#`cat templates/repository/common/PROJECTS.md`#gse' -i "$workdir/README.md"
 
 # pushes the committed changes from the local Git client to GitHub
 function push_changes {
