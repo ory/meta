@@ -14,75 +14,75 @@ function replicate_all {
 		echo "ERROR (sync_all): provided workspace ($workspace) is not a directory"
 		exit 1
 	fi
-	local -r push=$2
-	if [ "$push" != "push" ] && [ "$push" != "commit" ] && [ "$push" != "keep" ]; then
-		echo "ERROR (sync_all): unknown value for \"push\" argument: \"$push\". Please provide either \"push\", \"commit\", or \"keep\"."
+	local -r persist=$2
+	if [ "$persist" != "push" ] && [ "$persist" != "commit" ] && [ "$persist" != "keep" ]; then
+		echo "ERROR (sync_all): unknown value for \"persist\" argument: \"$persist\". Please provide either \"push\", \"commit\", or \"keep\"."
 		exit 1
 	fi
-	replicate ory/hydra server "Hydra" "$workspace" "$push"
-	replicate ory/keto server "Keto" "$workspace" "$push"
-	replicate ory/oathkeeper server "Oathkeeper" "$workspace" "$push"
-	replicate ory/kratos server "Kratos" "$workspace" "$push"
-	replicate ory/hydra-login-consent-node library "Hydra Login, Logout And Consent Node Example" "$workspace" "$push"
-	replicate ory/docs library "Documentation" "$workspace" "$push"
-	replicate ory/cli library "CLI" "$workspace" "$push"
-	replicate ory/kratos-selfservice-ui-node library "Kratos SelfService UI Node Example" "$workspace" "$push"
-	replicate ory/kratos-selfservice-ui-react-native library "Kratos SelfService UI React Native Example" "$workspace" "$push"
-	replicate ory/fosite library "Fosite" "$workspace" "$push"
-	replicate ory/dockertest library "Dockertest" "$workspace" "$push"
-	replicate ory/herodot library "Herodot" "$workspace" "$push"
-	replicate ory/graceful library "Graceful" "$workspace" "$push"
+	replicate ory/hydra server "Hydra" "$workspace" "$persist"
+	replicate ory/keto server "Keto" "$workspace" "$persist"
+	replicate ory/oathkeeper server "Oathkeeper" "$workspace" "$persist"
+	replicate ory/kratos server "Kratos" "$workspace" "$persist"
+	replicate ory/hydra-login-consent-node library "Hydra Login, Logout And Consent Node Example" "$workspace" "$persist"
+	replicate ory/docs library "Documentation" "$workspace" "$persist"
+	replicate ory/cli library "CLI" "$workspace" "$persist"
+	replicate ory/kratos-selfservice-ui-node library "Kratos SelfService UI Node Example" "$workspace" "$persist"
+	replicate ory/kratos-selfservice-ui-react-native library "Kratos SelfService UI React Native Example" "$workspace" "$persist"
+	replicate ory/fosite library "Fosite" "$workspace" "$persist"
+	replicate ory/dockertest library "Dockertest" "$workspace" "$persist"
+	replicate ory/herodot library "Herodot" "$workspace" "$persist"
+	replicate ory/graceful library "Graceful" "$workspace" "$persist"
 	# TODO: uncomment once https://github.com/ory/themes/pull/62 ships
-	# replicate ory/themes library "Themes" "$workspace" "$push"
-	replicate ory/k8s library "Kubernetes Resources" "$workspace" "$push"
-	replicate ory/x library "X" "$workspace" "$push"
-	replicate ory/web library "Web" "$workspace" "$push"
-	replicate ory/closed-reference-notifier action "Closed Reference Notifier" "$workspace" "$push"
-	replicate ory/label-sync-action action "Label Sync Action" "$workspace" "$push"
-	replicate ory/milestone-action action "Milestone Action" "$workspace" "$push"
-	replicate ory/prettier-styles action "Prettier Styles" "$workspace" "$push"
-	replicate ory/build-buf-action action "Buildbuf Action" "$workspace" "$push"
-	replicate ory/examples library "Examples" "$workspace" "$push"
-	replicate ory/hydra-maester library "Ory Hydra Maester" "$workspace" "$push"
-	replicate ory/oathkeeper-maester library "Ory Oathkeeper Maester" "$workspace" "$push"
-	replicate ory/sdk library "Ory SDK" "$workspace" "$push"
-	replicate ory/platform library "Ory Platform" "$workspace" "$push"
-	replicate ory/keto-client-dotnet library "Ory Keto Dotnet Client" "$workspace" "$push"
-	replicate ory/keto-client-java library "Ory Keto Java Client" "$workspace" "$push"
-	replicate ory/keto-client-rust library "Ory Keto Rust Client" "$workspace" "$push"
-	replicate ory/keto-client-dart library "Ory Keto Dart Client" "$workspace" "$push"
-	replicate ory/keto-client-js library "Ory Keto JavaScript Client" "$workspace" "$push"
-	replicate ory/keto-client-php library "Ory Keto PHP Client" "$workspace" "$push"
-	replicate ory/keto-client-go library "Ory Keto Go Client" "$workspace" "$push"
-	replicate ory/keto-client-ruby library "Ory Keto Ruby Client" "$workspace" "$push"
-	replicate ory/keto-client-python library "Ory Keto Python Client" "$workspace" "$push"
-	replicate ory/kratos-client-dotnet library "Ory Kratos Dotnet Client" "$workspace" "$push"
-	replicate ory/kratos-client-java library "Ory Kratos Java Client" "$workspace" "$push"
-	replicate ory/kratos-client-rust library "Ory Kratos Rust Client" "$workspace" "$push"
-	replicate ory/kratos-client-dart library "Ory Kratos Dart Client" "$workspace" "$push"
-	replicate ory/kratos-client-js library "Ory Kratos JavaScript Client" "$workspace" "$push"
-	replicate ory/kratos-client-php library "Ory Kratos PHP Client" "$workspace" "$push"
-	replicate ory/kratos-client-go library "Ory Kratos Go Client" "$workspace" "$push"
-	replicate ory/kratos-client-ruby library "Ory Kratos Ruby Client" "$workspace" "$push"
-	replicate ory/kratos-client-python library "Ory Kratos Python Client" "$workspace" "$push"
-	replicate ory/hydra-client-dotnet library "Ory Hydra Dotnet Client" "$workspace" "$push"
-	replicate ory/hydra-client-java library "Ory Hydra Java Client" "$workspace" "$push"
-	replicate ory/hydra-client-rust library "Ory Hydra Rust Client" "$workspace" "$push"
-	replicate ory/hydra-client-dart library "Ory Hydra Dart Client" "$workspace" "$push"
-	replicate ory/hydra-client-js library "Ory Hydra JavaScript Client" "$workspace" "$push"
-	replicate ory/hydra-client-php library "Ory Hydra PHP Client" "$workspace" "$push"
-	replicate ory/hydra-client-go library "Ory Hydra Go Client" "$workspace" "$push"
-	replicate ory/hydra-client-ruby library "Ory Hydra Ruby Client" "$workspace" "$push"
-	replicate ory/hydra-client-python library "Ory Hydra Python Client" "$workspace" "$push"
-	replicate ory/oathkeeper-client-dotnet library "Ory Oathkeeper Dotnet Client" "$workspace" "$push"
-	replicate ory/oathkeeper-client-java library "Ory Oathkeeper Java Client" "$workspace" "$push"
-	replicate ory/oathkeeper-client-rust library "Ory Oathkeeper Rust Client" "$workspace" "$push"
-	replicate ory/oathkeeper-client-dart library "Ory Oathkeeper Dart Client" "$workspace" "$push"
-	replicate ory/oathkeeper-client-js library "Ory Oathkeeper JavaScript Client" "$workspace" "$push"
-	replicate ory/oathkeeper-client-php library "Ory Oathkeeper PHP Client" "$workspace" "$push"
-	replicate ory/oathkeeper-client-go library "Ory Oathkeeper Go Client" "$workspace" "$push"
-	replicate ory/oathkeeper-client-ruby library "Ory Oathkeeper Ruby Client" "$workspace" "$push"
-	replicate ory/oathkeeper-client-python library "Ory Oathkeeper Python Client" "$workspace" "$push"
+	# replicate ory/themes library "Themes" "$workspace" "$persist"
+	replicate ory/k8s library "Kubernetes Resources" "$workspace" "$persist"
+	replicate ory/x library "X" "$workspace" "$persist"
+	replicate ory/web library "Web" "$workspace" "$persist"
+	replicate ory/closed-reference-notifier action "Closed Reference Notifier" "$workspace" "$persist"
+	replicate ory/label-sync-action action "Label Sync Action" "$workspace" "$persist"
+	replicate ory/milestone-action action "Milestone Action" "$workspace" "$persist"
+	replicate ory/prettier-styles action "Prettier Styles" "$workspace" "$persist"
+	replicate ory/build-buf-action action "Buildbuf Action" "$workspace" "$persist"
+	replicate ory/examples library "Examples" "$workspace" "$persist"
+	replicate ory/hydra-maester library "Ory Hydra Maester" "$workspace" "$persist"
+	replicate ory/oathkeeper-maester library "Ory Oathkeeper Maester" "$workspace" "$persist"
+	replicate ory/sdk library "Ory SDK" "$workspace" "$persist"
+	replicate ory/platform library "Ory Platform" "$workspace" "$persist"
+	replicate ory/keto-client-dotnet library "Ory Keto Dotnet Client" "$workspace" "$persist"
+	replicate ory/keto-client-java library "Ory Keto Java Client" "$workspace" "$persist"
+	replicate ory/keto-client-rust library "Ory Keto Rust Client" "$workspace" "$persist"
+	replicate ory/keto-client-dart library "Ory Keto Dart Client" "$workspace" "$persist"
+	replicate ory/keto-client-js library "Ory Keto JavaScript Client" "$workspace" "$persist"
+	replicate ory/keto-client-php library "Ory Keto PHP Client" "$workspace" "$persist"
+	replicate ory/keto-client-go library "Ory Keto Go Client" "$workspace" "$persist"
+	replicate ory/keto-client-ruby library "Ory Keto Ruby Client" "$workspace" "$persist"
+	replicate ory/keto-client-python library "Ory Keto Python Client" "$workspace" "$persist"
+	replicate ory/kratos-client-dotnet library "Ory Kratos Dotnet Client" "$workspace" "$persist"
+	replicate ory/kratos-client-java library "Ory Kratos Java Client" "$workspace" "$persist"
+	replicate ory/kratos-client-rust library "Ory Kratos Rust Client" "$workspace" "$persist"
+	replicate ory/kratos-client-dart library "Ory Kratos Dart Client" "$workspace" "$persist"
+	replicate ory/kratos-client-js library "Ory Kratos JavaScript Client" "$workspace" "$persist"
+	replicate ory/kratos-client-php library "Ory Kratos PHP Client" "$workspace" "$persist"
+	replicate ory/kratos-client-go library "Ory Kratos Go Client" "$workspace" "$persist"
+	replicate ory/kratos-client-ruby library "Ory Kratos Ruby Client" "$workspace" "$persist"
+	replicate ory/kratos-client-python library "Ory Kratos Python Client" "$workspace" "$persist"
+	replicate ory/hydra-client-dotnet library "Ory Hydra Dotnet Client" "$workspace" "$persist"
+	replicate ory/hydra-client-java library "Ory Hydra Java Client" "$workspace" "$persist"
+	replicate ory/hydra-client-rust library "Ory Hydra Rust Client" "$workspace" "$persist"
+	replicate ory/hydra-client-dart library "Ory Hydra Dart Client" "$workspace" "$persist"
+	replicate ory/hydra-client-js library "Ory Hydra JavaScript Client" "$workspace" "$persist"
+	replicate ory/hydra-client-php library "Ory Hydra PHP Client" "$workspace" "$persist"
+	replicate ory/hydra-client-go library "Ory Hydra Go Client" "$workspace" "$persist"
+	replicate ory/hydra-client-ruby library "Ory Hydra Ruby Client" "$workspace" "$persist"
+	replicate ory/hydra-client-python library "Ory Hydra Python Client" "$workspace" "$persist"
+	replicate ory/oathkeeper-client-dotnet library "Ory Oathkeeper Dotnet Client" "$workspace" "$persist"
+	replicate ory/oathkeeper-client-java library "Ory Oathkeeper Java Client" "$workspace" "$persist"
+	replicate ory/oathkeeper-client-rust library "Ory Oathkeeper Rust Client" "$workspace" "$persist"
+	replicate ory/oathkeeper-client-dart library "Ory Oathkeeper Dart Client" "$workspace" "$persist"
+	replicate ory/oathkeeper-client-js library "Ory Oathkeeper JavaScript Client" "$workspace" "$persist"
+	replicate ory/oathkeeper-client-php library "Ory Oathkeeper PHP Client" "$workspace" "$persist"
+	replicate ory/oathkeeper-client-go library "Ory Oathkeeper Go Client" "$workspace" "$persist"
+	replicate ory/oathkeeper-client-ruby library "Ory Oathkeeper Ruby Client" "$workspace" "$persist"
+	replicate ory/oathkeeper-client-python library "Ory Oathkeeper Python Client" "$workspace" "$persist"
 }
 
 # replicates the info in this repository into the given target repository
@@ -108,9 +108,9 @@ function replicate {
 		echo 'ERROR (replicate): argument "workspace" is missing'
 		exit 1
 	fi
-	local -r push=$5
-	if [ "$push" != "push" ] && [ "$push" != "commit" ] && [ "$push" != "keep" ]; then
-		echo "ERROR (replicate): Unknown value for \"push\" argument: \"$push\". Please provide either \"push\", \"commit\", or \"keep\"."
+	local -r persist=$5
+	if [ "$persist" != "push" ] && [ "$persist" != "commit" ] && [ "$persist" != "keep" ]; then
+		echo "ERROR (replicate): Unknown value for \"persist\" argument: \"$persist\". Please provide either \"push\", \"commit\", or \"keep\"."
 		exit 1
 	fi
 
@@ -134,10 +134,10 @@ function replicate {
 	fi
 
 	# optionally commit
-	if [ "$push" == "commit" ] || [ "$push" == "push" ]; then
+	if [ "$persist" == "commit" ] || [ "$persist" == "push" ]; then
 		commit_changes "$repo_path"
 	fi
-	if [ "$push" == "push" ]; then
+	if [ "$persist" == "push" ]; then
 		push_changes
 	fi
 }
