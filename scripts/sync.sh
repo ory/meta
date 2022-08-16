@@ -3,10 +3,6 @@
 set -Eexuo pipefail # abort the script on error
 
 # replicate shared data from this repo into all repositories at Ory
-#
-# Arguments:
-# $push == "push" --> commit and push to Github
-# $push == "none" --> don't commit or push
 function replicate_all {
 	# verify arguments
 	local -r workspace=$1
@@ -19,8 +15,8 @@ function replicate_all {
 		exit 1
 	fi
 	local -r push=$2
-	if [ "$push" != "push" ] && [ "$push" != "none" ]; then
-		echo "ERROR (sync_all): unknown value for \"push\" argument: \"$push\". Please provide either \"push\" or \"none\"."
+	if [ "$push" != "push" ] && [ "$push" != "commit" ] && [ "$push" != "keep" ]; then
+		echo "ERROR (sync_all): unknown value for \"push\" argument: \"$push\". Please provide either \"push\", \"commit\", or \"keep\"."
 		exit 1
 	fi
 	replicate ory/hydra server "Hydra" "$workspace" "$push"
@@ -113,8 +109,8 @@ function replicate {
 		exit 1
 	fi
 	local -r push=$5
-	if [ "$push" != "push" ] && [ "$push" != "none" ]; then
-		echo "ERROR (replicate): Unknown value for \"push\" argument: \"$push\". Please provide either \"push\" or \"none\"."
+	if [ "$push" != "push" ] && [ "$push" != "commit" ] && [ "$push" != "keep" ]; then
+		echo "ERROR (replicate): Unknown value for \"push\" argument: \"$push\". Please provide either \"push\", \"commit\", or \"keep\"."
 		exit 1
 	fi
 
@@ -138,8 +134,10 @@ function replicate {
 	fi
 
 	# optionally commit
+	if [ "$push" == "commit" ] || [ "$push" == "push" ]; then
+		commit_changes "$repo_path"
+	fi
 	if [ "$push" == "push" ]; then
-		commit_changes
 		push_changes
 	fi
 }
@@ -167,8 +165,12 @@ function clone {
 
 # commits the changes in the current directory to the local Git client
 function commit_changes {
-	git add -A
-	git commit -a -m "chore: update repository templates" -m "[skip ci] - updated repository templates to https://github.com/ory/meta/commit/$GITHUB_SHA"
+	local -r repo_path=$1
+	(
+		cd "$repo_path"
+		git add -A
+		git commit -a -m "chore: update repository templates" -m "[skip ci] - updated repository templates to https://github.com/ory/meta/commit/$GITHUB_SHA" || true
+	)
 }
 
 # configures the Git client on CI
@@ -242,7 +244,7 @@ function install_dependencies_on_ci {
 
 # pushes the committed changes from the local Git client to GitHub
 function push_changes {
-	git push origin HEAD:master
+	git push
 }
 
 function substitutePlaceholders {
