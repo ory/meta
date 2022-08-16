@@ -182,6 +182,12 @@ that your company deserves a spot here, reach out to
             <td align="center"><img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/paralus.svg" alt="Paralus"></td>
             <td><a href="https://www.paralus.io/">paralus.io</a></td>
         </tr>
+        <tr>
+            <td>Adopter *</td>
+            <td>TIER IV</td>
+            <td align="center"><img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/tieriv.svg" alt="TIER IV"></td>
+            <td><a href="https://tier4.jp/en/">tier4.jp</a></td>
+        </tr>
     </tbody>
 </table>
 
