@@ -2,9 +2,6 @@
   "name": "meta",
   "version": "1.0.0",
   "prettier": "ory-prettier-styles",
-  "config": {
-    "prettierTarget": "**/*.{js,ts,md,mdx,yml}"
-  },
   "scripts": {
     "format": "prettier --write .",
     "format:check": "prettier --check .",
