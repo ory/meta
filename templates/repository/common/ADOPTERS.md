@@ -188,6 +188,12 @@ that your company deserves a spot here, reach out to
             <td align="center"><img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/tieriv.svg" alt="TIER IV"></td>
             <td><a href="https://tier4.jp/en/">tier4.jp</a></td>
         </tr>
+        <tr>
+            <td>Adopter *</td>
+            <td>R2Devops</td>
+            <td align="center"><img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/r2devops.svg" alt="R2Devops"></td>
+            <td><a href="https://r2devops.io/">r2devops.io</a></td>
+        </tr>
     </tbody>
 </table>
 
