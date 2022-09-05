@@ -194,6 +194,12 @@ that your company deserves a spot here, reach out to
             <td align="center"><img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/r2devops.svg" alt="R2Devops"></td>
             <td><a href="https://r2devops.io/">r2devops.io</a></td>
         </tr>
+        <tr>
+            <td>Adopter *</td>
+            <td>LunaSec</td>
+            <td align="center"><img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/lunasec.svg" alt="LunaSec"></td>
+            <td><a href="https://www.lunasec.io/">lunasec.io</a></td>
+        </tr>
     </tbody>
 </table>
 
