@@ -238,7 +238,12 @@ that your company deserves a spot here, reach out to
         <tr>
             <td>Sponsor</td>
             <td>Strivacity</td>
-            <td align="center"><img height="16px" src="https://raw.githubusercontent.com/jonas-jonas/meta/dark-theme-support/static/adopters/strivacity.svg" alt="Strivacity"></td>
+            <td align="center">
+                <picture>
+                    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/jonas-jonas/meta/dark-theme-support/static/adopters/light/strivacity.svg" />
+                    <img height="16px" src="https://raw.githubusercontent.com/jonas-jonas/meta/dark-theme-support/static/adopters/dark/strivacity.svg" alt="Spiri.bo">
+                </picture>
+            </td>
             <td><a href="https://strivacity.com/">strivacity.com</a></td>
         </tr>
         <tr>
