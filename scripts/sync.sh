@@ -1,5 +1,4 @@
 #!/bin/bash
-
 set -Eexuo pipefail # abort the script on error
 
 # replicate shared data from this repo into all repositories at Ory
@@ -32,8 +31,7 @@ function replicate_all {
 	replicate ory/dockertest library "Dockertest" "$workspace" "$persist"
 	replicate ory/herodot library "Herodot" "$workspace" "$persist"
 	replicate ory/graceful library "Graceful" "$workspace" "$persist"
-	# TODO: uncomment once https://github.com/ory/themes/pull/62 ships
-	# replicate ory/themes library "Themes" "$workspace" "$persist"
+	replicate ory/themes library "Themes" "$workspace" "$persist"
 	replicate ory/k8s library "Kubernetes Resources" "$workspace" "$persist"
 	replicate ory/x library "X" "$workspace" "$persist"
 	replicate ory/web library "Web" "$workspace" "$persist"
@@ -113,6 +111,8 @@ function replicate {
 		echo "ERROR (replicate): Unknown value for \"persist\" argument: \"$persist\". Please provide either \"push\", \"commit\", or \"keep\"."
 		exit 1
 	fi
+
+	printf "\n\n\n########################################################################################\n\n%s (%s)\n\n########################################################################################\n\n" "$repo_id" "$repo_type"
 
 	# clone if the codebase doesn't exist in the workspace yet
 	local -r repo_name=$(basename "$repo_id")
