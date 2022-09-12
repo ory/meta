@@ -125,7 +125,7 @@ function replicate {
 	copy_templates "$repo_path" "$repo_type"
 	substitutePlaceholders "$repo_id" "$repo_path" "https://github.com/$repo_id/discussions" "$human_name"
 	if [ -d "$repo_id/docs/docs" ]; then
-		copy_contributing_guide_to_docs "$repo_id"
+		copy_contributing_guide_to_docs "$repo_path"
 	fi
 	add_adopters_to_readme "$repo_path"
 	add_ecosystem_to_readme "$repo_path"
@@ -183,8 +183,8 @@ function configure_git_on_ci {
 
 # copy contributing guide to docs if docs exist
 function copy_contributing_guide_to_docs {
-	local -r workdir=$1
-	local -r file="$workdir/docs/docs/contributing.md"
+	local -r repo_path=$1
+	local -r file="$repo_path/docs/docs/contributing.md"
 	cat <<EOF >"$file"
 ---
 id: contributing
@@ -192,7 +192,7 @@ title: Contribution Guidelines
 ---
 
 EOF
-	cat "$workdir/CONTRIBUTING.md" >>"$file"
+	cat "$repo_path/CONTRIBUTING.md" >>"$file"
 	sed '/Contributing to/d' "$file"
 }
 
