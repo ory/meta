@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -Eexuo pipefail # abort the script on error
 
 # replicate shared data from this repo into all repositories at Ory
