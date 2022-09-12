@@ -148,14 +148,14 @@ function replicate {
 ### INDIVIDUAL ACTIVITIES
 
 function add_adopters_to_readme {
-	local -r workdir=$1
-	perl -0pe 's#<!--\s*BEGIN ADOPTERS\s*-->.*<!--\s*END ADOPTERS\s*-->\n#`cat templates/repository/common/ADOPTERS.md`#gse' -i "$workdir/README.md"
+	local -r repo_path=$1
+	perl -0pe 's#<!--\s*BEGIN ADOPTERS\s*-->.*<!--\s*END ADOPTERS\s*-->\n#`cat templates/repository/common/ADOPTERS.md`#gse' -i "$repo_path/README.md"
 }
 
 # adds an overview of all projects to README.md
 function add_ecosystem_to_readme {
-	local -r workdir=$1
-	perl -0pe 's#<!--\s*BEGIN ECOSYSTEM\s*-->.*<!--\s*END ECOSYSTEM\s*-->\n#`cat templates/repository/common/PROJECTS.md`#gse' -i "$workdir/README.md"
+	local -r repo_path=$1
+	perl -0pe 's#<!--\s*BEGIN ECOSYSTEM\s*-->.*<!--\s*END ECOSYSTEM\s*-->\n#`cat templates/repository/common/PROJECTS.md`#gse' -i "$repo_path/README.md"
 }
 
 # clones the given project onto the local machine
@@ -181,8 +181,8 @@ function configure_git_on_ci {
 
 # copy contributing guide to docs if docs exist
 function copy_contributing_guide_to_docs {
-	local -r workdir=$1
-	local -r file="$workdir/docs/docs/contributing.md"
+	local -r repo_path=$1
+	local -r file="$repo_path/docs/docs/contributing.md"
 	cat <<EOF >"$file"
 ---
 id: contributing
@@ -190,7 +190,7 @@ title: Contribution Guidelines
 ---
 
 EOF
-	cat "$workdir/CONTRIBUTING.md" >>"$file"
+	cat "$repo_path/CONTRIBUTING.md" >>"$file"
 	sed '/Contributing to/d' "$file"
 }
 
