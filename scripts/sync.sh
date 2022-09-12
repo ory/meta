@@ -127,8 +127,8 @@ function replicate {
 	if [ -d "$repo_id/docs/docs" ]; then
 		copy_contributing_guide_to_docs "$repo_id"
 	fi
-	add_adopters_to_readme "$repo_id"
-	add_ecosystem_to_readme "$repo_id"
+	add_adopters_to_readme "$repo_path"
+	add_ecosystem_to_readme "$repo_path"
 	if test -f package.json; then
 		format "$repo_path"
 	fi
@@ -146,14 +146,14 @@ function replicate {
 ### INDIVIDUAL ACTIVITIES
 
 function add_adopters_to_readme {
-	local -r workdir=$1
-	perl -0pe 's#<!--\s*BEGIN ADOPTERS\s*-->.*<!--\s*END ADOPTERS\s*-->\n#`cat templates/repository/common/ADOPTERS.md`#gse' -i "$workdir/README.md"
+	local -r repo_path=$1
+	perl -0pe 's#<!--\s*BEGIN ADOPTERS\s*-->.*<!--\s*END ADOPTERS\s*-->\n#`cat templates/repository/common/ADOPTERS.md`#gse' -i "$repo_path/README.md"
 }
 
 # adds an overview of all projects to README.md
 function add_ecosystem_to_readme {
-	local -r workdir=$1
-	perl -0pe 's#<!--\s*BEGIN ECOSYSTEM\s*-->.*<!--\s*END ECOSYSTEM\s*-->\n#`cat templates/repository/common/PROJECTS.md`#gse' -i "$workdir/README.md"
+	local -r repo_path=$1
+	perl -0pe 's#<!--\s*BEGIN ECOSYSTEM\s*-->.*<!--\s*END ECOSYSTEM\s*-->\n#`cat templates/repository/common/PROJECTS.md`#gse' -i "$repo_path/README.md"
 }
 
 # clones the given project onto the local machine
