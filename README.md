@@ -51,3 +51,12 @@ by the sync script. To test committing, replace the last line with this one:
 ```
 replicate_all "$workspace" commit
 ```
+
+To test syncing problems with a single repo:
+
+```
+source scripts/sync.sh
+workspace=$(create_workspace)
+GITHUB_SHA=12345
+replicate ory/hydra server "Hydra" "$workspace" "keep"
+```
