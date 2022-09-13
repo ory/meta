@@ -125,10 +125,10 @@ function replicate {
 	copy_templates "$repo_path" "$repo_type"
 	substitutePlaceholders "$repo_id" "$repo_path" "https://github.com/$repo_id/discussions" "$human_name"
 	if [ -d "$repo_id/docs/docs" ]; then
-		copy_contributing_guide_to_docs "$repo_id"
+		copy_contributing_guide_to_docs "$repo_path"
 	fi
-	add_adopters_to_readme "$repo_id"
-	add_ecosystem_to_readme "$repo_id"
+	add_adopters_to_readme "$repo_path"
+	add_ecosystem_to_readme "$repo_path"
 	if test -f package.json; then
 		format "$repo_path"
 	fi
@@ -147,15 +147,15 @@ function replicate {
 
 function add_adopters_to_readme {
 	header "ADDING ADOPTERS TO README"
-	local -r workdir=$1
-	perl -0pe 's#<!--\s*BEGIN ADOPTERS\s*-->.*<!--\s*END ADOPTERS\s*-->\n#`cat templates/repository/common/ADOPTERS.md`#gse' -i "$workdir/README.md"
+	local -r repo_path=$1
+	perl -0pe 's#<!--\s*BEGIN ADOPTERS\s*-->.*<!--\s*END ADOPTERS\s*-->\n#`cat templates/repository/common/ADOPTERS.md`#gse' -i "$repo_path/README.md"
 }
 
 # adds an overview of all projects to README.md
 function add_ecosystem_to_readme {
 	header "ADDING ECOSYSTEM TO README"
-	local -r workdir=$1
-	perl -0pe 's#<!--\s*BEGIN ECOSYSTEM\s*-->.*<!--\s*END ECOSYSTEM\s*-->\n#`cat templates/repository/common/PROJECTS.md`#gse' -i "$workdir/README.md"
+	local -r repo_path=$1
+	perl -0pe 's#<!--\s*BEGIN ECOSYSTEM\s*-->.*<!--\s*END ECOSYSTEM\s*-->\n#`cat templates/repository/common/PROJECTS.md`#gse' -i "$repo_path/README.md"
 }
 
 # clones the given project onto the local machine
@@ -189,8 +189,8 @@ function configure_git_on_ci {
 # copy contributing guide to docs if docs exist
 function copy_contributing_guide_to_docs {
 	header "COPYING WRITING GUIDE TO DOCS"
-	local -r workdir=$1
-	local -r file="$workdir/docs/docs/contributing.md"
+	local -r repo_path=$1
+	local -r file="$repo_path/docs/docs/contributing.md"
 	cat <<EOF >"$file"
 ---
 id: contributing
@@ -198,7 +198,7 @@ title: Contribution Guidelines
 ---
 
 EOF
-	cat "$workdir/CONTRIBUTING.md" >>"$file"
+	cat "$repo_path/CONTRIBUTING.md" >>"$file"
 	sed '/Contributing to/d' "$file"
 }
 
