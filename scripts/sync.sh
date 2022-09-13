@@ -112,7 +112,7 @@ function replicate {
 		exit 1
 	fi
 
-	printf "\n\n\n########################################################################################\n\n%s (%s)\n\n########################################################################################\n\n" "$repo_id" "$repo_type"
+	{ printf "\n\n\n\n\n\n\n########################################################################################\n\n  %s (%s)\n\n########################################################################################\n\n\n" "$repo_id" "$repo_type"; }   2> /dev/null
 
 	# clone if the codebase doesn't exist in the workspace yet
 	local -r repo_name=$(basename "$repo_id")
@@ -146,18 +146,21 @@ function replicate {
 ### INDIVIDUAL ACTIVITIES
 
 function add_adopters_to_readme {
+	header "ADDING ADOPTERS TO README"
 	local -r repo_path=$1
 	perl -0pe 's#<!--\s*BEGIN ADOPTERS\s*-->.*<!--\s*END ADOPTERS\s*-->\n#`cat templates/repository/common/ADOPTERS.md`#gse' -i "$repo_path/README.md"
 }
 
 # adds an overview of all projects to README.md
 function add_ecosystem_to_readme {
+	header "ADDING ECOSYSTEM TO README"
 	local -r repo_path=$1
 	perl -0pe 's#<!--\s*BEGIN ECOSYSTEM\s*-->.*<!--\s*END ECOSYSTEM\s*-->\n#`cat templates/repository/common/PROJECTS.md`#gse' -i "$repo_path/README.md"
 }
 
 # clones the given project onto the local machine
 function clone {
+	header "CLONING"
 	local -r repo_id=$1
 	local -r repo_path=$2
 	git clone --depth 1 "git@github.com:$repo_id.git" "$repo_path"
@@ -165,6 +168,7 @@ function clone {
 
 # commits the changes in the current directory to the local Git client
 function commit_changes {
+	header "COMMITTING"
 	local -r repo_path=$1
 	(
 		cd "$repo_path"
@@ -175,6 +179,7 @@ function commit_changes {
 
 # configures the Git client on CI
 function configure_git_on_ci {
+	header "CONFIGURING GIT"
 	# set git email & username
 	bash <(curl -s https://raw.githubusercontent.com/ory/ci/master/src/scripts/install/git.sh)
 	# change global url from https://github.com/ to git@github.com:
@@ -183,6 +188,7 @@ function configure_git_on_ci {
 
 # copy contributing guide to docs if docs exist
 function copy_contributing_guide_to_docs {
+	header "COPYING WRITING GUIDE TO DOCS"
 	local -r repo_path=$1
 	local -r file="$repo_path/docs/docs/contributing.md"
 	cat <<EOF >"$file"
@@ -198,6 +204,7 @@ EOF
 
 # replicates the template files in templates/repository into the given project
 function copy_templates {
+	header "COPYING TEMPLATES"
 	local -r repo_path=$1
 	local -r repo_type=$2
 	rm -rf "$repo_path/.github/ISSUE_TEMPLATE/"
@@ -227,6 +234,7 @@ function create_workspace {
 }
 
 function format {
+	header "FORMATTING"
 	local -r repo_path=$1
 	(
 		cd "$repo_path"
@@ -238,16 +246,19 @@ function format {
 }
 
 function install_dependencies_on_ci {
+	header "INSTALLING DEPENDENCIES"
 	sudo apt-get update -y
 	sudo apt-get install -y moreutils gettext-base
 }
 
 # pushes the committed changes from the local Git client to GitHub
 function push_changes {
+	header "PUSHING TO GITHUB"
 	git push
 }
 
 function substitutePlaceholders {
+	header "SUBSTITUTING PLACEHOLDERS"
 	local -r repo_id=$1
 	local -r repo_path=$2
 	local -r repo_discussions=$3
@@ -268,6 +279,7 @@ function substitute_placeholders_in_file {
 	local -r repo_id=$2
 	local -r repo_discussions=$3
 	local -r human_name=$4
+	header "SUBSTITUTING PLACEHOLDERS IN FILE"
 	case "$repo_id" in
 	"ory/hydra" | "ory/kratos" | "ory/oathkeeper" | "ory/keto")
 		discussions=$repo_discussions
@@ -279,4 +291,12 @@ function substitute_placeholders_in_file {
 	if [ -f "$file" ]; then
 		env -i DISCUSSIONS="$discussions" REPOSITORY="$repo_id" PROJECT="$human_name" /bin/bash -c "envsubst < \"$file\" | sponge \"$file\""
 	fi
+}
+
+function header {
+	{ set +x; } 2>/dev/null
+	echo
+	echo "$1" ...
+	echo
+	set -x
 }
