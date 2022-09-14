@@ -255,6 +255,7 @@ function install_dependencies_on_ci {
 function push_changes {
 	header "PUSHING TO GITHUB"
 	git status
+	git show
 	git push
 }
 
