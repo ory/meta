@@ -112,7 +112,7 @@ function replicate {
 		exit 1
 	fi
 
-	{ printf "\n\n\n\n\n\n\n########################################################################################\n\n  %s (%s)\n\n########################################################################################\n\n\n" "$repo_id" "$repo_type"; }   2> /dev/null
+	{ printf "\n\n\n\n\n\n\n########################################################################################\n\n  %s (%s)\n\n########################################################################################\n\n\n" "$repo_id" "$repo_type"; } 2>/dev/null
 
 	# clone if the codebase doesn't exist in the workspace yet
 	local -r repo_name=$(basename "$repo_id")
@@ -173,7 +173,7 @@ function commit_changes {
 	(
 		cd "$repo_path"
 		git add -A
-		git commit -a -m "chore: update repository templates" -m "[skip ci] - updated repository templates to https://github.com/ory/meta/commit/$GITHUB_SHA" || true
+		git commit -a -m "chore: update repository templates to https://github.com/ory/meta/commit/$GITHUB_SHA" || true
 	)
 }
 
@@ -254,6 +254,7 @@ function install_dependencies_on_ci {
 # pushes the committed changes from the local Git client to GitHub
 function push_changes {
 	header "PUSHING TO GITHUB"
+	git status
 	git push
 }
 
