@@ -138,7 +138,7 @@ function replicate {
 		commit_changes "$repo_path"
 	fi
 	if [ "$persist" == "push" ]; then
-		push_changes
+		push_changes "$repo_path"
 	fi
 }
 
@@ -254,7 +254,11 @@ function install_dependencies_on_ci {
 # pushes the committed changes from the local Git client to GitHub
 function push_changes {
 	header "PUSHING TO GITHUB"
-	git push
+	local -r repo_path=$1
+	(
+		cd "$repo_path"
+		git push
+	)
 }
 
 function substitutePlaceholders {
