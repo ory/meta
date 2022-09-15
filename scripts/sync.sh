@@ -173,7 +173,7 @@ function commit_changes {
 	(
 		cd "$repo_path"
 		git add -A
-		git commit -a -m "chore: update repository templates" -m "[skip ci] - updated repository templates to https://github.com/ory/meta/commit/$GITHUB_SHA" || true
+		git commit -a -m "chore: update repository templates to https://github.com/ory/meta/commit/$GITHUB_SHA" || true
 	)
 }
 
