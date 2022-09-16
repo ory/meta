@@ -6,8 +6,6 @@
     "url": "git+https://github.com/ory/meta.git"
   },
   "scripts": {
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
     "text-run": "text-run"
   },
   "prettier": "ory-prettier-styles",
