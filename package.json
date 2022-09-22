@@ -6,14 +6,12 @@
     "url": "git+https://github.com/ory/meta.git"
   },
   "scripts": {
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
     "text-run": "text-run"
   },
   "prettier": "ory-prettier-styles",
   "devDependencies": {
     "ory-prettier-styles": "1.3.0",
-    "prettier": "^2.7.1",
+    "prettier": "2.7.1",
     "prettier-plugin-packagejson": "^2.2.18",
     "text-runner": "5.0.2"
   }
