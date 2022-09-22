@@ -94,8 +94,8 @@ to help out:
   look at discussions in the forum and take part in community events. More info
   on this in [Communication](#communication).
 
-- **Answer discussions.** There are several unanswered discussions at all times
-  on GitHub, you can see an
+- **Answer discussions.** At all times, there are several unanswered discussions
+  on GitHub. You can see an
   [overview here](https://github.com/discussions?discussions_q=is%3Aunanswered+org%3Aory+sort%3Aupdated-desc).
   If you think you know an answer or can provide some information that might
   help, please share it! Bonus: You get GitHub achievements for answered

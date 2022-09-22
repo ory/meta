@@ -22,7 +22,7 @@ https://github.com/ory/meta/blob/master/templates/repository/SECURITY.md
 ## Supported Versions
 
 We release patches for security vulnerabilities. Which versions are eligible for
-receiving such patches, depends on the CVSS v3.0 Rating:
+receiving such patches depends on the CVSS v3.0 Rating:
 
 | CVSS v3.0 | Supported Versions                        |
 | --------- | ----------------------------------------- |
