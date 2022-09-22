@@ -87,7 +87,7 @@ body:
 
   - attributes:
       description: |
-        Design docs should rarely contain code, or pseudo-code except in situations where novel algorithms are described. As appropriate, link to prototypes that show the feasability of the design.
+        Design docs should rarely contain code, or pseudo-code except in situations where novel algorithms are described. As appropriate, link to prototypes that show the feasibility of the design.
       label: "Code and pseudo-code"
     id: pseudocode
     type: textarea
