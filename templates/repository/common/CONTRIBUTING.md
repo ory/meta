@@ -13,18 +13,17 @@ https://github.com/ory/meta/blob/master/templates/repository/common/CONTRIBUTING
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [Contribute to Ory $PROJECT](#contribute-to-ory-project)
-  - [Introduction](#introduction)
-  - [FAQ](#faq)
-  - [How can I contribute?](#how-can-i-contribute)
-  - [Communication](#communication)
-  - [Contribute examples](#contribute-examples)
-  - [Contribute code](#contribute-code)
-  - [Contribute documentation](#contribute-documentation)
-  - [Disclosing vulnerabilities](#disclosing-vulnerabilities)
-  - [Code style](#code-style)
-    - [Working with forks](#working-with-forks)
-  - [Conduct](#conduct)
+- [Introduction](#introduction)
+- [FAQ](#faq)
+- [How can I contribute?](#how-can-i-contribute)
+- [Communication](#communication)
+- [Contribute examples](#contribute-examples)
+- [Contribute code](#contribute-code)
+- [Contribute documentation](#contribute-documentation)
+- [Disclosing vulnerabilities](#disclosing-vulnerabilities)
+- [Code style](#code-style)
+  - [Working with forks](#working-with-forks)
+- [Conduct](#conduct)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
