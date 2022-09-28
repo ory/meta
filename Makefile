@@ -1,7 +1,7 @@
 format: .bin/shfmt node_modules  # formats the source code
 	echo formatting ...
 	.bin/shfmt --write .
-	npm run format
+	npm exec -- prettier --write .
 
 help:  # shows all available Make commands
 	cat Makefile | grep '^[^ ]*:' | grep -v '^\.bin/' | grep -v '^node_modules' | grep -v '.SILENT:' | grep -v help | sed 's/:.*#/#/' | column -s "#" -t
@@ -11,7 +11,6 @@ test: .bin/shellcheck .bin/shfmt node_modules  # runs all linters
 	find . -name '*.sh' | xargs .bin/shellcheck
 	echo Verifying formatting ...
 	.bin/shfmt --list .
-	npm run format:check
 
 .bin/shellcheck: Makefile
 	echo installing Shellcheck ...

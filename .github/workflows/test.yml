@@ -6,8 +6,20 @@ on:
   push:
 
 jobs:
-  format:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - run: make test
+      - uses: webfactory/ssh-agent@v0.4.1
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Dry-run the sync
+        run: |
+          source ./scripts/sync.sh
+          install_dependencies_on_ci
+          configure_git_on_ci
+          workspace=$(create_workspace)
+          replicate_all "$workspace" "commit"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
