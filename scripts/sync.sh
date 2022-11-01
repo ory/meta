@@ -216,8 +216,8 @@ function copy_templates {
 	.bin/ory dev headers cp -r "templates/repository/common/.github" "$repo_path/"
 	.bin/ory dev headers cp -r "templates/repository/$repo_type/.github" "$repo_path/"
 	# copy issue templates as-is because they are displayed verbatim and shouldn't contain headers
-	if [ -d "templates/repository/$repo_type/.github/ISSUE_TEMPLATE" ]; then
-		cp -r "templates/repository/$repo_type/.github/ISSUE_TEMPLATE" "$repo_path/.github"
+	if [ -f "templates/repository/$repo_type/.github/pull_request_template.md" ]; then
+		cp "templates/repository/$repo_type/.github/pull_request_template.md" "$repo_path/.github"
 	fi
 }
 
