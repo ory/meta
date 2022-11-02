@@ -6,6 +6,12 @@ format: .bin/shfmt node_modules  # formats the source code
 help:  # shows all available Make commands
 	cat Makefile | grep '^[^ ]*:' | grep -v '^\.bin/' | grep -v '^node_modules' | grep -v '.SILENT:' | grep -v help | sed 's/:.*#/#/' | column -s "#" -t
 
+licenses: .bin/licenses node_modules  # checks open-source licenses
+	.bin/licenses
+
+.bin/licenses: Makefile
+	curl https://raw.githubusercontent.com/ory/ci/master/licenses/install | sh
+
 test: .bin/shellcheck .bin/shfmt node_modules  # runs all linters
 	echo running tests ...
 	find . -name '*.sh' | xargs .bin/shellcheck
@@ -27,7 +33,7 @@ test: .bin/shellcheck .bin/shfmt node_modules  # runs all linters
 	chmod +x .bin/shfmt
 
 node_modules: package.json package-lock.json
-	echo installing Prettier ...
+	echo installing Node dependencies ...
 	npm ci
 	touch node_modules  # update timestamp so that Make doesn't reinstall it over and over
 
