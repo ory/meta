@@ -208,13 +208,17 @@ function copy_templates {
 	local -r repo_path=$1
 	local -r repo_type=$2
 	rm -rf "$repo_path/.github/ISSUE_TEMPLATE/"
-	cp "templates/repository/common/CONTRIBUTING.md" "$repo_path/CONTRIBUTING.md"
-	cp "templates/repository/common/SECURITY.md" "$repo_path/SECURITY.md"
-	cp "templates/repository/common/LICENSE" "$repo_path/LICENSE"
-	cp "templates/repository/common/CODE_OF_CONDUCT.md" "$repo_path/CODE_OF_CONDUCT.md"
-	cp -n "templates/repository/common/.reference-ignore" "$repo_path/.reference-ignore" || true # copy only if it does not exist, as it is meant to help getting started
-	cp -r "templates/repository/common/.github" "$repo_path/"
-	cp -r "templates/repository/$repo_type/.github" "$repo_path/"
+	.bin/ory dev headers cp "templates/repository/common/CONTRIBUTING.md" "$repo_path/CONTRIBUTING.md"
+	.bin/ory dev headers cp "templates/repository/common/SECURITY.md" "$repo_path/SECURITY.md"
+	.bin/ory dev headers cp "templates/repository/common/LICENSE" "$repo_path/LICENSE"
+	.bin/ory dev headers cp "templates/repository/common/CODE_OF_CONDUCT.md" "$repo_path/CODE_OF_CONDUCT.md"
+	.bin/ory dev headers cp -n "templates/repository/common/.reference-ignore" "$repo_path/.reference-ignore" || true # copy only if it does not exist, as it is meant to help getting started
+	.bin/ory dev headers cp -r "templates/repository/common/.github" "$repo_path/"
+	.bin/ory dev headers cp -r "templates/repository/$repo_type/.github" "$repo_path/"
+	# copy pull-request templates as-is because they are displayed verbatim and shouldn't contain the comment header
+	if [ -f "templates/repository/$repo_type/.github/pull_request_template.md" ]; then
+		cp "templates/repository/$repo_type/.github/pull_request_template.md" "$repo_path/.github"
+	fi
 }
 
 # creates a pull request with the changes on GitHub
@@ -249,6 +253,7 @@ function install_dependencies_on_ci {
 	header "INSTALLING DEPENDENCIES"
 	sudo apt-get update -y
 	sudo apt-get install -y moreutils gettext-base
+	curl https://raw.githubusercontent.com/ory/meta/master/install.sh | bash -s -- -b .bin ory v0.1.45
 }
 
 # pushes the committed changes from the local Git client to GitHub
