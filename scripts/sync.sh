@@ -215,6 +215,10 @@ function copy_templates {
 	.bin/ory dev headers cp -n "templates/repository/common/.reference-ignore" "$repo_path/.reference-ignore" || true # copy only if it does not exist, as it is meant to help getting started
 	.bin/ory dev headers cp -r "templates/repository/common/.github" "$repo_path/"
 	.bin/ory dev headers cp -r "templates/repository/$repo_type/.github" "$repo_path/"
+	# copy pull-request templates as-is because they are displayed verbatim and shouldn't contain the comment header
+	if [ -f "templates/repository/$repo_type/.github/pull_request_template.md" ]; then
+		cp "templates/repository/$repo_type/.github/pull_request_template.md" "$repo_path/.github"
+	fi
 }
 
 # creates a pull request with the changes on GitHub
