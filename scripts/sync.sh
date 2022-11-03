@@ -253,7 +253,7 @@ function install_dependencies_on_ci {
 	header "INSTALLING DEPENDENCIES"
 	sudo apt-get update -y
 	sudo apt-get install -y moreutils gettext-base
-	curl https://raw.githubusercontent.com/ory/meta/master/install.sh | bash -s -- -b .bin ory v0.1.45
+	curl https://raw.githubusercontent.com/ory/meta/master/install.sh | bash -s -- -b .bin ory v0.1.47
 }
 
 # pushes the committed changes from the local Git client to GitHub
