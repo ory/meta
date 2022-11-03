@@ -173,6 +173,7 @@ function commit_changes {
 	(
 		cd "$repo_path"
 		git add -A
+		git restore --staged package-lock.json || true
 		git commit -a -m "chore: update repository templates to https://github.com/ory/meta/commit/$GITHUB_SHA" || true
 	)
 }
