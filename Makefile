@@ -1,6 +1,6 @@
 format: .bin/ory .bin/shfmt node_modules  # formats the source code
 	echo formatting ...
-	.bin/ory dev headers copyright
+	.bin/ory dev headers copyright --type=open-source
 	.bin/shfmt --write .
 	npm exec -- prettier --write .
 
