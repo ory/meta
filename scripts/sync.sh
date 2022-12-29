@@ -34,7 +34,6 @@ function replicate_all {
 	replicate ory/themes library "Themes" "$workspace" "$persist"
 	replicate ory/k8s library "Kubernetes Resources" "$workspace" "$persist"
 	replicate ory/x library "X" "$workspace" "$persist"
-	replicate ory/web library "Web" "$workspace" "$persist"
 	replicate ory/closed-reference-notifier action "Closed Reference Notifier" "$workspace" "$persist"
 	replicate ory/label-sync-action action "Label Sync Action" "$workspace" "$persist"
 	replicate ory/milestone-action action "Milestone Action" "$workspace" "$persist"
