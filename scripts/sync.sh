@@ -242,10 +242,7 @@ function format {
 	local -r repo_path=$1
 	(
 		cd "$repo_path"
-		if [ -f 'package.json' ] && [ -f 'package-lock.json' ]; then
-			npm i --legacy-peer-deps
-			npm exec -- prettier --write "*.md" .github
-		fi
+		npx prettier --write "*.md" .github
 	)
 }
 
