@@ -392,6 +392,17 @@ that your company deserves a spot here, reach out to
             </td>
             <td><a href="https://amplitude.com/">amplitude.com</a></td>
         </tr>
+         <tr>
+            <td>Adopter *</td>
+            <td>Pinniped</td>
+            <td align="center">
+                <picture>
+                    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ory/meta/master/static/adopters/light/pinniped.svg" />
+                    <img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/dark/pinniped.svg" alt="pinniped.dev">
+                </picture>
+            </td>
+            <td><a href="https://pinniped.dev/">pinniped.dev</a></td>
+        </tr>
     </tbody>
 </table>
 
