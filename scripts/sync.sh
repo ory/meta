@@ -242,7 +242,7 @@ function format {
 	local -r repo_path=$1
 	(
 		cd "$repo_path"
-		npx prettier --write "*.md" .github
+		npx prettier@2.8.1 --write "*.md" .github
 	)
 }
 
