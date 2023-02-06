@@ -242,7 +242,7 @@ function format {
 	local -r repo_path=$1
 	(
 		cd "$repo_path"
-		npm i
+		npm install ory-prettier-styles@1.3.0
 		npx prettier@2.7.1 --write "*.md" .github
 	)
 }
