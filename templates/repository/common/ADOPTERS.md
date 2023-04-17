@@ -402,6 +402,17 @@ that your company deserves a spot here, reach out to
                 </picture>
             </td>
             <td><a href="https://pinniped.dev/">pinniped.dev</a></td>
+        </tr>         
+        <tr>
+            <td>Adopter *</td>
+            <td>Pvotal</td>
+            <td align="center">
+                <picture>
+                    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ory/meta/master/static/adopters/light/pvotal.svg" />
+                    <img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/dark/pvotal.svg" alt="pvotal.tech">
+                </picture>
+            </td>
+            <td><a href="https://pvotal.tech/">pvotal.tech</a></td>
         </tr>
     </tbody>
 </table>
