@@ -18,9 +18,6 @@ function replicate_all {
 		echo "ERROR (sync_all): unknown value for \"persist\" argument: \"$persist\". Please provide either \"push\", \"commit\", or \"keep\"."
 		exit 1
 	fi
-	replicate ory/keto server "Keto" "$workspace" "$persist"
-	replicate ory/oathkeeper server "Oathkeeper" "$workspace" "$persist"
-	replicate ory/kratos server "Kratos" "$workspace" "$persist"
 	replicate ory/hydra-login-consent-node library "Hydra Login, Logout And Consent Node Example" "$workspace" "$persist"
 	replicate ory/docs library "Documentation" "$workspace" "$persist"
 	replicate ory/cli library "CLI" "$workspace" "$persist"
