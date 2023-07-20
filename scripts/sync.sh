@@ -37,7 +37,7 @@ function replicate_all {
 	replicate ory/closed-reference-notifier action "Closed Reference Notifier" "$workspace" "$persist"
 	replicate ory/label-sync-action action "Label Sync Action" "$workspace" "$persist"
 	replicate ory/milestone-action action "Milestone Action" "$workspace" "$persist"
-	replicate ory/prettier-styles action "Prettier Styles" "$workspace" "$persist"
+#	replicate ory/prettier-styles action "Prettier Styles" "$workspace" "$persist"
 	replicate ory/build-buf-action action "Buildbuf Action" "$workspace" "$persist"
 	replicate ory/examples library "Examples" "$workspace" "$persist"
 	replicate ory/hydra-maester library "Ory Hydra Maester" "$workspace" "$persist"
@@ -128,9 +128,9 @@ function replicate {
 	fi
 	add_adopters_to_readme "$repo_path"
 	add_ecosystem_to_readme "$repo_path"
-	if test -f package.json; then
-		format "$repo_path"
-	fi
+#	if test -f package.json; then
+#		format "$repo_path"
+#	fi
 
 	# optionally commit
 	if [ "$persist" == "commit" ] || [ "$persist" == "push" ]; then
@@ -237,14 +237,14 @@ function create_workspace {
 	mktemp -d
 }
 
-function format {
-	header "FORMATTING"
-	local -r repo_path=$1
-	(
-		cd "$repo_path"
-		npx prettier --write "*.md" .github
-	)
-}
+# function format {
+# 	header "FORMATTING"
+# 	local -r repo_path=$1
+# 	(
+# 		cd "$repo_path"
+# 		npx prettier --write "*.md" .github
+# 	)
+# }
 
 function install_dependencies_on_ci {
 	header "INSTALLING DEPENDENCIES"
