@@ -18,6 +18,11 @@ function replicate_all {
 		echo "ERROR (sync_all): unknown value for \"persist\" argument: \"$persist\". Please provide either \"push\", \"commit\", or \"keep\"."
 		exit 1
 	fi
+	replicate ory/prettier-styles action "Prettier Styles" "$workspace" "$persist"
+	replicate ory/hydra server "Hydra" "$workspace" "$persist"
+	replicate ory/keto server "Keto" "$workspace" "$persist"
+	replicate ory/oathkeeper server "Oathkeeper" "$workspace" "$persist"
+	replicate ory/kratos server "Kratos" "$workspace" "$persist"
 	replicate ory/hydra-login-consent-node library "Hydra Login, Logout And Consent Node Example" "$workspace" "$persist"
 	replicate ory/docs library "Documentation" "$workspace" "$persist"
 	replicate ory/cli library "CLI" "$workspace" "$persist"
@@ -33,7 +38,6 @@ function replicate_all {
 	replicate ory/closed-reference-notifier action "Closed Reference Notifier" "$workspace" "$persist"
 	replicate ory/label-sync-action action "Label Sync Action" "$workspace" "$persist"
 	replicate ory/milestone-action action "Milestone Action" "$workspace" "$persist"
-	replicate ory/prettier-styles action "Prettier Styles" "$workspace" "$persist"
 	replicate ory/build-buf-action action "Buildbuf Action" "$workspace" "$persist"
 	replicate ory/examples library "Examples" "$workspace" "$persist"
 	replicate ory/hydra-maester library "Ory Hydra Maester" "$workspace" "$persist"
