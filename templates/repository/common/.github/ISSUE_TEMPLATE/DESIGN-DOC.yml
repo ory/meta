@@ -35,6 +35,12 @@ body:
     id: checklist
     type: checkboxes
   - attributes:
+      description: "Leave empty if you are self-hosting Ory."
+      label: "Ory Network Project"
+      placeholder: "https://<your-project-slug>.projects.oryapis.com"
+    id: ory-network-project
+    type: input
+  - attributes:
       description: |
         This section gives the reader a very rough overview of the landscape in which the new system is being built and what is actually being built. This isn’t a requirements doc. Keep it succinct! The goal is that readers are brought up to speed but some previous knowledge can be assumed and detailed info can be linked to. This section should be entirely focused on objective background facts.
       label: "Context and scope"

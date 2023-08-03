@@ -28,6 +28,12 @@ body:
     id: checklist
     type: checkboxes
   - attributes:
+      description: "Leave empty if you are self-hosting Ory."
+      label: "Ory Network Project"
+      placeholder: "https://<your-project-slug>.projects.oryapis.com"
+    id: ory-network-project
+    type: input
+  - attributes:
       description: "Is your feature request related to a problem? Please describe."
       label: "Describe your problem"
       placeholder:
