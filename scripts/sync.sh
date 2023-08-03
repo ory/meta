@@ -31,7 +31,6 @@ function replicate_all {
 	replicate ory/dockertest library "Dockertest" "$workspace" "$persist"
 	replicate ory/herodot library "Herodot" "$workspace" "$persist"
 	replicate ory/graceful library "Graceful" "$workspace" "$persist"
-	replicate ory/themes library "Themes" "$workspace" "$persist"
 	replicate ory/k8s library "Kubernetes Resources" "$workspace" "$persist"
 	replicate ory/x library "X" "$workspace" "$persist"
 	replicate ory/closed-reference-notifier action "Closed Reference Notifier" "$workspace" "$persist"
