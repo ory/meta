@@ -242,6 +242,7 @@ function format {
 	local -r repo_path=$1
 	(
 		cd "$repo_path"
+		npm ci --legacy-peer-deps
 		npx prettier --write "*.md" .github
 	)
 }
