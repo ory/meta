@@ -127,7 +127,7 @@ function replicate {
 	fi
 	add_adopters_to_readme "$repo_path"
 	add_ecosystem_to_readme "$repo_path"
-	if test -f package-lock.json; then
+	if test -f "$repo_path/package-lock.json"; then
 		format "$repo_path"
 	fi
 
