@@ -143,7 +143,7 @@ checklist to contribute an example:
    not get mixed up.
 1. Add a descriptive prefix to commits. This ensures a uniform commit history
    and helps structure the changelog. Please refer to this
-   [Convential Commits configuration](https://github.com/ory/$REPOSITORY/blob/master/.github/workflows/conventional_commits.yml)
+   [Convential Commits configuration](https://github.com$REPOSITORY/blob/master/.github/workflows/conventional_commits.yml)
    for the list of accepted prefixes. You can read more about the Conventional Commit specification [at their site](https://www.conventionalcommits.org/en/v1.0.0/).
 1. Create a `README.md` that explains how to use the example. (Use
    [the README template](https://github.com/ory/examples/blob/master/_common/README.md)).
@@ -171,7 +171,7 @@ request, go through this checklist:
 1. Run `make format`
 1. Add a descriptive prefix to commits. This ensures a uniform commit history
    and helps structure the changelog. Please refer to this
-   [Convential Commits configuration](https://github.com/ory/$REPOSITORY/blob/master/.github/workflows/conventional_commits.yml)
+   [Convential Commits configuration](https://github.com/$REPOSITORY/blob/master/.github/workflows/conventional_commits.yml)
    for the list of accepted prefixes. You can read more about the Conventional Commit specification [at their site](https://www.conventionalcommits.org/en/v1.0.0/).
 
 If a pull request is not ready to be reviewed yet
