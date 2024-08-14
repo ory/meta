@@ -2,7 +2,8 @@
 
 ## Overview
 
-This security policy outlines the security support commitments for different types of Ory users. 
+This security policy outlines the security support commitments for different
+types of Ory users.
 
 ### Apache 2.0 License Users
 
@@ -11,7 +12,8 @@ This security policy outlines the security support commitments for different typ
 
 ### Ory Network Users & Ory Enterprise License Customers
 
-For users on the Ory Network and customers with an Ory Enterprise license, the following timelines apply for security vulnerabilities based on their severity:
+For users on the Ory Network and customers with an Ory Enterprise license, the
+following timelines apply for security vulnerabilities based on their severity:
 
 - **Critical:** Resolved within 14 days.
 - **High:** Resolved within 30 days.
@@ -19,8 +21,12 @@ For users on the Ory Network and customers with an Ory Enterprise license, the f
 - **Low:** Resolved within 180 days.
 - **Informational:** Addressed as needed.
 
-[Get in touch](https://www.ory.sh/contact/) to learn more about Ory's security SLAs and process.
+[Get in touch](https://www.ory.sh/contact/) to learn more about Ory's security
+SLAs and process.
 
 ## Reporting a Vulnerability
 
-If you suspect a security vulnerability, please report it to **[security@ory.sh](mailto:security@ory.sh)**. We will respond within 48 hours. If confirmed, we will work to release a patch as soon as possible, typically within a few days depending on the issue's complexity.
+If you suspect a security vulnerability, please report it to
+**[security@ory.sh](mailto:security@ory.sh)**. We will respond within 48 hours.
+If confirmed, we will work to release a patch as soon as possible, typically
+within a few days depending on the issue's complexity.

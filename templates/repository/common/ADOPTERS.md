@@ -1,10 +1,12 @@
 <!--BEGIN ADOPTERS-->
 
 The Ory community stands on the shoulders of individuals, companies, and
-maintainers. The Ory team thanks everyone involved - from submitting bug reports and
-feature requests, to contributing patches and documentation. The Ory community
-counts more than 33.000 members and is growing rapidly. The Ory stack protects 60.000.000.000+ API
-requests every month with over 400.000+ active service nodes. None of this would have been possible without each and everyone of you!
+maintainers. The Ory team thanks everyone involved - from submitting bug reports
+and feature requests, to contributing patches and documentation. The Ory
+community counts more than 33.000 members and is growing rapidly. The Ory stack
+protects 60.000.000.000+ API requests every month with over 400.000+ active
+service nodes. None of this would have been possible without each and everyone
+of you!
 
 The following list represents companies that have accompanied us along the way
 and that have made outstanding contributions to our ecosystem. _If you think
