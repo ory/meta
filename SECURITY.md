@@ -19,7 +19,7 @@ For users on the Ory Network and customers with an Ory Enterprise license, the f
 - **Low:** Resolved within 180 days.
 - **Informational:** Addressed as needed.
 
-[Get in touch](https://www.ory.sh/contact/) for more information.
+[Get in touch](https://www.ory.sh/contact/) to learn more about Ory's security SLAs and process.
 
 ## Reporting a Vulnerability
 
