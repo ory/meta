@@ -5,24 +5,32 @@
 This security policy outlines the security support commitments for different
 types of Ory users.
 
-### Apache 2.0 License Users
+## Apache 2.0 License Users
 
-- **Security SLA:** No security Service Level Agreement (SLA) is provided.
-- **Release Schedule:** Releases are planned every 3 to 6 months.
+* **Security SLA:** No security Service Level Agreement (SLA) is provided.
+* **Release Schedule:** Releases are planned every 3 to 6 months. These releases will contain all security fixes implemented up to that point.
 
-### Ory Network Users & Ory Enterprise License Customers
+## Ory Enterprise License Customers
 
-For users on the Ory Network and customers with an Ory Enterprise license, the
-following timelines apply for security vulnerabilities based on their severity:
+* **Security SLA:** The following timelines apply for security vulnerabilities based on their severity:
+  - Critical: Resolved within 14 days.
+  - High: Resolved within 30 days.
+  - Medium: Resolved within 90 days.
+  - Low: Resolved within 180 days.
+  - Informational: Addressed as needed.
+* **Release Schedule:** Updates are provided as soon as vulnerabilities are resolved, adhering to the above SLA.
 
-- **Critical:** Resolved within 14 days.
-- **High:** Resolved within 30 days.
-- **Medium:** Resolved within 90 days.
-- **Low:** Resolved within 180 days.
-- **Informational:** Addressed as needed.
+## Ory Network Users
 
-[Get in touch](https://www.ory.sh/contact/) to learn more about Ory's security
-SLAs and process.
+* **Security SLA:** The following timelines apply for security vulnerabilities based on their severity:
+  - Critical: Resolved within 14 days.
+  - High: Resolved within 30 days.
+  - Medium: Resolved within 90 days.
+  - Low: Resolved within 180 days.
+  - Informational: Addressed as needed.
+* **Release Schedule:** Updates are automatically deployed to Ory Network as soon as vulnerabilities are resolved, adhering to the above SLA.
+
+[Get in touch](https://www.ory.sh/contact/) to learn more about Ory's security SLAs and process.
 
 ## Reporting a Vulnerability
 
