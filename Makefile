@@ -35,7 +35,7 @@ test: .bin/shellcheck .bin/shfmt node_modules  # runs all linters
 .bin/shfmt: Makefile
 	echo installing Shellfmt ...
 	mkdir -p .bin
-	curl -sSL https://github.com/mvdan/sh/releases/download/v3.5.1/shfmt_v3.5.1_linux_amd64 -o .bin/shfmt
+	curl -sSL https://github.com/mvdan/sh/releases/download/v3.9.0/shfmt_v3.9.0_darwin_arm64 -o .bin/shfmt
 	chmod +x .bin/shfmt
 
 node_modules: package.json package-lock.json
