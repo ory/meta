@@ -33,10 +33,20 @@ test: .bin/shellcheck .bin/shfmt node_modules  # runs all linters
 	touch .bin/shellcheck   # update the timestamp so that Make doesn't re-install the file over and over again
 
 .bin/shfmt: Makefile
-	echo installing Shellfmt ...
+	echo "Installing Shellfmt ..."
 	mkdir -p .bin
-	curl -sSL https://github.com/mvdan/sh/releases/download/v3.5.1/shfmt_v3.5.1_linux_amd64 -o .bin/shfmt
+	if [ "$$(uname -s)" = "Darwin" ] && [ "$$(uname -m)" = "arm64" ]; then \
+		echo " - detected macOS ARM64"; \
+		curl -sSL https://github.com/mvdan/sh/releases/download/v3.9.0/shfmt_v3.9.0_darwin_arm64 -o .bin/shfmt; \
+	elif [ "$$(uname -s)" = "Linux" ] && [ "$$(uname -m)" = "x86_64" ]; then \
+		echo " - detected Linux AMD64"; \
+		curl -sSL https://github.com/mvdan/sh/releases/download/v3.9.0/shfmt_v3.9.0_linux_amd64 -o .bin/shfmt; \
+	else \
+		echo " - unsupported architecture: $$(uname -s) $$(uname -m)"; \
+		exit 1; \
+	fi
 	chmod +x .bin/shfmt
+	touch .bin/shfmt 
 
 node_modules: package.json package-lock.json
 	echo installing Node dependencies ...
