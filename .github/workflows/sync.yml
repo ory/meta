@@ -6,10 +6,10 @@ on:
   # action is triggered on push to the following paths
   push:
     paths:
-      - "templates/**"
-      - "scripts/sync*"
-      - "package.json"
-      - ".github/workflows/sync.yml"
+      - 'templates/**'
+      - 'scripts/sync*'
+      - 'package.json'
+      - '.github/workflows/sync.yml'
     branches:
       - master
 
