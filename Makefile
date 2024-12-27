@@ -26,11 +26,20 @@ test: .bin/shellcheck .bin/shfmt node_modules  # runs all linters
 
 .bin/shellcheck: Makefile
 	echo installing Shellcheck ...
-	curl -sSL https://github.com/koalaman/shellcheck/releases/download/stable/shellcheck-stable.linux.x86_64.tar.xz | tar xJ
 	mkdir -p .bin
-	mv shellcheck-stable/shellcheck .bin
-	rm -rf shellcheck-stable
-	touch .bin/shellcheck   # update the timestamp so that Make doesn't re-install the file over and over again
+	if [ "$$(uname -s)" = "Darwin" ] && [ "$$(uname -m)" = "arm64" ]; then \
+		echo " - detected macOS ARM64" && \
+		curl -sSL https://github.com/koalaman/shellcheck/releases/download/v0.10.0/shellcheck-v0.10.0.darwin.aarch64.tar.xz | tar xJ; \
+	elif [ "$$(uname -s)" = "Linux" ] && [ "$$(uname -m)" = "x86_64" ]; then \
+		echo " - detected Linux AMD64" && \
+		curl -sSL https://github.com/koalaman/shellcheck/releases/download/v0.10.0/shellcheck-v0.10.0.linux.x86_64.tar.xz | tar xJ; \
+	else \
+		echo " - unsupported architecture: $$(uname -s) $$(uname -m)" && \
+		exit 1; \
+	fi
+	mv shellcheck-v0.10.0/shellcheck .bin
+	rm -rf shellcheck-v0.10.0
+	touch .bin/shellcheck
 
 .bin/shfmt: Makefile
 	echo "Installing Shellfmt ..."
