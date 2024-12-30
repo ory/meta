@@ -271,17 +271,17 @@ function create_workspace {
 }
 
 function format {
-  header "FORMATTING"
-  local -r repo_path=$1
-  if [ ! -f "$repo_path/package.json" ]; then
-    echo "Skipping formatting as package.json does not exist in $repo_path"
-    return
-  fi
-  (
-    cd "$repo_path"
-    npm ci --legacy-peer-deps
-    npx prettier --write "*.md" .github
-  )
+	header "FORMATTING"
+	local -r repo_path=$1
+	if [ ! -f "$repo_path/package.json" ]; then
+		echo "Skipping formatting as package.json does not exist in $repo_path"
+		return
+	fi
+	(
+		cd "$repo_path"
+		npm ci --legacy-peer-deps
+		npx prettier --write "*.md" .github
+	)
 }
 
 function install_dependencies_on_ci {
