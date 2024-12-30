@@ -19,9 +19,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: webfactory/ssh-agent@v0.4.1
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - run: |
           source ./scripts/sync.sh
           install_dependencies_on_ci
@@ -29,4 +26,5 @@ jobs:
           workspace=$(create_workspace)
           replicate_all "$workspace" "push"
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+          GITHUB_TOKEN: ${{ secrets.ORY_BOT_PAT }}
+
