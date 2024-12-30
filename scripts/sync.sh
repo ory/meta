@@ -195,7 +195,7 @@ function clone {
 	header "CLONING"
 	local -r repo_id=$1
 	local -r repo_path=$2
-	git clone --depth 1 "https://github.com/$repo_id.git" "$repo_path"
+	git clone --depth 1 "git@github.com:$repo_id.git" "$repo_path"
 }
 
 # commits the changes in the current directory to the local Git client
@@ -215,8 +215,7 @@ function configure_git_on_ci {
 	header "CONFIGURING GIT"
 	# set git email & username
 	bash <(curl -s https://raw.githubusercontent.com/ory/ci/master/src/scripts/install/git.sh)
-	# change global url from https://github.com/ to git@github.com:
-	# git config --global url."git@github.com:".insteadOf https://github.com/
+	git config --global url."git@github.com:".insteadOf https://github.com/
 	git config --global user.email "60093411+ory-bot@users.noreply.github.com"
 	git config --global user.name "ory-bot"
 }

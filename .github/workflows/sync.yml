@@ -19,6 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: webfactory/ssh-agent@v0.4.1
+        with:
+          ssh-private-key: ${{ secrets.ORY_BOT_SSH_KEY }}
       - run: |
           source ./scripts/sync.sh
           install_dependencies_on_ci
