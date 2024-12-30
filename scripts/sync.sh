@@ -195,7 +195,7 @@ function clone {
 	header "CLONING"
 	local -r repo_id=$1
 	local -r repo_path=$2
-	git clone --depth 1 "git@github.com:$repo_id.git" "$repo_path"
+	git clone --depth 1 "https://github.com/$repo_id.git" "$repo_path"
 }
 
 # commits the changes in the current directory to the local Git client
