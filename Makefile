@@ -1,3 +1,22 @@
+OS=$(shell uname -s | tr '[:upper:]' '[:lower:]')
+ARCH=$(shell uname -m)
+ifeq ($(ARCH),x86_64)
+	ARCH=amd64
+	ARCH_SHCK=x86_64
+else ifeq ($(ARCH),arm64)
+	ARCH=arm64
+	ARCH_SHCK=arm64
+else ifeq ($(ARCH),aarch64)
+	ARCH=arm64
+	ARCH_SHCK=arm64
+else ifeq ($(ARCH),i386)
+	ARCH=386
+	ARCH_SHCK=386
+else ifeq ($(ARCH),i686)
+	ARCH=386
+	ARCH_SHCK=386
+endif
+
 format: .bin/ory .bin/shfmt node_modules  # formats the source code
 	echo formatting ...
 	.bin/ory dev headers copyright --type=open-source
@@ -42,20 +61,9 @@ test: .bin/shellcheck .bin/shfmt node_modules  # runs all linters
 	touch .bin/shellcheck
 
 .bin/shfmt: Makefile
-	echo "Installing Shellfmt ..."
 	mkdir -p .bin
-	if [ "$$(uname -s)" = "Darwin" ] && [ "$$(uname -m)" = "arm64" ]; then \
-		echo " - detected macOS ARM64"; \
-		curl -sSL https://github.com/mvdan/sh/releases/download/v3.9.0/shfmt_v3.9.0_darwin_arm64 -o .bin/shfmt; \
-	elif [ "$$(uname -s)" = "Linux" ] && [ "$$(uname -m)" = "x86_64" ]; then \
-		echo " - detected Linux AMD64"; \
-		curl -sSL https://github.com/mvdan/sh/releases/download/v3.9.0/shfmt_v3.9.0_linux_amd64 -o .bin/shfmt; \
-	else \
-		echo " - unsupported architecture: $$(uname -s) $$(uname -m)"; \
-		exit 1; \
-	fi
+	curl -sSL https://github.com/mvdan/sh/releases/download/v3.10.0/shfmt_v3.10.0_$(OS)_$(ARCH) -o .bin/shfmt
 	chmod +x .bin/shfmt
-	touch .bin/shfmt 
 
 node_modules: package.json package-lock.json
 	echo installing Node dependencies ...
