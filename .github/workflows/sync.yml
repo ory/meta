@@ -27,4 +27,3 @@ jobs:
           replicate_all "$workspace" "push"
         env:
           GITHUB_TOKEN: ${{ secrets.ORY_BOT_PAT }}
-
