@@ -11,9 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: make test
-      - uses: webfactory/ssh-agent@v0.4.1
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - name: Dry-run the sync
         run: |
           source ./scripts/sync.sh
@@ -22,4 +19,4 @@ jobs:
           workspace=$(create_workspace)
           replicate_all "$workspace" "commit"
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_AENEASR }}
+          GITHUB_TOKEN: ${{ secrets.ORY_BOT_PAT }}
