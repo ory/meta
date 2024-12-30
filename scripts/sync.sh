@@ -216,7 +216,7 @@ function configure_git_on_ci {
 	# set git email & username
 	bash <(curl -s https://raw.githubusercontent.com/ory/ci/master/src/scripts/install/git.sh)
 	# change global url from https://github.com/ to git@github.com:
-	git config --global url."git@github.com:".insteadOf https://github.com/
+	# git config --global url."git@github.com:".insteadOf https://github.com/
 }
 
 # copy contributing guide to docs if docs exist
