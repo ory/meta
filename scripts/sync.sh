@@ -217,6 +217,8 @@ function configure_git_on_ci {
 	bash <(curl -s https://raw.githubusercontent.com/ory/ci/master/src/scripts/install/git.sh)
 	# change global url from https://github.com/ to git@github.com:
 	# git config --global url."git@github.com:".insteadOf https://github.com/
+	git config --global user.email "60093411+ory-bot@users.noreply.github.com"
+	git config --global user.name "ory-bot"
 }
 
 # copy contributing guide to docs if docs exist
@@ -289,8 +291,6 @@ function install_dependencies_on_ci {
 	sudo apt-get update -y
 	sudo apt-get install -y moreutils gettext-base
 	curl https://raw.githubusercontent.com/ory/meta/master/install.sh | bash -s -- -b .bin ory v0.1.48
-	git config --global user.email "60093411+ory-bot@users.noreply.github.com"
-	git config --global user.name "ory-bot"
 }
 
 # pushes the committed changes from the local Git client to GitHub
