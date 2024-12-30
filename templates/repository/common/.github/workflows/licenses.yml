@@ -8,7 +8,8 @@ on:
       - master
 
 jobs:
-  check:
+  licenses:
+    name: License compliance
     runs-on: ubuntu-latest
     steps:
       - name: Install script
