@@ -2,7 +2,7 @@
 set -Eexuo pipefail # abort the script on error
 
 # Array to collect errors
-declare -a errors
+declare -a errors=()
 
 # replicate shared data from this repo into all repositories at Ory
 function replicate_all {
