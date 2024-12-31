@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -Eexuo pipefail # abort the script on error
 
+# Array to collect errors
+declare -a errors
+
 # replicate shared data from this repo into all repositories at Ory
 function replicate_all {
 	# verify arguments
@@ -119,6 +122,15 @@ function replicate_all {
 		repo_type=${type_map[$repo_name]:-library}
 		replicate "ory/$repo_name" "$repo_type" "$human_name" "$workspace" "$persist"
 	done
+
+	# Check for errors and exit with a non-zero status if any errors were collected
+	if [ ${#errors[@]} -ne 0 ]; then
+		echo "Errors occurred during git push:"
+		for error in "${errors[@]}"; do
+			echo "$error"
+		done
+		exit 1
+	fi
 }
 
 # replicates the info in this repository into the given target repository
@@ -304,7 +316,9 @@ function push_changes {
 	local -r repo_path=$1
 	(
 		cd "$repo_path"
-		git push
+		if ! git push; then
+			errors+=("Failed to push changes for $repo_path")
+		fi
 	)
 }
 
