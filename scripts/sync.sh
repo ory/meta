@@ -98,6 +98,7 @@ function replicate_all {
 	declare -a exclusion_list=(
 		"meta"
 		"ci"
+		"sdk"
 		".github"
 	)
 
