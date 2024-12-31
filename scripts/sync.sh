@@ -101,7 +101,12 @@ function replicate_all {
 		".github"
 	)
 
-	gh repo list ory --visibility public --no-archived --source --json name -L 1000 | jq -r '.[] | .name' | while read -r repo_name; do
+	repos=$(gh repo list ory --visibility public --no-archived --source --json name -L 1000 | jq -r '.[] | .name')
+	echo "Found repositories:"
+	echo $repos
+	echo "---"
+
+	$repos | while read -r repo_name; do
 		# Check if the repository is in the exclusion list
 		for excluded_repo in "${exclusion_list[@]}"; do
 			if [[ "$repo_name" == "$excluded_repo" ]]; then
