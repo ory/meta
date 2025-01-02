@@ -5,8 +5,8 @@ on:
   push:
     branches:
       - main
-      - master
       - v3
+      - master
 
 jobs:
   licenses:
