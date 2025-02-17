@@ -7,7 +7,7 @@
 - [FAQ](#faq)
 - [How can I contribute?](#how-can-i-contribute)
 - [Communication](#communication)
-- [Contribute examples](#contribute-examples)
+- [Contribute examples or community projects](#contribute-examples-or-community-projects)
 - [Contribute code](#contribute-code)
 - [Contribute documentation](#contribute-documentation)
 - [Disclosing vulnerabilities](#disclosing-vulnerabilities)
@@ -122,7 +122,7 @@ the projects that you are interested in.
 
 Also, [follow us on Twitter](https://twitter.com/orycorp).
 
-## Contribute example or community projects
+## Contribute examples or community projects
 
 One of the most impactful ways to contribute is by adding code examples or other
 Ory-related code. You can find an overview of community code in the
