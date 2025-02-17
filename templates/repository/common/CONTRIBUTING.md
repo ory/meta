@@ -124,13 +124,14 @@ Also, [follow us on Twitter](https://twitter.com/orycorp).
 
 ## Contribute example or community projects
 
-One of the most impactful ways to contribute is by adding code examples or other Ory-related code.
-You can find an overview of community code in the [awesome-ory](https://github.com/ory/awesome-ory) repository.
+One of the most impactful ways to contribute is by adding code examples or other
+Ory-related code. You can find an overview of community code in the
+[awesome-ory](https://github.com/ory/awesome-ory) repository.
 
 _If you would like to contribute a new example, we would love to hear from you!_
 
-Please [open a pull request at awesome-ory](https://github.com/ory/awesome-ory/) to
-add your example or Ory-related project to the awesome-ory README.
+Please [open a pull request at awesome-ory](https://github.com/ory/awesome-ory/)
+to add your example or Ory-related project to the awesome-ory README.
 
 ## Contribute code
 
