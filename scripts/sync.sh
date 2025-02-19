@@ -42,7 +42,7 @@ function replicate_all {
 		["label-sync-action"]="Label Sync Action"
 		["milestone-action"]="Milestone Action"
 		["build-buf-action"]="Buildbuf Action"
-		["examples"]="Examples"
+		["awesome-ory"]="Awesome Ory"
 		["hydra-maester"]="Ory Hydra Maester"
 		["oathkeeper-maester"]="Ory Oathkeeper Maester"
 		["sdk"]="Ory SDK"
