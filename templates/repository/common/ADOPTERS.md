@@ -3,9 +3,9 @@
 The Ory community stands on the shoulders of individuals, companies, and
 maintainers. The Ory team thanks everyone involved - from submitting bug reports
 and feature requests, to contributing patches and documentation. The Ory
-community counts more than 50.000 members and is growing rapidly. The Ory stack
-protects 7.000.000.000+ API requests every day. None of this would have been
-possible without each and everyone of you!
+community counts more than 50.000 members and is growing. The Ory stack protects
+7.000.000.000+ API requests every day across thousands of companies. None of
+this would have been possible without each and everyone of you!
 
 The following list represents companies that have accompanied us along the way
 and that have made outstanding contributions to our ecosystem. _If you think
@@ -208,7 +208,7 @@ that your company deserves a spot here, reach out to
                     <img height="24px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/dark/klarna.svg" alt="Klarna">
                 </picture>
             </td>
-            <td><a href="https://www.klarna.com/">klarna.comm</a></td>
+            <td><a href="https://www.klarna.com/">klarna.com</a></td>
         </tr>
         <tr>
             <td>Raspberry PI Foundation</td>
@@ -281,16 +281,6 @@ that your company deserves a spot here, reach out to
             <td><a href="https://www.contraste.com/en">contraste.com</a></td>
         </tr>
         <tr>
-            <td>Rabbit</td>
-            <td align="center">
-                <picture>
-                    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ory/meta/master/static/adopters/light/rabbit.svg" />
-                    <img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/dark/rabbit.svg" alt="Rabbit">
-                </picture>
-            </td>
-            <td><a href="https://rabbit.co.th/">rabbit.co.th</a></td>
-        </tr>
-        <tr>
             <td>inMusic</td>
             <td align="center">
                 <picture>
@@ -310,16 +300,6 @@ that your company deserves a spot here, reach out to
             </td>
             <td><a href="https://buhta.com/">buhta.com</a></td>
         </tr>
-        <tr>
-            <td>TIER IV</td>
-            <td align="center">
-                <picture>
-                    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ory/meta/master/static/adopters/light/tieriv.svg" />
-                    <img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/dark/tieriv.svg" alt="TIER IV">
-                </picture>
-            </td>
-            <td><a href="https://tier4.jp/en/">tier4.jp</a></td>
-        </tr>
         </tr>
             <tr>
             <td>Amplitude</td>
@@ -331,149 +311,121 @@ that your company deserves a spot here, reach out to
             </td>
             <td><a href="https://amplitude.com/">amplitude.com</a></td>
         </tr>
-        <tr>
-            <td>Kyma Project</td>
-            <td align="center">
-                <picture>
-                    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ory/meta/master/static/adopters/light/kyma.svg" />
-                    <img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/dark/kyma.svg" alt="Kyma Project">
-                </picture>
-            </td>
-            <td><a href="https://kyma-project.io">kyma-project.io</a></td>
-        </tr>
-        <tr>
-            <td>Serlo</td>
-            <td align="center">
-                <picture>
-                    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ory/meta/master/static/adopters/light/serlo.svg" />
-                    <img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/dark/serlo.svg" alt="Serlo">
-                </picture>
-            </td>
-            <td><a href="https://serlo.org/">serlo.org</a></td>
-        </tr>
-        <tr>
-            <td>Padis</td>
-            <td align="center">
-                <picture>
-                    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ory/meta/master/static/adopters/light/padis.svg" />
-                    <img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/dark/padis.svg" alt="Padis">
-                </picture>
-            </td>
-            <td><a href="https://padis.io/">padis.io</a></td>
-        </tr>
-        <tr>
-            <td>Cloudbear</td>
-            <td align="center">
-                <picture>
-                    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ory/meta/master/static/adopters/light/cloudbear.svg" />
-                    <img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/dark/cloudbear.svg" alt="Cloudbear">
-                </picture>
-            </td>
-            <td><a href="https://cloudbear.eu/">cloudbear.eu</a></td>
-        </tr>
-        <tr>
-            <td>Security Onion Solutions</td>
-            <td align="center">
-                <picture>
-                    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ory/meta/master/static/adopters/light/securityonion.svg" />
-                    <img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/dark/securityonion.svg" alt="Security Onion Solutions">
-                </picture>
-            </td>
-            <td><a href="https://securityonionsolutions.com/">securityonionsolutions.com</a></td>
-        </tr>
-        <tr>
-            <td>Factly</td>
-            <td align="center">
-                <picture>
-                    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ory/meta/master/static/adopters/light/factly.svg" />
-                    <img height="24px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/dark/factly.svg" alt="Factly">
-                </picture>
-            </td>
-            <td><a href="https://factlylabs.com/">factlylabs.com</a></td>
-        </tr>
-        <tr>
-            <td>Cashdeck / All My Funds</td>
-            <td align="center">
-                <picture>
-                    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ory/meta/master/static/adopters/light/allmyfunds.svg" />
-                    <img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/dark/allmyfunds.svg" alt="All My Funds">
-                </picture>
-            </td>
-            <td><a href="https://cashdeck.com.au/">cashdeck.com.au</a></td>
-        </tr>
-        <tr>
-            <td>Nortal</td>
-            <td align="center">
-                <picture>
-                    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ory/meta/master/static/adopters/light/nortal.svg" />
-                    <img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/dark/nortal.svg" alt="Nortal">
-                </picture>
-            </td>
-            <td><a href="https://nortal.com/">nortal.com</a></td>
-        </tr>
-        <tr>
-            <td>OrderMyGear</td>
-            <td align="center">
-                <picture>
-                    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ory/meta/master/static/adopters/light/ordermygear.svg" />
-                    <img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/dark/ordermygear.svg" alt="OrderMyGear">
-                </picture>
-            </td>
-            <td><a href="https://www.ordermygear.com/">ordermygear.com</a></td>
-        </tr>
-        <tr>
-            <td>R2Devops</td>
-            <td align="center">
-                <picture>
-                    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ory/meta/master/static/adopters/light/r2devops.svg" />
-                    <img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/dark/r2devops.svg" alt="R2Devops">
-                </picture>
-            </td>
-            <td><a href="https://r2devops.io/">r2devops.io</a></td>
-        </tr>
-        <tr>
-            <td>Paralus</td>
-            <td align="center">
-                <picture>
-                    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ory/meta/master/static/adopters/light/paralus.svg" />
-                    <img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/dark/paralus.svg" alt="Paralus">
-                </picture>
-            </td>
-            <td><a href="https://www.paralus.io/">paralus.io</a></td>
-        </tr>
-        </tr>
-            <tr>
-            <td>dyrector.io</td>
-            <td align="center">
-                <picture>
-                    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ory/meta/master/static/adopters/light/dyrector_io.svg" />
-                    <img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/dark/dyrector_io.svg" alt="dyrector.io">
-                </picture>
-            </td>
-            <td><a href="https://dyrector.io/">dyrector.io</a></td>
-        </tr>
-         <tr>
-            <td>Pinniped</td>
-            <td align="center">
-                <picture>
-                    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ory/meta/master/static/adopters/light/pinniped.svg" />
-                    <img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/dark/pinniped.svg" alt="pinniped.dev">
-                </picture>
-            </td>
-            <td><a href="https://pinniped.dev/">pinniped.dev</a></td>
-        </tr>
-        <tr>
-            <td>Pvotal</td>
-            <td align="center">
-                <picture>
-                    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ory/meta/master/static/adopters/light/pvotal.svg" />
-                    <img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/dark/pvotal.svg" alt="pvotal.tech">
-                </picture>
-            </td>
-            <td><a href="https://pvotal.tech/">pvotal.tech</a></td>
-        </tr>
-    </tbody>
-
+        </tbody>
+  <tbody>
+    <tr>
+        <td align="center">
+            <a href="https://rabbit.co.th/">
+            <picture>
+                <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ory/meta/master/static/adopters/light/rabbit.svg" />
+                <img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/dark/rabbit.svg" alt="Rabbit">
+            </picture>
+        </td>
+<td align="center">
+        <a href="https://tier4.jp/en/">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ory/meta/master/static/adopters/light/tieriv.svg" />
+            <img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/dark/tieriv.svg" alt="TIER IV">
+          </picture>
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://kyma-project.io">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ory/meta/master/static/adopters/light/kyma.svg" />
+            <img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/dark/kyma.svg" alt="Kyma Project">
+          </picture>
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://serlo.org/">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ory/meta/master/static/adopters/light/serlo.svg" />
+            <img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/dark/serlo.svg" alt="Serlo">
+          </picture>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <a href="https://padis.io/">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ory/meta/master/static/adopters/light/padis.svg" />
+            <img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/dark/padis.svg" alt="Padis">
+          </picture>
+        </a>
+      </td>
+     <td align="center">
+        <a href="https://cloudbear.eu/">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ory/meta/master/static/adopters/light/cloudbear.svg" />
+            <img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/dark/cloudbear.svg" alt="Cloudbear">
+          </picture>
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://securityonionsolutions.com/">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ory/meta/master/static/adopters/light/securityonion.svg" />
+            <img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/dark/securityonion.svg" alt="Security Onion Solutions">
+          </picture>
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://factlylabs.com/">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ory/meta/master/static/adopters/light/factly.svg" />
+            <img height="24px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/dark/factly.svg" alt="Factly">
+          </picture>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <a href="https://r2devops.io/">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ory/meta/master/static/adopters/light/r2devops.svg" />
+            <img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/dark/r2devops.svg" alt="R2Devops">
+          </picture>
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://www.paralus.io/">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ory/meta/master/static/adopters/light/paralus.svg" />
+            <img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/dark/paralus.svg" alt="Paralus">
+          </picture>
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://dyrector.io/">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ory/meta/master/static/adopters/light/dyrector_io.svg" />
+            <img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/dark/dyrector_io.svg" alt="dyrector.io">
+          </picture>
+        </a>
+      </td>
+      <td align="center">
+        <a href="https://pinniped.dev/">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ory/meta/master/static/adopters/light/pinniped.svg" />
+            <img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/dark/pinniped.svg" alt="pinniped.dev">
+          </picture>
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <a href="https://pvotal.tech/">
+          <picture>
+            <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ory/meta/master/static/adopters/light/pvotal.svg" />
+            <img height="32px" src="https://raw.githubusercontent.com/ory/meta/master/static/adopters/dark/pvotal.svg" alt="pvotal.tech">
+          </picture>
+        </a>
+      </td>
+      <td></td>
+    </tr>
+  </tbody>
 </table>
 
 Many thanks to all individual contributors
