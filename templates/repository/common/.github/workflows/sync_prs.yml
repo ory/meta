@@ -1,0 +1,67 @@
+name: Synchronize Pull Requests
+
+on:
+  pull_request:
+    types:
+      - "labeled"
+      - "unlabeled"
+      - "opened"
+      - "edited"
+      - "reopened"
+      - "synchronize"
+
+jobs:
+  run-copybara:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    name: Run Copybara
+    env:
+      GIT_EMAIL: "60093411+ory-bot@users.noreply.github.com"
+      GIT_NAME: "ory-bot"
+    steps:
+      - name: Configure Git
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_BOT }}
+        run: |
+          git config --global user.email "${{ env.GIT_EMAIL }}"
+          git config --global user.name "${{ env.GIT_NAME }}"
+          git config --global credential.helper store
+          echo "https://${{ env.GIT_NAME }}:${GITHUB_TOKEN}@github.com" > ~/.git-credentials
+
+      - name: Checkout repository containing .github/copybara/copy.bara.sky
+        uses: actions/checkout@v4
+        with:
+          repository: ory-corp/cloud
+          sparse-checkout: |
+            .github/copybara/copy.bara.sky
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: "21"
+          distribution: "zulu"
+
+      - name: Download Copybara JAR
+        run:
+          wget
+          https://github.com/google/copybara/releases/download/${COPYBARA_VERSION}/copybara_deploy.jar
+          -O copybara.jar
+        env:
+          COPYBARA_VERSION: v20250519
+
+      - name: Validate Copybara config
+        run: java -jar copybara.jar validate .github/copybara/copy.bara.sky
+
+      - name: Run Copybara - Sync PR
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN_BOT }}
+        shell: bash
+        if:
+          ${{ !failure() && !cancelled() &&
+          contains(fromJSON('["ory/oathkeeper", "ory/kratos", "ory/keto",
+          "ory/hydra", "ory/elements", "ory/kratos-selfservice-ui-node",
+          "ory/kratos-selfservice-ui-react-native",
+          "ory/kratos-selfservice-ui-react-nextjs"]'),
+          github.event.repository.name) }}
+        run: |
+          java -jar copybara.jar .github/copybara/copy.bara.sky pull_${{ github.event.repository.name }} ${{ github.event.number }} --folder-dir .copybara-cache 2>&1 | tee output.log
