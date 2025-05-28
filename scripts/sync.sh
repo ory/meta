@@ -28,6 +28,8 @@ function replicate_all {
 		["oathkeeper"]="Oathkeeper"
 		["kratos"]="Kratos"
 		["polis"]="Polis"
+		["polis-examples"]="Polis Examples"
+		["saml20"]="Saml20"		
 		["hydra-login-consent-node"]="Hydra Login, Logout And Consent Node Example"
 		["docs"]="Documentation"
 		["cli"]="CLI"
