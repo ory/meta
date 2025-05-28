@@ -107,7 +107,6 @@ function replicate_all {
 		"oathkeeper"
 		"kratos"
 		"elements"
-		"elements"
 		"polis"
 		"kratos-selfservice-ui-node"
 		"kratos-selfservice-ui-react-native"
