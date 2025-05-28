@@ -18,21 +18,25 @@ function replicate_all {
 		echo "ERROR (sync_all): unknown value for \"persist\" argument: \"$persist\". Please provide either \"push\", \"commit\", or \"keep\"."
 		exit 1
 	fi
-	replicate ory/hydra server "Hydra" "$workspace" "$persist"
-	replicate ory/keto server "Keto" "$workspace" "$persist"
-	replicate ory/oathkeeper server "Oathkeeper" "$workspace" "$persist"
-	replicate ory/kratos server "Kratos" "$workspace" "$persist"
+
+	# These are mono-repos and can no longer be synced with this script.
+
+	# replicate ory/hydra server "Hydra" "$workspace" "$persist"
+	# replicate ory/keto server "Keto" "$workspace" "$persist"
+	# replicate ory/oathkeeper server "Oathkeeper" "$workspace" "$persist"
+	# replicate ory/kratos server "Kratos" "$workspace" "$persist"
+	# replicate ory/cli library "CLI" "$workspace" "$persist"
+	# replicate ory/kratos-selfservice-ui-node library "Kratos SelfService UI Node Example" "$workspace" "$persist"
+	# replicate ory/kratos-selfservice-ui-react-native library "Kratos SelfService UI React Native Example" "$workspace" "$persist"
+	# replicate ory/fosite library "Fosite" "$workspace" "$persist"
+	# replicate ory/x library "X" "$workspace" "$persist"
+
 	replicate ory/hydra-login-consent-node library "Hydra Login, Logout And Consent Node Example" "$workspace" "$persist"
 	replicate ory/docs library "Documentation" "$workspace" "$persist"
-	replicate ory/cli library "CLI" "$workspace" "$persist"
-	replicate ory/kratos-selfservice-ui-node library "Kratos SelfService UI Node Example" "$workspace" "$persist"
-	replicate ory/kratos-selfservice-ui-react-native library "Kratos SelfService UI React Native Example" "$workspace" "$persist"
-	replicate ory/fosite library "Fosite" "$workspace" "$persist"
 	replicate ory/dockertest library "Dockertest" "$workspace" "$persist"
 	replicate ory/herodot library "Herodot" "$workspace" "$persist"
 	replicate ory/graceful library "Graceful" "$workspace" "$persist"
 	replicate ory/k8s library "Kubernetes Resources" "$workspace" "$persist"
-	replicate ory/x library "X" "$workspace" "$persist"
 	replicate ory/closed-reference-notifier action "Closed Reference Notifier" "$workspace" "$persist"
 	replicate ory/label-sync-action action "Label Sync Action" "$workspace" "$persist"
 	replicate ory/milestone-action action "Milestone Action" "$workspace" "$persist"
