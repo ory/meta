@@ -29,7 +29,7 @@ function replicate_all {
 		["kratos"]="Kratos"
 		["polis"]="Polis"
 		["polis-examples"]="Polis Examples"
-		["saml20"]="Saml20"		
+		["saml20"]="SAML 2.0 library for Node.js"		
 		["hydra-login-consent-node"]="Hydra Login, Logout And Consent Node Example"
 		["docs"]="Documentation"
 		["cli"]="CLI"
