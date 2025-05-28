@@ -94,6 +94,7 @@ function replicate_all {
 		["keto"]="server"
 		["oathkeeper"]="server"
 		["kratos"]="server"
+		["polis"]="server"
 		["closed-reference-notifier"]="action"
 		["label-sync-action"]="action"
 		["milestone-action"]="action"
@@ -344,7 +345,7 @@ function substitute_placeholders_in_file {
 	local -r human_name=$4
 	header "SUBSTITUTING PLACEHOLDERS IN FILE"
 	case "$repo_id" in
-	"ory/hydra" | "ory/kratos" | "ory/oathkeeper" | "ory/keto")
+	"ory/hydra" | "ory/kratos" | "ory/oathkeeper" | "ory/keto" | "ory/polis")
 		discussions=$repo_discussions
 		;;
 	*)
