@@ -108,6 +108,8 @@ function replicate_all {
 		"kratos"
 		"elements"
 		"polis"
+		"x"
+		"fosite"
 		"kratos-selfservice-ui-node"
 		"kratos-selfservice-ui-react-native"
 		"kratos-selfservice-ui-react-nextjs"
