@@ -102,6 +102,16 @@ function replicate_all {
 		"meta"
 		"ci"
 		".github"
+		"hydra"
+    "keto"
+    "oathkeeper"
+    "kratos"
+    "elements"
+    "elements"
+    "polis"
+    "kratos-selfservice-ui-node"
+    "kratos-selfservice-ui-react-native"
+    "kratos-selfservice-ui-react-nextjs"
 	)
 
 	gh repo list ory --visibility public --no-archived --source --json name -L 1000 | jq -r '.[] | .name' | while read -r repo_name; do
