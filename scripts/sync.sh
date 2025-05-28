@@ -27,6 +27,7 @@ function replicate_all {
 		["keto"]="Keto"
 		["oathkeeper"]="Oathkeeper"
 		["kratos"]="Kratos"
+		["polis"]="Polis"
 		["hydra-login-consent-node"]="Hydra Login, Logout And Consent Node Example"
 		["docs"]="Documentation"
 		["cli"]="CLI"
