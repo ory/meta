@@ -30,6 +30,20 @@ OpenID Connect Provider which easily connects to any existing identity system by
 writing a tiny "bridge" application. It gives absolute control over the user
 interface and user experience flows.
 
+### Ory Keto: Access Control Policies as a Server
+
+[Ory Keto](https://github.com/ory/keto) is a policy decision point. It uses a
+set of access control policies, similar to AWS IAM Policies, in order to
+determine whether a subject (user, application, service, car, ...) is authorized
+to perform a certain action on a resource.
+
+### Ory Polis: Enterprise Single Sign-On (SSO)
+
+Ory Polis is an Enterprise Single Sign-On (SSO) service that bridges SAML and
+OIDC Identity Provider connections to an OAuth2/OpenID Connect flow. It
+abstracts the complexities of SAML and OIDC protocols and supports Directory
+Sync via SCIM 2.0 for user and group provisioning.
+
 ### Ory Oathkeeper: Identity & Access Proxy
 
 [Ory Oathkeeper](https://github.com/ory/oathkeeper) is a BeyondCorp/Zero Trust
@@ -38,12 +52,5 @@ and request mutation rules for your web services: Authenticate JWT, Access
 Tokens, API Keys, mTLS; Check if the contained subject is allowed to perform the
 request; Encode resulting content into custom headers (`X-User-ID`), JSON Web
 Tokens and more!
-
-### Ory Keto: Access Control Policies as a Server
-
-[Ory Keto](https://github.com/ory/keto) is a policy decision point. It uses a
-set of access control policies, similar to AWS IAM Policies, in order to
-determine whether a subject (user, application, service, car, ...) is authorized
-to perform a certain action on a resource.
 
 <!--END ECOSYSTEM-->
