@@ -39,10 +39,11 @@ to perform a certain action on a resource.
 
 ### Ory Polis: Enterprise Single Sign-On (SSO)
 
-Ory Polis is an Enterprise Single Sign-On (SSO) service that bridges SAML and
-OIDC Identity Provider connections to an OAuth2/OpenID Connect flow. It
-abstracts the complexities of SAML and OIDC protocols and supports Directory
-Sync via SCIM 2.0 for user and group provisioning.
+[Ory Polis](https://github.com/ory/polis) is an Enterprise Single Sign-On (SSO)
+service that bridges SAML and OIDC Identity Provider connections to an
+OAuth2/OpenID Connect flow. It abstracts the complexities of SAML and OIDC
+protocols and supports Directory Sync via SCIM 2.0 for user and group
+provisioning.
 
 ### Ory Oathkeeper: Identity & Access Proxy
 
