@@ -31,7 +31,7 @@ that your company deserves a spot here, reach out to
                 </picture>
             </td>
             <td><a href="https://openai.com/">openai.com</a></td>
-            <td><a href="https://www.ory.sh/case-studies/openai">OpenAI Case Study</a></td>
+            <td><a href="https://www.ory.com/case-studies/openai">OpenAI Case Study</a></td>
         </tr>
         <tr>
             <td>Fandom</td>
@@ -42,7 +42,7 @@ that your company deserves a spot here, reach out to
                 </picture>
             </td>
             <td><a href="https://www.fandom.com/">fandom.com</a></td>
-            <td><a href="https://www.ory.sh/case-studies/fandom">Fandom Case Study</a></td>
+            <td><a href="https://www.ory.com/case-studies/fandom">Fandom Case Study</a></td>
         </tr>
         <tr>
             <td>Lumin</td>
@@ -53,7 +53,7 @@ that your company deserves a spot here, reach out to
                 </picture>
             </td>
             <td><a href="https://www.luminpdf.com/">luminpdf.com</a></td>
-            <td><a href="https://www.ory.sh/case-studies/lumin">Lumin Case Study</a></td>
+            <td><a href="https://www.ory.com/case-studies/lumin">Lumin Case Study</a></td>
         </tr>
         <tr>
             <td>Sencrop</td>
@@ -64,7 +64,7 @@ that your company deserves a spot here, reach out to
                 </picture>
             </td>
             <td><a href="https://sencrop.com/">sencrop.com</a></td>
-            <td><a href="https://www.ory.sh/case-studies/sencrop">Sencrop Case Study</a></td>
+            <td><a href="https://www.ory.com/case-studies/sencrop">Sencrop Case Study</a></td>
         </tr>
         <tr>
             <td>OSINT Industries</td>
@@ -75,7 +75,7 @@ that your company deserves a spot here, reach out to
                 </picture>
             </td>
             <td><a href="https://www.osint.industries/">osint.industries</a></td>
-            <td><a href="https://www.ory.sh/case-studies/osint">OSINT Industries Case Study</a></td>
+            <td><a href="https://www.ory.com/case-studies/osint">OSINT Industries Case Study</a></td>
         </tr>
         <tr>
             <td>HGV</td>
@@ -86,7 +86,7 @@ that your company deserves a spot here, reach out to
                 </picture>
             </td>
             <td><a href="https://www.hgv.it/">hgv.it</a></td>
-            <td><a href="https://www.ory.sh/case-studies/hgv">HGV Case Study</a></td>
+            <td><a href="https://www.ory.com/case-studies/hgv">HGV Case Study</a></td>
         </tr>
         <tr>
             <td>Maxroll</td>
@@ -97,7 +97,7 @@ that your company deserves a spot here, reach out to
                 </picture>
             </td>
             <td><a href="https://maxroll.gg/">maxroll.gg</a></td>
-            <td><a href="https://www.ory.sh/case-studies/maxroll">Maxroll Case Study</a></td>
+            <td><a href="https://www.ory.com/case-studies/maxroll">Maxroll Case Study</a></td>
         </tr>
         <tr>
             <td>Zezam</td>
@@ -108,7 +108,7 @@ that your company deserves a spot here, reach out to
                 </picture>
             </td>
             <td><a href="https://www.zezam.io/">zezam.io</a></td>
-            <td><a href="https://www.ory.sh/case-studies/zezam">Zezam Case Study</a></td>
+            <td><a href="https://www.ory.com/case-studies/zezam">Zezam Case Study</a></td>
         </tr>
         <tr>
             <td>T.RowePrice</td>

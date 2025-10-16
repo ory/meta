@@ -18,7 +18,7 @@ dependencies (Java, Node, Ruby, libxml, ...).
 
 [Ory Kratos](https://github.com/ory/kratos) is an API-first Identity and User
 Management system that is built according to
-[cloud architecture best practices](https://www.ory.sh/docs/next/ecosystem/software-architecture-philosophy).
+[cloud architecture best practices](https://www.ory.com/docs/next/ecosystem/software-architecture-philosophy).
 It implements core use cases that almost every software application needs to
 deal with: Self-service Login and Registration, Multi-Factor Authentication
 (MFA/2FA), Account Recovery and Verification, Profile, and Account Management.
