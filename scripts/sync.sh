@@ -113,7 +113,7 @@ function replicate_all {
 		"kratos-selfservice-ui-node"
 		"kratos-selfservice-ui-react-native"
 		"kratos-selfservice-ui-react-nextjs"
-		"network", # manages its own templates
+		"network"  # manages its own templates
 	)
 
 	gh repo list ory --visibility public --no-archived --source --json name -L 1000 | jq -r '.[] | .name' | while read -r repo_name; do
