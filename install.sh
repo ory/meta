@@ -16,6 +16,7 @@ Usage: $this [-b] bindir [-d] <project> [<tag>]
       - kratos - downloads Ory Kratos
       - hydra - downloads Ory Hydra
       - oathkeeper - downloads Ory Oathkeeper
+      - talos - downloads Ory Talos
       - ory - downloads the Ory CLI
 
   -b sets bindir or installation directory, Defaults to ./bin
@@ -47,7 +48,7 @@ parse_args() {
 	done
 	shift $((OPTIND - 1))
 
-	[ -z "$1" ] && (echo "Please specify the project you want to download. Possible values are: keto, kratos, hydra, oathkeeper, ory." && exit 1)
+	[ -z "$1" ] && (echo "Please specify the project you want to download. Possible values are: keto, kratos, hydra, oathkeeper, talos, ory." && exit 1)
 	TAG=$2
 
 	case "$1" in
@@ -83,8 +84,15 @@ parse_args() {
 		FLAVOR=""
 		;;
 
+	talos)
+		REPO="talos"
+		BINARY=talos
+		PROJECT_NAME=talos
+		FLAVOR=""
+		;;
+
 	*)
-		echo "The project you specified is unknown. Please choose one of \"ory\", \"keto\", \"kratos\", \"oathkeeper\". Received \"$1\"."
+		echo "The project you specified is unknown. Please choose one of \"ory\", \"keto\", \"kratos\", \"oathkeeper\", \"talos\". Received \"$1\"."
 		exit 1
 		;;
 	esac
