@@ -25,6 +25,7 @@ function replicate_all {
 	declare -A name_map=(
 		["hydra"]="Hydra"
 		["keto"]="Keto"
+		["talos"]="Talos"
 		["oathkeeper"]="Oathkeeper"
 		["kratos"]="Kratos"
 		["hydra-login-consent-node"]="Hydra Login, Logout And Consent Node Example"
@@ -106,6 +107,7 @@ function replicate_all {
 		"keto"
 		"oathkeeper"
 		"kratos"
+		"talos"
 		"elements"
 		"polis"
 		"x"
