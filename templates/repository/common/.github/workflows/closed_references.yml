@@ -16,11 +16,11 @@ jobs:
     runs-on: ubuntu-latest
     name: Find closed references
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2-beta
+      - uses: actions/checkout@0717577d45739eb3c851188b29f50ed6c0b2194e # v2
+      - uses: actions/setup-node@27082cecf3ff7a1742dbd5e12605f0cb59dce2d9 # v2-beta
         with:
           node-version: "14"
-      - uses: ory/closed-reference-notifier@v1
+      - uses: ory/closed-reference-notifier@e389079345c8c974f59bd8ee2869539b41de8252 # v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           issueLabels: upstream,good first issue,help wanted
