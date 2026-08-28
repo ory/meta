@@ -306,8 +306,14 @@ function format {
 	fi
 	(
 		cd "$repo_path"
-		npm ci --legacy-peer-deps
-		npx prettier --write "*.md" .github
+		# --ignore-scripts skips lifecycle scripts (e.g. native builds like node-pty)
+		# which are irrelevant for formatting and break on newer Node versions
+		if npm ci --legacy-peer-deps --ignore-scripts; then
+			npx prettier --write "*.md" .github
+		else
+			echo "WARNING: 'npm ci' failed in $repo_path, formatting with a standalone prettier instead"
+			npx --yes prettier@2.7.1 --write "*.md" .github
+		fi
 	)
 }
 
