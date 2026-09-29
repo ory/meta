@@ -21,7 +21,8 @@ for file in "$templates"/*.yml "$live_licenses" .github/workflows/workflows.yml;
 	while IFS= read -r ref; do
 		[ -n "$ref" ] || continue
 		case "$ref" in
-		./* | docker://*) ;;
+		\$/*@*) fail "$file: $ref must not have a ref" ;;
+		./* | \$/?* | docker://*) ;;
 		*@*)
 			sha=${ref##*@}
 			if ! [[ $sha =~ ^[0-9a-f]{40}$ ]]; then
