@@ -14,7 +14,12 @@ fail() {
 }
 
 for file in "$templates"/*.yml "$live_licenses" .github/workflows/workflows.yml; do
+	if ! refs=$(yq -r '(.jobs[].uses, .jobs[].steps[]?.uses) | select(. != null)' "$file"); then
+		fail "$file: cannot parse"
+		continue
+	fi
 	while IFS= read -r ref; do
+		[ -n "$ref" ] || continue
 		case "$ref" in
 		./* | docker://*) ;;
 		*@*)
@@ -25,7 +30,7 @@ for file in "$templates"/*.yml "$live_licenses" .github/workflows/workflows.yml;
 			;;
 		*) fail "$file: $ref has no ref" ;;
 		esac
-	done < <(yq -r '.jobs[].steps[]?.uses // "" | select(. != "")' "$file")
+	done <<<"$refs"
 done
 
 if ! cmp -s "$templates/licenses.yml" "$live_licenses"; then
@@ -48,15 +53,11 @@ fi
 if [ "$(yq '.jobs.write.needs' "$licenses")" != check ]; then
 	fail "$licenses: job write must need job check"
 fi
-write_if=$(yq '.jobs.write.if // ""' "$licenses")
-if [[ $write_if != *"github.event_name == 'push' && ("* ]]; then
-	fail "$licenses: job write must run only on push"
+write_if=$(yq '.jobs.write.if // ""' "$licenses" | tr -s ' \n' ' ' | sed 's/ $//')
+expected_if="\${{ github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' || github.ref == 'refs/heads/v3') }}"
+if [ "$write_if" != "$expected_if" ]; then
+	fail "$licenses: job write must run only on pushes to main, master and v3"
 fi
-for branch in main master v3; do
-	if [[ $write_if != *"'refs/heads/$branch'"* ]]; then
-		fail "$licenses: job write must allow refs/heads/$branch"
-	fi
-done
 if [ "$(yq '[.jobs.* | select(.permissions == null)] | length' "$licenses")" != 0 ]; then
 	fail "$licenses: every job must declare permissions"
 fi
