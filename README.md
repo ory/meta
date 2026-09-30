@@ -28,8 +28,8 @@ full commit SHA, with the release or branch in a trailing comment. Dependabot
 and Renovate do not update these pins, so update them by hand:
 
 1. Find the commit for the new release with
-   `git ls-remote https://github.com/<owner>/<repo> 'refs/tags/<tag>^{}'`. For an
-   action pinned to a branch, such as `ory/ci` at `# master`, use the branch
+   `git ls-remote https://github.com/<owner>/<repo> 'refs/tags/<tag>^{}'`. For
+   an action pinned to a branch, such as `ory/ci` at `# master`, use the branch
    head.
 2. Review the changes between the old and the new commit.
 3. Replace the SHA and the comment. For the license workflow, change the
