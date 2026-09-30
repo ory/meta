@@ -42,7 +42,7 @@ licenses="$templates/licenses.yml"
 if [ "$(yq -o=json -I=0 '.jobs.check.permissions' "$licenses")" != '{"contents":"read"}' ]; then
 	fail "$licenses: job check must have only contents: read"
 fi
-if [ -n "$(yq '.jobs.check.if // ""' "$licenses")" ]; then
+if [ "$(yq '.jobs.check | has("if")' "$licenses")" != false ]; then
 	fail "$licenses: job check must run on every event"
 fi
 if yq -o=json '.jobs.check' "$licenses" | grep -q 'secrets\.'; then
