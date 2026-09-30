@@ -51,8 +51,8 @@ default_ref="github.ref == format('refs/heads/{0}', github.event.repository.defa
 if [ "$(yq '.jobs.check | has("if")' "$licenses")" != false ]; then
 	fail "$licenses: job check must run on every event"
 fi
-if [ "$(yq -o=json -I=0 '.on.push' "$licenses")" != null ]; then
-	fail "$licenses: the push trigger must not filter branches"
+if [ "$(yq -o=json -I=0 '.on.push' "$licenses")" != '{"branches":["main","v3","v4","master"]}' ]; then
+	fail "$licenses: the push trigger must run only on main, v3, v4 and master"
 fi
 if [ "$(yq -o=json -I=0 '.on | keys' "$licenses")" != '["pull_request","push"]' ]; then
 	fail "$licenses: triggers must be only pull_request and push"

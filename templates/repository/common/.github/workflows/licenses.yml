@@ -3,6 +3,11 @@ name: Licenses
 on:
   pull_request:
   push:
+    branches:
+      - main
+      - v3
+      - v4
+      - master
 
 jobs:
   check:
