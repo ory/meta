@@ -103,6 +103,7 @@ function replicate_all {
 		"meta"
 		"ci"
 		".github"
+		"docs"
 		"hydra"
 		"keto"
 		"oathkeeper"
