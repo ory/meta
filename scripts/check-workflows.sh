@@ -47,8 +47,12 @@ licenses="$templates/licenses.yml"
 if [ "$(yq -o=json -I=0 '.jobs.check.permissions' "$licenses")" != '{"contents":"read"}' ]; then
 	fail "$licenses: job check must have only contents: read"
 fi
+default_ref="github.ref == format('refs/heads/{0}', github.event.repository.default_branch)"
 if [ "$(yq '.jobs.check | has("if")' "$licenses")" != false ]; then
 	fail "$licenses: job check must run on every event"
+fi
+if [ "$(yq -o=json -I=0 '.on.push' "$licenses")" != '{"branches":["main","v3","v4","master"]}' ]; then
+	fail "$licenses: the push trigger must run only on main, v3, v4 and master"
 fi
 if [ "$(yq -o=json -I=0 '.on | keys' "$licenses")" != '["pull_request","push"]' ]; then
 	fail "$licenses: triggers must be only pull_request and push"
@@ -63,9 +67,8 @@ if [ "$(yq -o=json -I=0 '[.jobs.write.needs] | flatten' "$licenses")" != '["chec
 	fail "$licenses: job write must need job check"
 fi
 write_if=$(yq '.jobs.write.if // ""' "$licenses" | tr -s ' \n' ' ' | sed 's/ $//')
-expected_if="\${{ github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' || github.ref == 'refs/heads/v3') }}"
-if [ "$write_if" != "$expected_if" ]; then
-	fail "$licenses: job write must run only on pushes to main, master and v3"
+if [ "$write_if" != "\${{ github.event_name == 'push' && $default_ref }}" ]; then
+	fail "$licenses: job write must run only on pushes to the default branch"
 fi
 if [ "$(yq '[.jobs.* | select(.permissions == null)] | length' "$licenses")" != 0 ]; then
 	fail "$licenses: every job must declare permissions"
