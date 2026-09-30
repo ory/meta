@@ -4,6 +4,11 @@ set -Eeuo pipefail
 
 cd "$(dirname "${BASH_SOURCE[0]}")/.."
 
+if ! yq --version 2>&1 | grep -q mikefarah; then
+	echo "check-workflows: requires mikefarah/yq v4" >&2
+	exit 1
+fi
+
 templates=templates/repository/common/.github/workflows
 live_licenses=.github/workflows/licenses.yml
 failed=0
@@ -45,13 +50,16 @@ fi
 if [ "$(yq '.jobs.check | has("if")' "$licenses")" != false ]; then
 	fail "$licenses: job check must run on every event"
 fi
-if yq -o=json '.jobs.check' "$licenses" | grep -q 'secrets\.'; then
-	fail "$licenses: job check must not use secrets"
+if [ "$(yq -o=json -I=0 '.on | keys' "$licenses")" != '["pull_request","push"]' ]; then
+	fail "$licenses: triggers must be only pull_request and push"
+fi
+if yq -o=json 'del(.jobs.write)' "$licenses" | grep -q 'secrets'; then
+	fail "$licenses: only job write may use secrets"
 fi
 if [ "$(yq -o=json -I=0 '.jobs.write.permissions' "$licenses")" != '{"contents":"write"}' ]; then
 	fail "$licenses: job write must have only contents: write"
 fi
-if [ "$(yq '.jobs.write.needs' "$licenses")" != check ]; then
+if [ "$(yq -o=json -I=0 '[.jobs.write.needs] | flatten' "$licenses")" != '["check"]' ]; then
 	fail "$licenses: job write must need job check"
 fi
 write_if=$(yq '.jobs.write.if // ""' "$licenses" | tr -s ' \n' ' ' | sed 's/ $//')

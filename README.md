@@ -20,6 +20,22 @@ files from [server](./templates/repository/server) and libraries from the
 To update the repositories simply make your changes. Once merged to master, they
 will be published using a GitHub Action.
 
+### Updating pinned actions
+
+The workflow templates in
+[common](./templates/repository/common/.github/workflows) pin every action to a
+full commit SHA, with the release or branch in a trailing comment. Dependabot
+and Renovate do not update these pins, so update them by hand:
+
+1. Find the commit for the new release with
+   `git ls-remote https://github.com/<owner>/<repo> 'refs/tags/<tag>^{}'`. For an
+   action pinned to a branch, such as `ory/ci` at `# master`, use the branch
+   head.
+2. Review the changes between the old and the new commit.
+3. Replace the SHA and the comment. For the license workflow, change the
+   template and `.github/workflows/licenses.yml` together.
+4. Run `scripts/check-workflows.sh`.
+
 ## Github Sync action
 
 The [meta scripts](https://github.com/ory/meta/tree/master/scripts) synchronize
