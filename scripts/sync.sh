@@ -104,6 +104,7 @@ function replicate_all {
 		"ci"
 		".github"
 		"docs"
+		"milestone-action"
 		"hydra"
 		"keto"
 		"oathkeeper"
