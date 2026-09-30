@@ -3,15 +3,13 @@ name: Licenses
 on:
   pull_request:
   push:
-    branches:
-      - main
-      - v3
-      - v4
-      - master
 
 jobs:
   check:
     name: License compliance
+    if:
+      ${{ github.event_name == 'pull_request' || github.ref ==
+      format('refs/heads/{0}', github.event.repository.default_branch) }}
     permissions:
       contents: read
     runs-on: ubuntu-latest
@@ -26,9 +24,8 @@ jobs:
   write:
     name: Update license overview
     if:
-      ${{ github.event_name == 'push' && (github.ref == 'refs/heads/main' ||
-      github.ref == 'refs/heads/master' || github.ref == 'refs/heads/v3' ||
-      github.ref == 'refs/heads/v4') }}
+      ${{ github.event_name == 'push' && github.ref == format('refs/heads/{0}',
+      github.event.repository.default_branch) }}
     needs: check
     permissions:
       contents: write
