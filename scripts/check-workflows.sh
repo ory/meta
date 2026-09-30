@@ -18,7 +18,7 @@ fail() {
 	failed=1
 }
 
-for file in "$templates"/*.yml "$live_licenses" .github/workflows/workflows.yml; do
+for file in templates/repository/*/.github/workflows/*.y*ml "$live_licenses" .github/workflows/workflows.yml; do
 	if ! refs=$(yq -r '(.jobs[].uses, .jobs[].steps[]?.uses) | select(. != null)' "$file"); then
 		fail "$file: cannot parse"
 		continue

@@ -22,10 +22,10 @@ will be published using a GitHub Action.
 
 ### Updating pinned actions
 
-The workflow templates in
-[common](./templates/repository/common/.github/workflows) pin every action to a
-full commit SHA, with the release or branch in a trailing comment. Dependabot
-and Renovate do not update these pins, so update them by hand:
+The workflow templates in [templates/repository](./templates/repository) pin
+every action to a full commit SHA, with the release or branch in a trailing
+comment. Dependabot and Renovate do not update these pins, so update them by
+hand:
 
 1. Find the commit for the new release with
    `git ls-remote https://github.com/<owner>/<repo> 'refs/tags/<tag>^{}'`. For
