@@ -63,9 +63,9 @@ if [ "$(yq -o=json -I=0 '[.jobs.write.needs] | flatten' "$licenses")" != '["chec
 	fail "$licenses: job write must need job check"
 fi
 write_if=$(yq '.jobs.write.if // ""' "$licenses" | tr -s ' \n' ' ' | sed 's/ $//')
-expected_if="\${{ github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' || github.ref == 'refs/heads/v3') }}"
+expected_if="\${{ github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' || github.ref == 'refs/heads/v3' || github.ref == 'refs/heads/v4') }}"
 if [ "$write_if" != "$expected_if" ]; then
-	fail "$licenses: job write must run only on pushes to main, master and v3"
+	fail "$licenses: job write must run only on pushes to main, master, v3 and v4"
 fi
 if [ "$(yq '[.jobs.* | select(.permissions == null)] | length' "$licenses")" != 0 ]; then
 	fail "$licenses: every job must declare permissions"

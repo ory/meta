@@ -6,6 +6,7 @@ on:
     branches:
       - main
       - v3
+      - v4
       - master
 
 jobs:
@@ -26,7 +27,8 @@ jobs:
     name: Update license overview
     if:
       ${{ github.event_name == 'push' && (github.ref == 'refs/heads/main' ||
-      github.ref == 'refs/heads/master' || github.ref == 'refs/heads/v3') }}
+      github.ref == 'refs/heads/master' || github.ref == 'refs/heads/v3' ||
+      github.ref == 'refs/heads/v4') }}
     needs: check
     permissions:
       contents: write
