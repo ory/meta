@@ -48,9 +48,8 @@ if [ "$(yq -o=json -I=0 '.jobs.check.permissions' "$licenses")" != '{"contents":
 	fail "$licenses: job check must have only contents: read"
 fi
 default_ref="github.ref == format('refs/heads/{0}', github.event.repository.default_branch)"
-check_if=$(yq '.jobs.check.if // ""' "$licenses" | tr -s ' \n' ' ' | sed 's/ $//')
-if [ "$check_if" != "\${{ github.event_name == 'pull_request' || $default_ref }}" ]; then
-	fail "$licenses: job check must run on pull requests and on pushes to the default branch"
+if [ "$(yq '.jobs.check | has("if")' "$licenses")" != false ]; then
+	fail "$licenses: job check must run on every event"
 fi
 if [ "$(yq -o=json -I=0 '.on.push' "$licenses")" != null ]; then
 	fail "$licenses: the push trigger must not filter branches"
